@@ -1,0 +1,79 @@
+# Delphi / C++Builder
+*.dcu
+*.dcp
+*.bpl
+*.obj
+*.o
+*.tds
+*.map
+*.drc
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.dsk
+*.stat
+*.~*
+__history/
+__recovery/
+Win32/
+Win64/
+
+# Visual Studio / MSVC / .NET
+.vs/
+bin/
+obj/
+Debug/
+Release/
+x64/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.ipch
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.aps
+*.cache
+*.log
+*.tlog
+packages/
+TestResults/
+
+# Qt
+*.pro.user
+*.pro.user.*
+build-*/
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Makefile
+Makefile.*
+!cpp/MinGW/Makefile
+
+# Binaries (the SDK DLLs and assemblies are installed separately)
+*.exe
+*.dll
+*.lib
+*.a
+
+# SDK wrapper files copied from the SDK
+TVideoGrabber.cpp
+TVideoGrabber.h
+!qt/QuickStart_with_Overlays/TVideoGrabber.cpp
+!qt/QuickStart_with_Overlays/TVideoGrabber.h
+
+# Java / IDE
+.idea/
+*.iml
+target/
+out/
+
+# Misc
+Thumbs.db
+Desktop.ini
+.DS_Store

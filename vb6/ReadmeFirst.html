@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVideoGrabber - Read me first</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #222;
+    background: #f4f5f7;
+    margin: 0;
+    padding: 30px 16px;
+  }
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #dfe2e6;
+    border-radius: 6px;
+    padding: 32px 40px 40px;
+  }
+  header {
+    border-bottom: 2px solid #990000;
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+  }
+  header .company { font-weight: 600; color: #555; font-size: 14px; }
+  header .company a { text-decoration: none; }
+  header h1 { margin: 6px 0 0; font-size: 26px; color: #990000; font-weight: 600; }
+  header .subtitle { color: #666; font-size: 14px; margin-top: 4px; }
+  h2 {
+    font-size: 17px;
+    color: #990000;
+    margin: 28px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e3e6ea;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  a { color: #0066cc; }
+  code {
+    font-family: Consolas, "Courier New", monospace;
+    background: #f0f2f5;
+    border: 1px solid #e0e3e8;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 13.5px;
+  }
+  pre {
+    font-family: Consolas, "Courier New", monospace;
+    background: #f0f2f5;
+    border: 1px solid #e0e3e8;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    overflow-x: auto;
+  }
+  ul, ol { padding-left: 22px; }
+  li { margin: 4px 0; }
+  .note {
+    background: #fff8e1;
+    border-left: 4px solid #f0b429;
+    padding: 8px 14px;
+    margin: 10px 0;
+  }
+  .common {
+    font-size: 13.5px;
+    color: #666;
+    margin: -10px 0 0;
+  }
+  footer { margin-top: 36px; font-size: 12.5px; color: #888; text-align: center; }
+
+  pre.listing { font-size: 12.5px; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="company">Datastead Software &middot; <a href="https://www.datastead.com/">www.datastead.com</a></div>
+  <h1>Read me first</h1>
+  <div class="subtitle">VB6 demo projects</div>
+</header>
+
+
+<h2>OCX install</h2>
+<p>Be sure to register the <code>vidgrab_VB6.ocx</code> component before using the VB6 demo projects:</p>
+<p><b>Start</b> -> <b>Run</b> -> <code>RegSvr32 [path to the ocx]\vidgrab_VB6.ocx</code></p>
+<p>E.g.:</p>
+<pre>RegSvr32 c:\vidgrab\VB6\vidgrab_VB6.ocx</pre>
+
+<h2>Properties</h2>
+<p>Some of the properties included in the user guide are not published (their values are not stored, so they are not visible with the object explorer), however they exist and you can assign and read their values (e.g. <code>VideoDevice</code>, <code>AudioInput</code>, etc.).</p>
+
+<h2>Types</h2>
+<p>The types described in the user guide begin by <code>Tx</code> in the OCX. E.g. <code>TPlaylist</code> in the user guide is <code>TxPlaylist</code> in the OCX.</p>
+<p>They are all listed, with their values and links to the online and offline documentation, in <a href="EnumeratedTypes.html">EnumeratedTypes.html</a> located in the folder of the OCX.</p>
+
+
+<h2>OnFrameBitmap and OnFrameProgress2 events</h2>
+<p>These events pass as parameter:</p>
+<ul>
+  <li>a pointer to a <code>TFrameInfo</code> structure,</li>
+  <li>a pointer to a <code>TFrameBitmapInfo</code> structure.</li>
+</ul>
+<p>These structures are declared in the <code>VidGrabUtil.bas</code> module included with the MainDemo project.</p>
+<p>Look at the <code>FrameBitmap</code> and <code>FrameProgress2</code> events of the MainDemo project for sample code.</p>
+
+<h2>Upgrading the demo projects</h2>
+<p>If the demo projects were already opened with an earlier version of the OCX, delete <code>vidgrab_VB6.oca</code>
+next to the OCX and re-register the new OCX before opening them. No GUID has to be edited in the <code>.vbp</code>
+or <code>.frm</code> files: the identifiers of <code>vidgrab_VB6.ocx</code> are permanent.</p>
+
+
+<footer>&copy; Datastead Software</footer>
+
+</div>
+</body>
+</html>

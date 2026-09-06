@@ -121,7 +121,7 @@ object frmMainForm: TfrmMainForm
   object grbPlayerControl: TGroupBox
     Left = 8
     Top = 261
-    Width = 1316
+    Width = 1314
     Height = 70
     Margins.Left = 2
     Margins.Top = 2
@@ -130,9 +130,9 @@ object frmMainForm: TfrmMainForm
     Anchors = [akLeft, akTop, akRight]
     Caption = 'player control'
     TabOrder = 3
-    ExplicitWidth = 1314
+    ExplicitWidth = 1312
     DesignSize = (
-      1316
+      1314
       70)
     object btnPlayerBackwards: TSpeedButton
       Left = 15
@@ -291,7 +291,7 @@ object frmMainForm: TfrmMainForm
     object tbrPlayerProgress: TTrackBar
       Left = 289
       Top = 22
-      Width = 1024
+      Width = 1022
       Height = 32
       Anchors = [akLeft, akTop, akRight]
       Max = 1
@@ -301,7 +301,7 @@ object frmMainForm: TfrmMainForm
       TabOrder = 0
       ThumbLength = 15
       OnChange = tbrPlayerProgressChange
-      ExplicitWidth = 1022
+      ExplicitWidth = 1020
     end
     object chkPlayerTrackbarSynchrone: TCheckBox
       Left = 945
@@ -318,20 +318,20 @@ object frmMainForm: TfrmMainForm
   end
   object VideoGrabber: TVideoGrabber
     Left = 234
-    Top = 398
-    Width = 781
-    Height = 430
+    Top = 379
+    Width = 839
+    Height = 494
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Margins.Bottom = 2
     Color = clBlack
     OnResize = VideoGrabberResize
-    AspectRatioToUse = -1.000000000000000000
+    AspectRatioToUse = -1.00000000000000000
     AudioCompressor = 0
     AutoFileNameDateTimeFormat = 'yymmdd_hhmmss_zzz'
     AutoFilePrefix = 'vg'
-    Cropping_Zoom = 1.000000000000000000
+    Cropping_Zoom = 1.00000000000000000
     ImageOverlayEnabled = False
     ImageOverlay_AlphaBlend = False
     ImageOverlay_AlphaBlendValue = 180
@@ -353,7 +353,7 @@ object frmMainForm: TfrmMainForm
       '5555555555 5555555555 5555555555 5555555555 5555555555 555555555' +
       '5 5555555555 5555555555 5555555555 5555555555'
     NDIName = 'DATASTEAD_UNNAMED_SOURCE'
-    PlayerSpeedRatio = 1.000000000000000000
+    PlayerSpeedRatio = 1.00000000000000000
     PlayerTrackBar = tbrPlayerProgress
     TextOverlay_Enabled = False
     TextOverlay_Font.Charset = DEFAULT_CHARSET
@@ -388,12 +388,12 @@ object frmMainForm: TfrmMainForm
       'time (ns): %time_100ns%'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
-    v360_AspectRatio = -1.000000000000000000
-    VideoCompression_Quality = 1.000000000000000000
+    v360_AspectRatio = -1.00000000000000000
+    VideoCompression_Quality = 1.00000000000000000
     VideoCompressor = 0
     VideoDelay = 0
     VideoFromImages_TemporaryFile = 'SetOfBitmaps01.dat'
-    VideoProcessing_RotationCustomAngle = 45.500000000000000000
+    VideoProcessing_RotationCustomAngle = 45.50000000000000000
     StreamInterface_Format = 'mpegts'
     StreamInterface_IsRealTime = True
     OnAudioDeviceSelected = VideoGrabberAudioDeviceSelected
@@ -414,7 +414,6 @@ object frmMainForm: TfrmMainForm
     OnMouseDown = VideoGrabberMouseDown
     OnMouseMove = VideoGrabberMouseMove
     OnMouseUp = VideoGrabberMouseUp
-    OnMultipurposeEncoderProgress = VideoGrabberMultiPurposeEncoderProgress
     OnONVIFDiscoveryCompleted = VideoGrabberONVIFDiscoveryCompleted
     OnPlayerBufferingData = VideoGrabberPlayerBufferingData
     OnPlayerEndOfPlaylist = VideoGrabberPlayerEndOfPlaylist
@@ -434,9 +433,9 @@ object frmMainForm: TfrmMainForm
     OnVideoFromBitmapsNextFrameNeeded = VideoGrabberVideoFromBitmapsNextFrameNeeded
   end
   object pctMain: TPageControl
-    Left = 7
+    Left = 8
     Top = 0
-    Width = 1318
+    Width = 1316
     Height = 257
     Margins.Left = 2
     Margins.Top = 2
@@ -446,7 +445,7 @@ object frmMainForm: TfrmMainForm
     Anchors = [akLeft, akTop, akRight]
     MultiLine = True
     TabOrder = 4
-    ExplicitWidth = 1316
+    ExplicitWidth = 1314
     object tbsVideoDevice: TTabSheet
       Caption = 'video source'
       ImageIndex = 2
@@ -1048,21 +1047,6 @@ object frmMainForm: TfrmMainForm
           OnClick = chkScreenRecordingWithCursorClick
         end
       end
-      object rdgPreferredVideoSize: TRadioGroup
-        Left = 754
-        Top = 20
-        Width = 223
-        Height = 125
-        Caption = 'preferred video sizes (examples)'
-        ItemIndex = 0
-        Items.Strings = (
-          'source size (default)'
-          '640x360'
-          '1280x720'
-          '1920x1080')
-        TabOrder = 9
-        OnClick = rdgPreferredVideoSizeClick
-      end
       object chkretchPreferredVideoSize: TCheckBox
         Left = 898
         Top = 114
@@ -1070,8 +1054,7 @@ object frmMainForm: TfrmMainForm
         Height = 21
         Alignment = taLeftJustify
         Caption = 'stretch'
-        TabOrder = 10
-        OnClick = chkretchPreferredVideoSizeClick
+        TabOrder = 9
       end
     end
     object tbsIPCameras: TTabSheet
@@ -1922,32 +1905,33 @@ object frmMainForm: TfrmMainForm
           OnChange = cboAudioRenderersChange
         end
       end
-      object rdgVUMeters: TRadioGroup
-        Left = 414
-        Top = 59
+      object btnConfigureVUMeters: TButton
+        Left = 473
+        Top = 68
         Width = 247
-        Height = 41
-        Caption = 'VU Meters'
-        Columns = 3
-        Items.Strings = (
-          'disabled'
-          'analog'
-          'bargraph')
+        Height = 34
+        Caption = 'Configure VU-Meters...'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
         TabOrder = 1
-        OnClick = rdgVUMetersClick
+        OnClick = btnConfigureVUMetersClick
       end
       object pnLeftVUMeter: TPanel
         Left = 414
-        Top = 108
-        Width = 158
+        Top = 112
+        Width = 180
         Height = 110
         Caption = 'Left VU Meter'
         TabOrder = 2
       end
       object pnRightVUMeter: TPanel
-        Left = 581
-        Top = 108
-        Width = 149
+        Left = 606
+        Top = 112
+        Width = 180
         Height = 110
         Caption = 'Right VU Meter'
         TabOrder = 3
@@ -2022,22 +2006,13 @@ object frmMainForm: TfrmMainForm
         TabOrder = 5
         OnClick = chkRenderAudioDeviceClick
       end
-      object btnBargraphOverlay: TButton
-        Left = 670
-        Top = 69
-        Width = 139
-        Height = 31
-        Caption = 'bargraph overlay'
-        TabOrder = 6
-        OnClick = btnBargraphOverlayClick
-      end
       object grbAudioCaptureDevice: TGroupBox
         Left = 12
         Top = 27
         Width = 396
         Height = 112
         Caption = 'Audio capture device (if default selected above)'
-        TabOrder = 7
+        TabOrder = 6
         object Label26: TLabel
           Left = 10
           Top = 50
@@ -2472,478 +2447,496 @@ object frmMainForm: TfrmMainForm
         OnChange = edtAVIAutoFilePrefixChange
       end
     end
+    object Encryption: TTabSheet
+      Caption = 'Encryption'
+      ImageIndex = 13
+      object Label30: TLabel
+        Left = 1
+        Top = 48
+        Width = 150
+        Height = 13
+        Caption = 'Encryption key (16 or 32 chars):'
+      end
+      object Label71: TLabel
+        Left = 0
+        Top = 75
+        Width = 151
+        Height = 13
+        Caption = 'Decryption key (16 or 32 chars):'
+      end
+      object edtEncryptionKey: TEdit
+        Left = 167
+        Top = 45
+        Width = 219
+        Height = 21
+        TabOrder = 0
+      end
+      object edtDecryptionKey: TEdit
+        Left = 167
+        Top = 72
+        Width = 219
+        Height = 21
+        TabOrder = 1
+      end
+      object Memo1: TMemo
+        Left = 615
+        Top = 3
+        Width = 692
+        Height = 222
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -10
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Lines.Strings = (
+          
+            'THIS FEATURE REQUIRES THE DATASTEAD MULTIPURPOSE ENCODER TO BE I' +
+            'NSTALLED'
+          ''
+          
+            '- the key used for decryption must be the key that have been use' +
+            'd for encryption, so set both to the same value (the only case w' +
+            'here it is different '
+          
+            'is to decrypt a source with a key while encrypting it with anoth' +
+            'er key)'
+          
+            '- the key length must be exactly 16 characters (128 bits) or 32 ' +
+            'characters (256 bits)'
+          '- to disable the encryption or decryption, just set an empty key'
+          ''
+          'OPTION 1: REAL-TIME ENCRYPTION/DECRYPTION'
+          
+            'A) real-time encryption: set the encryption key, then go to the ' +
+            'source tab or IP camera tab and select the source to record, the' +
+            'n start the recording '
+          'and it will be encrypted "on the fly"'
+          
+            'B) real-time decryption: set the decryption key, then go to the ' +
+            'player tab and select the encrypted video clip to play, then cli' +
+            'ck "OpenPlayer"'
+          ''
+          'OPTION 2: PRE OR POST ENCRYPTION/DECRYPTION'
+          
+            'A) encryption of existing video files : set the encryption key, ' +
+            'set the unencrypted file as source, set the name of the output v' +
+            'ideo clip to be '
+          'encrypted, then click "Encrypt"'
+          
+            'B) decryption of existing video files : set the decryption key, ' +
+            'set the encrypted file as source, set the name of the output vid' +
+            'eo clip to be decrypted, '
+          'then click "Decrypt"')
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object btnClearEncryption: TButton
+        Left = 439
+        Top = 47
+        Width = 41
+        Height = 17
+        Caption = 'clear'
+        TabOrder = 3
+        OnClick = btnClearEncryptionClick
+      end
+      object btnClearDecryption: TButton
+        Left = 439
+        Top = 70
+        Width = 41
+        Height = 17
+        Caption = 'clear'
+        TabOrder = 4
+        OnClick = btnClearDecryptionClick
+      end
+      object GroupBox4: TGroupBox
+        Left = 3
+        Top = 99
+        Width = 593
+        Height = 110
+        Caption = 'process video files (OPTION 2) :'
+        TabOrder = 5
+        object edtSourceClip: TLabel
+          Left = 16
+          Top = 32
+          Width = 3
+          Height = 13
+        end
+        object spdSourceVideoClip: TSpeedButton
+          Left = 6
+          Top = 20
+          Width = 152
+          Height = 26
+          Caption = 'source video clip (input) :'
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            0400000000000001000000000000000000001000000010000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+            5555555555555555555555555555555555555555555555555555555555555555
+            555555555555555555555555555555555555555FFFFFFFFFF555550000000000
+            55555577777777775F55500B8B8B8B8B05555775F555555575F550F0B8B8B8B8
+            B05557F75F555555575F50BF0B8B8B8B8B0557F575FFFFFFFF7F50FBF0000000
+            000557F557777777777550BFBFBFBFB0555557F555555557F55550FBFBFBFBF0
+            555557F555555FF7555550BFBFBF00055555575F555577755555550BFBF05555
+            55555575FFF75555555555700007555555555557777555555555555555555555
+            5555555555555555555555555555555555555555555555555555}
+          NumGlyphs = 2
+          OnClick = spdSourceVideoClipClick
+        end
+        object Label83: TLabel
+          Left = 14
+          Top = 52
+          Width = 144
+          Height = 13
+          Caption = 'destination video clip (output) :'
+        end
+        object edtEncryptDecryptSourceVideoClip: TEdit
+          Left = 164
+          Top = 23
+          Width = 393
+          Height = 21
+          TabOrder = 0
+        end
+        object edtEncryptDecryptDestinationVideoClip: TEdit
+          Left = 164
+          Top = 50
+          Width = 397
+          Height = 21
+          TabOrder = 1
+        end
+        object btnEcryptVideoClip: TButton
+          Left = 317
+          Top = 77
+          Width = 90
+          Height = 24
+          Caption = 'ENCRYPT'
+          TabOrder = 2
+        end
+        object btnDecryptVideoClip: TButton
+          Left = 430
+          Top = 77
+          Width = 90
+          Height = 24
+          Caption = 'DECRYPT'
+          TabOrder = 3
+        end
+        object chkEncryptDecryptOverwriteDestination: TCheckBox
+          Left = 9
+          Top = 79
+          Width = 166
+          Height = 17
+          Caption = 'overwrite destination if exists'
+          TabOrder = 4
+        end
+      end
+      object btnSetEncryptionKey: TButton
+        Left = 392
+        Top = 47
+        Width = 41
+        Height = 17
+        Caption = 'SET'
+        TabOrder = 6
+        OnClick = btnSetEncryptionKeyClick
+      end
+      object btnSetDecryptionKey: TButton
+        Left = 392
+        Top = 70
+        Width = 41
+        Height = 17
+        Caption = 'SET'
+        TabOrder = 7
+        OnClick = btnSetDecryptionKeyClick
+      end
+      object GroupBox8: TGroupBox
+        Left = 167
+        Top = 2
+        Width = 361
+        Height = 36
+        Caption = 'Encryption method'
+        TabOrder = 8
+        object rdbFastEncryption: TRadioButton
+          Left = 121
+          Top = 10
+          Width = 113
+          Height = 24
+          Caption = 'Fast encryption'
+          TabOrder = 0
+          OnClick = rdbFastEncryptionClick
+        end
+        object rdbAESencryption: TRadioButton
+          Left = 240
+          Top = 10
+          Width = 105
+          Height = 25
+          Caption = 'AES encryption'
+          TabOrder = 1
+          OnClick = rdbAESencryptionClick
+        end
+      end
+    end
     object tbsMPE: TTabSheet
       Caption = 'Multipurpose Encoder'
       ImageIndex = 12
-      object PageControl2: TPageControl
-        Left = 0
-        Top = 0
-        Width = 1310
-        Height = 229
-        ActivePage = TabSheet7
-        Align = alClient
+      object Label11: TLabel
+        Left = 979
+        Top = 135
+        Width = 82
+        Height = 13
+        Caption = 'Extra parameters:'
+      end
+      object Memo2: TMemo
+        Left = 3
+        Top = 2
+        Width = 391
+        Height = 224
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Lines.Strings = (
+          'These settings apply to the Datastead Multipurpose Encoder '
+          'audio and video compressors: n the "Recording" tab, select '
+          '"Datastead '
+          'Multipurpose Encoder" as video and/or audio '
+          'compressor, and set CompressionMode = '
+          'cm_CompressOnTheFly.'
+          ''
+          'The values set here are saved in the registry and '
+          'restored automatically when the app restarts.'#11
+          ''
+          'Alternatively the encoder configuration can be set '
+          'programmatically : if at least one value is set '
+          'programmatically, the '
+          'settings from the registry are ignored.'#11
+          'E.g.:'#11
+          'VideoGrabber.Encoder_SetStr (0, '
+          'Enc_Video_Codec, '#39'h264'#39');'
+          'VideoGrabber.Encoder_SetInt (0, '
+          'Enc_Video_BitRate_kb, 9000);')
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssVertical
         TabOrder = 0
-        object tbsDatasteadEncoder: TTabSheet
-          Caption = 'Datastead Encoder'
-          object Label140: TLabel
-            Left = 880
-            Top = 8
-            Width = 3
+      end
+      object video: TGroupBox
+        Left = 400
+        Top = 0
+        Width = 561
+        Height = 193
+        Caption = 'Video:'
+        TabOrder = 1
+        object Label128: TLabel
+          Left = 152
+          Top = 16
+          Width = 302
+          Height = 13
+          Caption = 'Codec name, e.g. "h264", "hevc", "mpeg4" or empty for default'
+        end
+        object Label129: TLabel
+          Left = 440
+          Top = 28
+          Width = 3
+          Height = 13
+        end
+        object Label130: TLabel
+          Left = 152
+          Top = 46
+          Width = 65
+          Height = 13
+          Caption = 'Bit rate (kbps)'
+        end
+        object Label134: TLabel
+          Left = 152
+          Top = 76
+          Width = 128
+          Height = 13
+          Caption = 'IDR Interval (GOP), e.g. 30'
+        end
+        object Label135: TLabel
+          Left = 152
+          Top = 106
+          Width = 125
+          Height = 13
+          Caption = 'Max B-frames, 0 by default'
+        end
+        object Label137: TLabel
+          Left = 152
+          Top = 136
+          Width = 231
+          Height = 13
+          Caption = 'Thread count, 1 by default (4 by default for h264)'
+        end
+        object Label136: TLabel
+          Left = 152
+          Top = 166
+          Width = 161
+          Height = 13
+          Caption = 'GPU H/W accel (none by default)'
+        end
+        object edtDatasteadEncoder_VideoCodecName: TEdit
+          Left = 56
+          Top = 12
+          Width = 89
+          Height = 21
+          TabOrder = 0
+        end
+        object edtDatasteadEncoder_Video_Bitrate_kb: TEdit
+          Left = 56
+          Top = 42
+          Width = 89
+          Height = 21
+          TabOrder = 1
+        end
+        object GroupBox10: TGroupBox
+          Left = 400
+          Top = 55
+          Width = 145
+          Height = 117
+          Caption = 'rate control (kbps):'
+          TabOrder = 2
+          object Label131: TLabel
+            Left = 68
+            Top = 24
+            Width = 51
             Height = 13
+            Caption = 'min bit rate'
           end
-          object Label11: TLabel
-            Left = 1064
-            Top = 123
-            Width = 82
+          object Label132: TLabel
+            Left = 68
+            Top = 56
+            Width = 54
             Height = 13
-            Caption = 'Extra parameters:'
+            Caption = 'max bit rate'
           end
-          object video: TGroupBox
-            Left = 336
-            Top = 0
-            Width = 561
-            Height = 193
-            Caption = 'Video:'
+          object Label133: TLabel
+            Left = 68
+            Top = 88
+            Width = 48
+            Height = 13
+            Caption = 'buffer size'
+          end
+          object edtDatasteadEncoder_Video_rc_MinBitRate_kb: TEdit
+            Left = 4
+            Top = 21
+            Width = 60
+            Height = 21
             TabOrder = 0
-            object Label128: TLabel
-              Left = 152
-              Top = 16
-              Width = 302
-              Height = 13
-              Caption = 'Codec name, e.g. "h264", "hevc", "mpeg4" or empty for default'
-            end
-            object Label129: TLabel
-              Left = 440
-              Top = 28
-              Width = 3
-              Height = 13
-            end
-            object Label130: TLabel
-              Left = 152
-              Top = 46
-              Width = 65
-              Height = 13
-              Caption = 'Bit rate (kbps)'
-            end
-            object Label134: TLabel
-              Left = 152
-              Top = 76
-              Width = 128
-              Height = 13
-              Caption = 'IDR Interval (GOP), e.g. 30'
-            end
-            object Label135: TLabel
-              Left = 152
-              Top = 106
-              Width = 125
-              Height = 13
-              Caption = 'Max B-frames, 0 by default'
-            end
-            object Label137: TLabel
-              Left = 152
-              Top = 136
-              Width = 231
-              Height = 13
-              Caption = 'Thread count, 1 by default (4 by default for h264)'
-            end
-            object Label136: TLabel
-              Left = 152
-              Top = 166
-              Width = 161
-              Height = 13
-              Caption = 'GPU H/W accel (none by default)'
-            end
-            object edtDatasteadEncoder_VideoCodecName: TEdit
-              Left = 56
-              Top = 12
-              Width = 89
-              Height = 21
-              TabOrder = 0
-              OnChange = edtDatasteadEncoder_VideoCodecNameChange
-            end
-            object edtDatasteadEncoder_Video_Bitrate_kb: TEdit
-              Left = 56
-              Top = 42
-              Width = 89
-              Height = 21
-              TabOrder = 1
-              OnChange = edtDatasteadEncoder_Video_Bitrate_kbChange
-            end
-            object GroupBox10: TGroupBox
-              Left = 400
-              Top = 55
-              Width = 145
-              Height = 117
-              Caption = 'rate control (kbps):'
-              TabOrder = 2
-              object Label131: TLabel
-                Left = 68
-                Top = 24
-                Width = 51
-                Height = 13
-                Caption = 'min bit rate'
-              end
-              object Label132: TLabel
-                Left = 68
-                Top = 56
-                Width = 54
-                Height = 13
-                Caption = 'max bit rate'
-              end
-              object Label133: TLabel
-                Left = 68
-                Top = 88
-                Width = 48
-                Height = 13
-                Caption = 'buffer size'
-              end
-              object edtDatasteadEncoder_Video_rc_MinBitRate_kb: TEdit
-                Left = 4
-                Top = 21
-                Width = 60
-                Height = 21
-                TabOrder = 0
-                OnChange = edtDatasteadEncoder_Video_rc_MinBitRate_kbChange
-              end
-              object edtDatasteadEncoder_Video_rc_MaxBitRate_kb: TEdit
-                Left = 4
-                Top = 53
-                Width = 60
-                Height = 21
-                TabOrder = 1
-                OnChange = edtDatasteadEncoder_Video_rc_MaxBitRate_kbChange
-              end
-              object edtDatasteadEncoder_Video_rc_BufferSize_kb: TEdit
-                Left = 4
-                Top = 85
-                Width = 60
-                Height = 21
-                TabOrder = 2
-                OnChange = edtDatasteadEncoder_Video_rc_BufferSize_kbChange
-              end
-            end
-            object edtDatasteadEncoder_Video_IDRInterval: TEdit
-              Left = 56
-              Top = 72
-              Width = 89
-              Height = 21
-              TabOrder = 3
-              OnChange = edtDatasteadEncoder_Video_IDRIntervalChange
-            end
-            object edtDatasteadEncoder_Video_MaxBframes: TEdit
-              Left = 56
-              Top = 102
-              Width = 89
-              Height = 21
-              TabOrder = 4
-              OnChange = edtDatasteadEncoder_Video_MaxBframesChange
-            end
-            object edtDatasteadEncoder_Video_ThreadCount: TEdit
-              Left = 56
-              Top = 132
-              Width = 89
-              Height = 21
-              TabOrder = 5
-              OnChange = edtDatasteadEncoder_Video_ThreadCountChange
-            end
-            object cmbGPUEncoder: TComboBox
-              Left = 56
-              Top = 162
-              Width = 90
-              Height = 21
-              TabOrder = 6
-              OnChange = cmbGPUEncoderChange
-              Items.Strings = (
-                'None'
-                'Auto'
-                'Intel_QSV'
-                'NVidia_NVENC'
-                'AMD_AMF')
-            end
           end
-          object GroupBox12: TGroupBox
-            Left = 912
-            Top = 0
-            Width = 401
-            Height = 114
-            Caption = 'Audio:'
+          object edtDatasteadEncoder_Video_rc_MaxBitRate_kb: TEdit
+            Left = 4
+            Top = 53
+            Width = 60
+            Height = 21
             TabOrder = 1
-            object Label138: TLabel
-              Left = 111
-              Top = 84
-              Width = 125
-              Height = 13
-              Caption = 'Bit rate (kbps) e.g. 64, 128'
-            end
-            object Label139: TLabel
-              Left = 111
-              Top = 48
-              Width = 160
-              Height = 13
-              Caption = 'samples per sec (44100, 22050...)'
-            end
-            object Label38: TLabel
-              Left = 74
-              Top = 32
-              Width = 3
-              Height = 13
-            end
-            object Label32: TLabel
-              Left = 111
-              Top = 16
-              Width = 211
-              Height = 13
-              Caption = 'Codec name, e.g. "aac", or empty for default'
-            end
-            object edtDatasteadEncoder_Audio_SamplesPerSecond: TEdit
-              Left = 16
-              Top = 50
-              Width = 89
-              Height = 21
-              TabOrder = 0
-              OnChange = edtDatasteadEncoder_Audio_SamplesPerSecondChange
-            end
-            object edtDatasteadEncoder_Audio_BitRate_kb: TEdit
-              Left = 16
-              Top = 80
-              Width = 89
-              Height = 21
-              TabOrder = 1
-              OnChange = edtDatasteadEncoder_Audio_BitRate_kbChange
-            end
-            object edtDatasteadEncoder_AudioCodecName: TEdit
-              Left = 16
-              Top = 12
-              Width = 89
-              Height = 21
-              TabOrder = 2
-              OnChange = edtDatasteadEncoder_AudioCodecNameChange
-            end
           end
-          object Memo2: TMemo
-            Left = 8
-            Top = 2
-            Width = 321
-            Height = 191
-            Color = clBtnFace
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'MS Sans Serif'
-            Font.Style = []
-            Lines.Strings = (
-              'To use this mode, in the "recording" tab, select:'
-              ''
-              '- "Datastead Multipurpose Encoder" as compressor'
-              '- CompressionMode = cm_CompressOnTheFly'
-              ''
-              'The format (e.g. mp4, avi, flv, etc...) is determined by '
-              'the extension of the RecordingFileName, or by the '
-              'RecordingMethod property if RecordingFileName is '
-              'empty')
-            ParentFont = False
-            ReadOnly = True
+          object edtDatasteadEncoder_Video_rc_BufferSize_kb: TEdit
+            Left = 4
+            Top = 85
+            Width = 60
+            Height = 21
             TabOrder = 2
           end
-          object mmoExtraParameters: TMemo
-            Left = 1064
-            Top = 141
-            Width = 241
-            Height = 57
-            TabOrder = 3
-            OnChange = mmoExtraParametersChange
-          end
         end
-        object TabSheet7: TTabSheet
-          Caption = 'Command line encoder'
-          ImageIndex = 1
-          object pgcMPE: TPageControl
-            Left = 0
-            Top = 0
-            Width = 1302
-            Height = 201
-            ActivePage = tbsMPEReencodingLog
-            Align = alClient
-            TabOrder = 0
-            object tshMPESettings: TTabSheet
-              Caption = 'Settings'
-              object GroupBox1: TGroupBox
-                Left = 4
-                Top = 54
-                Width = 1123
-                Height = 55
-                Caption = 
-                  'STREAMING: enable it then start the preview in the "video source' +
-                  '" tab or recording in the "Recording" tab        (note: it super' +
-                  'sedes ALL the streaming settings of the "WM Streaming" tab)'
-                TabOrder = 0
-                object chkMPEStreaming: TCheckBox
-                  Left = 4
-                  Top = 21
-                  Width = 80
-                  Height = 21
-                  Caption = 'enable'
-                  TabOrder = 0
-                  OnClick = chkMPEStreamingClick
-                end
-                object edtMPEStreaming: TEdit
-                  Left = 69
-                  Top = 23
-                  Width = 1051
-                  Height = 21
-                  TabOrder = 1
-                  Text = 
-                    'ffmpegLGPL.exe -i %PIPE% -pix_fmt yuv420p -threads 8 -c:v h264 -' +
-                    'b:v 2M -an -force_key_frames "expr:gte(t,n_forced*0.5)" -vf setp' +
-                    'ts=(RTCTIME-RTCSTART)/(TB*1000000) -acodec aac -ab 128k -ac 2 -f' +
-                    ' mpegts udp://239.255.0.1:10124'
-                  OnChange = edtMPEStreamingChange
-                end
-              end
-              object grbMPErecord: TGroupBox
-                Left = 4
-                Top = 0
-                Width = 1123
-                Height = 48
-                Caption = 
-                  'RECORDING: enable it then start the recording in the "Recording"' +
-                  ' tab         (note: it supersedes ALL the compression and codec ' +
-                  'settings of the "Recording" tab)'
-                TabOrder = 1
-                object chkMPERecording: TCheckBox
-                  Left = 4
-                  Top = 26
-                  Width = 80
-                  Height = 21
-                  Caption = 'enable'
-                  TabOrder = 0
-                  OnClick = chkMPERecordingClick
-                end
-                object edtMPERecording: TEdit
-                  Left = 69
-                  Top = 23
-                  Width = 1051
-                  Height = 21
-                  TabOrder = 1
-                  Text = 
-                    'ffmpegLGPL.exe -i %PIPE% -pix_fmt yuv420p -threads 8 -c:v h264 -' +
-                    'b:v 2M -an -force_key_frames "expr:gte(t,n_forced*0.5)" -vf setp' +
-                    'ts=(RTCTIME-RTCSTART)/(TB*1000000) -acodec aac -ab 128k -ac 2 -f' +
-                    ' mp4 %FILENAME%'
-                  OnChange = edtMPERecordingChange
-                end
-              end
-              object GroupBox6: TGroupBox
-                Left = 4
-                Top = 108
-                Width = 1123
-                Height = 55
-                Caption = 
-                  'Direct transcoding: replace these sample file names by the real ' +
-                  'files to process, specify more FFmpeg settings if needed, then c' +
-                  'lick "Start MPE reencoding"'
-                TabOrder = 2
-                object edtMPEReencoding: TEdit
-                  Left = 4
-                  Top = 22
-                  Width = 883
-                  Height = 21
-                  TabOrder = 0
-                  Text = 
-                    'ffmpegLGPL.exe -i "c:\folder\ClipToReencode.avi" -f mp4 "c:\fold' +
-                    'er\ClipReencodedToMP4.mp4"'
-                  OnChange = edtMPEReencodingChange
-                end
-                object btnStartMPEReencoding: TButton
-                  Left = 895
-                  Top = 21
-                  Width = 139
-                  Height = 31
-                  Caption = 'start MPE reencoding'
-                  TabOrder = 1
-                  OnClick = btnStartMPEReencodingClick
-                end
-                object btnStopMPEReencoding: TButton
-                  Left = 1041
-                  Top = 21
-                  Width = 70
-                  Height = 31
-                  Caption = 'stop'
-                  TabOrder = 2
-                  OnClick = btnStopMPEReencodingClick
-                end
-              end
-            end
-            object tbsMPERecordingLog: TTabSheet
-              Caption = 'Recording log'
-              ImageIndex = 1
-              object lblMPERecordingProgressInfo: TLabel
-                Left = 0
-                Top = 158
-                Width = 66
-                Height = 13
-                Caption = 'progress info: '
-              end
-              object mmoMPERecordingLog: TMemo
-                Left = 8
-                Top = 0
-                Width = 1129
-                Height = 139
-                Lines.Strings = (
-                  
-                    'The log and progress info is available only if SHOWCONSOLE has n' +
-                    'ot been specified'
-                  '')
-                TabOrder = 0
-              end
-            end
-            object tbsMPEStreamingLog: TTabSheet
-              Caption = 'Streaming log'
-              ImageIndex = 2
-              object lblMPEStreamingProgressInfo: TLabel
-                Left = 0
-                Top = 158
-                Width = 66
-                Height = 13
-                Caption = 'progress info: '
-              end
-              object mmoMPEStreamingLog: TMemo
-                Left = 0
-                Top = 0
-                Width = 1129
-                Height = 149
-                Lines.Strings = (
-                  
-                    'The log and progress info is available only if SHOWCONSOLE has n' +
-                    'ot been specified'
-                  '')
-                TabOrder = 0
-              end
-            end
-            object tbsMPEReencodingLog: TTabSheet
-              Caption = 'Reencoding Log'
-              ImageIndex = 3
-              object lblMPEReencodingProgressInfo: TLabel
-                Left = 0
-                Top = 158
-                Width = 66
-                Height = 13
-                Caption = 'progress info: '
-              end
-              object mmoMPEReencodingLog: TMemo
-                Left = 0
-                Top = 0
-                Width = 1129
-                Height = 149
-                Lines.Strings = (
-                  
-                    'The log and progress info is available only if SHOWCONSOLE has n' +
-                    'ot been specified')
-                TabOrder = 0
-              end
-            end
-          end
+        object edtDatasteadEncoder_Video_IDRInterval: TEdit
+          Left = 56
+          Top = 72
+          Width = 89
+          Height = 21
+          TabOrder = 3
         end
+        object edtDatasteadEncoder_Video_MaxBframes: TEdit
+          Left = 56
+          Top = 102
+          Width = 89
+          Height = 21
+          TabOrder = 4
+        end
+        object edtDatasteadEncoder_Video_ThreadCount: TEdit
+          Left = 56
+          Top = 132
+          Width = 89
+          Height = 21
+          TabOrder = 5
+        end
+        object cmbGPUEncoder: TComboBox
+          Left = 56
+          Top = 162
+          Width = 90
+          Height = 21
+          TabOrder = 6
+          Items.Strings = (
+            'None'
+            'Auto'
+            'Intel_QSV'
+            'NVidia_NVENC'
+            'AMD_AMF')
+        end
+      end
+      object GroupBox12: TGroupBox
+        Left = 977
+        Top = 0
+        Width = 330
+        Height = 114
+        Caption = 'Audio:'
+        TabOrder = 2
+        object Label138: TLabel
+          Left = 111
+          Top = 84
+          Width = 125
+          Height = 13
+          Caption = 'Bit rate (kbps) e.g. 64, 128'
+        end
+        object Label139: TLabel
+          Left = 111
+          Top = 48
+          Width = 160
+          Height = 13
+          Caption = 'samples per sec (44100, 22050...)'
+        end
+        object Label38: TLabel
+          Left = 74
+          Top = 32
+          Width = 3
+          Height = 13
+        end
+        object Label32: TLabel
+          Left = 111
+          Top = 16
+          Width = 211
+          Height = 13
+          Caption = 'Codec name, e.g. "aac", or empty for default'
+        end
+        object edtDatasteadEncoder_Audio_SamplesPerSecond: TEdit
+          Left = 16
+          Top = 50
+          Width = 89
+          Height = 21
+          TabOrder = 0
+        end
+        object edtDatasteadEncoder_Audio_BitRate_kb: TEdit
+          Left = 16
+          Top = 80
+          Width = 89
+          Height = 21
+          TabOrder = 1
+        end
+        object edtDatasteadEncoder_AudioCodecName: TEdit
+          Left = 16
+          Top = 12
+          Width = 89
+          Height = 21
+          TabOrder = 2
+        end
+      end
+      object mmoExtraParameters: TMemo
+        Left = 979
+        Top = 153
+        Width = 241
+        Height = 57
+        TabOrder = 3
       end
     end
     object TabSheet5: TTabSheet
@@ -3978,7 +3971,7 @@ object frmMainForm: TfrmMainForm
       Caption = 'motion detection'
       ImageIndex = 11
       DesignSize = (
-        1310
+        1308
         229)
       object Label53: TLabel
         Left = 0
@@ -4323,13 +4316,13 @@ object frmMainForm: TfrmMainForm
       object grbGridString: TGroupBox
         Left = 0
         Top = 69
-        Width = 470
+        Width = 468
         Height = 70
         Anchors = [akLeft, akTop, akRight]
         Caption = 'grid string'
         TabOrder = 13
         DesignSize = (
-          470
+          468
           70)
         object Label51: TLabel
           Left = 51
@@ -4356,7 +4349,7 @@ object frmMainForm: TfrmMainForm
         object edtGrid: TEdit
           Left = 66
           Top = 34
-          Width = 401
+          Width = 399
           Height = 21
           Anchors = [akLeft, akTop, akRight]
           TabOrder = 0
@@ -6088,203 +6081,11 @@ object frmMainForm: TfrmMainForm
         Stretch = True
       end
       object Label76: TLabel
-        Left = 364
-        Top = 138
+        Left = 283
+        Top = 213
         Width = 139
         Height = 13
         Caption = ' (SyncPreview = sp_disabled)'
-      end
-      object grbMainVideoWindow: TGroupBox
-        Left = 561
-        Top = 44
-        Width = 573
-        Height = 178
-        Caption = 'display settings:'
-        TabOrder = 0
-        object Label74: TLabel
-          Left = 158
-          Top = 118
-          Width = 86
-          Height = 13
-          Caption = 'pan-scan: (0..100)'
-        end
-        object edtAssignToMonitorLabel: TLabel
-          Left = 354
-          Top = 49
-          Width = 120
-          Height = 13
-          Caption = 'assign to monitor number:'
-        end
-        object chkEmbedded: TCheckBox
-          Left = 10
-          Top = 39
-          Width = 100
-          Height = 21
-          Caption = 'embedded'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 0
-          OnClick = chkEmbeddedClick
-        end
-        object chkFullScreen: TCheckBox
-          Left = 187
-          Top = 30
-          Width = 90
-          Height = 20
-          Caption = 'full screen'
-          TabOrder = 1
-          OnClick = chkFullScreenClick
-        end
-        object chkStayOnTop: TCheckBox
-          Left = 354
-          Top = 10
-          Width = 90
-          Height = 21
-          Caption = 'stay on top'
-          TabOrder = 2
-          OnClick = chkStayOnTopClick
-        end
-        object chkUseVideoPort: TCheckBox
-          Left = 453
-          Top = 10
-          Width = 109
-          Height = 21
-          Caption = 'use video port'
-          TabOrder = 3
-          OnClick = chkUseVideoPortClick
-        end
-        object chkMouseMovesWindow: TCheckBox
-          Left = 187
-          Top = 10
-          Width = 159
-          Height = 21
-          Caption = 'mouse moves window'
-          TabOrder = 4
-          OnClick = chkMouseMovesWindowClick
-        end
-        object chkAutoSize: TCheckBox
-          Left = 89
-          Top = 20
-          Width = 99
-          Height = 21
-          Caption = 'auto size'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 5
-          OnClick = chkAutoSizeClick
-        end
-        object btnNewLocation2: TButton
-          Left = 394
-          Top = 118
-          Width = 168
-          Height = 22
-          Caption = 'e.g. pos. 20,20 (640x480)'
-          TabOrder = 6
-          OnClick = btnNewLocation2Click
-        end
-        object rdgAspectRatio: TRadioGroup
-          Left = 10
-          Top = 71
-          Width = 129
-          Height = 98
-          Caption = 'aspect ratio'
-          Items.Strings = (
-            'box'
-            'no resize'
-            'stretch'
-            'pan-scan')
-          TabOrder = 7
-          OnClick = rdgAspectRatioClick
-        end
-        object chkVisible: TCheckBox
-          Left = 10
-          Top = 20
-          Width = 70
-          Height = 21
-          Caption = 'visible'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 8
-          OnClick = chkVisibleClick
-        end
-        object tbrPanScan: TTrackBar
-          Left = 158
-          Top = 138
-          Width = 168
-          Height = 21
-          Max = 100
-          Position = 50
-          TabOrder = 9
-          ThumbLength = 15
-          OnChange = tbrPanScanChange
-        end
-        object btnTestPanScan: TButton
-          Left = 394
-          Top = 150
-          Width = 119
-          Height = 21
-          Caption = 'test pan-scan (e.g.)'
-          TabOrder = 10
-          OnClick = btnTestPanScanClick
-        end
-        object chkAlphablend: TCheckBox
-          Left = 158
-          Top = 69
-          Width = 178
-          Height = 21
-          Caption = 'alphablending: (0..255)'
-          TabOrder = 11
-          OnClick = chkAlphablendClick
-        end
-        object chkTranspColor: TCheckBox
-          Left = 354
-          Top = 84
-          Width = 140
-          Height = 21
-          Caption = 'transp.color (hex):'
-          TabOrder = 12
-          OnClick = chkTranspColorClick
-        end
-        object tbrAlphablend: TTrackBar
-          Left = 158
-          Top = 89
-          Width = 178
-          Height = 21
-          Max = 255
-          Position = 180
-          TabOrder = 13
-          ThumbLength = 15
-          OnChange = tbrAlphablendChange
-        end
-        object edttranspColor: TEdit
-          Left = 482
-          Top = 81
-          Width = 80
-          Height = 21
-          TabOrder = 14
-          OnChange = edttranspColorChange
-        end
-        object edtAssignToMonitorNumber: TEdit
-          Left = 507
-          Top = 44
-          Width = 41
-          Height = 21
-          TabOrder = 15
-          Text = '0'
-          OnChange = edtAssignToMonitorNumberChange
-        end
       end
       object rdgVideoRenderer: TRadioGroup
         Left = 10
@@ -6308,7 +6109,7 @@ object frmMainForm: TfrmMainForm
           'None (saves cpu)'
           'madVR')
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 0
         OnClick = rdgVideoRendererClick
       end
       object chkVideoVisibleWhenStopped: TCheckBox
@@ -6317,7 +6118,7 @@ object frmMainForm: TfrmMainForm
         Width = 172
         Height = 21
         Caption = 'don'#39't close video window'
-        TabOrder = 2
+        TabOrder = 1
         OnClick = chkVideoVisibleWhenStoppedClick
       end
       object chkChangeCursor: TCheckBox
@@ -6326,7 +6127,7 @@ object frmMainForm: TfrmMainForm
         Width = 173
         Height = 21
         Caption = 'change cursor (e.g.cross)'
-        TabOrder = 3
+        TabOrder = 2
         OnClick = chkChangeCursorClick
       end
       object chkBorder: TCheckBox
@@ -6335,7 +6136,7 @@ object frmMainForm: TfrmMainForm
         Width = 63
         Height = 21
         Caption = 'border'
-        TabOrder = 4
+        TabOrder = 3
         OnClick = chkBorderClick
       end
       object chkTransparency: TCheckBox
@@ -6344,7 +6145,7 @@ object frmMainForm: TfrmMainForm
         Width = 102
         Height = 21
         Caption = 'transparency'
-        TabOrder = 5
+        TabOrder = 4
         OnClick = chkTransparencyClick
       end
       object chkSetLogo: TCheckBox
@@ -6353,7 +6154,7 @@ object frmMainForm: TfrmMainForm
         Width = 139
         Height = 21
         Caption = 'show logo, e.g.:'
-        TabOrder = 6
+        TabOrder = 5
         OnClick = chkSetLogoClick
       end
       object chkAdjustPixelAspectRatio: TCheckBox
@@ -6368,7 +6169,7 @@ object frmMainForm: TfrmMainForm
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 6
         OnClick = chkAdjustPixelAspectRatioClick
       end
       object chkBlackMagicDecklink: TCheckBox
@@ -6377,55 +6178,12 @@ object frmMainForm: TfrmMainForm
         Width = 201
         Height = 21
         Caption = 'BlackMagic Decklink output'
-        TabOrder = 8
+        TabOrder = 7
         OnClick = chkBlackMagicDecklinkClick
       end
-      object rdgDisplaySelected: TRadioGroup
-        Left = 364
-        Top = 0
-        Width = 770
-        Height = 41
-        Caption = 'display # selected:'
-        Columns = 10
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        ItemIndex = 0
-        Items.Strings = (
-          '0'
-          '1'
-          '2'
-          '3'
-          '4'
-          '5'
-          '6'
-          '7'
-          '8'
-          '9')
-        ParentFont = False
-        TabOrder = 9
-        OnClick = rdgDisplaySelectedClick
-      end
-      object chkDisplayActive: TCheckBox
-        Left = 364
-        Top = 49
-        Width = 189
-        Height = 21
-        Caption = 'DISPLAY ACTIVE ->'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 10
-        OnClick = chkDisplayActiveClick
-      end
       object chkZeroLatency: TCheckBox
-        Left = 364
-        Top = 118
+        Left = 283
+        Top = 193
         Width = 110
         Height = 21
         Caption = 'no latency'
@@ -6435,289 +6193,363 @@ object frmMainForm: TfrmMainForm
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 11
+        TabOrder = 8
         OnClick = chkZeroLatencyClick
       end
-    end
-    object tbsClipReencoding: TTabSheet
-      Caption = 'reencoding'
-      ImageIndex = 6
-      object btnSourceVideoClip: TSpeedButton
-        Left = 106
-        Top = 7
-        Width = 181
-        Height = 24
-        Caption = 'source video clip:'
-        Glyph.Data = {
-          76010000424D7601000000000000760000002800000020000000100000000100
-          0400000000000001000000000000000000001000000010000000000000000000
-          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
-          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
-          5555555555555555555555555555555555555555555555555555555555555555
-          555555555555555555555555555555555555555FFFFFFFFFF555550000000000
-          55555577777777775F55500B8B8B8B8B05555775F555555575F550F0B8B8B8B8
-          B05557F75F555555575F50BF0B8B8B8B8B0557F575FFFFFFFF7F50FBF0000000
-          000557F557777777777550BFBFBFBFB0555557F555555557F55550FBFBFBFBF0
-          555557F555555FF7555550BFBFBF00055555575F555577755555550BFBF05555
-          55555575FFF75555555555700007555555555557777555555555555555555555
-          5555555555555555555555555555555555555555555555555555}
-        NumGlyphs = 2
-        OnClick = btnSourceVideoClipClick
+      object chk1stVideoWindowActive: TCheckBox
+        Left = 447
+        Top = 3
+        Width = 203
+        Height = 17
+        Caption = 'MAIN VIDEO WINDOW ACTIVE'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 9
+        OnClick = chk1stVideoWindowActiveClick
       end
-      object Label75: TLabel
-        Left = 103
-        Top = 37
-        Width = 149
-        Height = 13
-        Caption = 'file name for the new video clip:'
+      object chk2ndVideoWindowActive: TCheckBox
+        Left = 776
+        Top = 3
+        Width = 185
+        Height = 17
+        Caption = '2ND VIDEO WINDOW ACTIVE'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 10
+        OnClick = chk2ndVideoWindowActiveClick
       end
-      object Label45: TLabel
-        Left = 1
-        Top = 55
-        Width = 233
-        Height = 13
-        Caption = '(extension will be ".wmv" if WMV output enabled)'
-      end
-      object grbReencodingSettings: TGroupBox
-        Left = 591
-        Top = 5
-        Width = 533
-        Height = 154
-        Caption = 'reencoding settings'
-        TabOrder = 0
-        object chkIncludeVideoStream: TCheckBox
-          Left = 10
-          Top = 48
-          Width = 178
-          Height = 21
-          Caption = 'includes the video stream'
+      object grbMainVideoWindow: TGroupBox
+        Left = 450
+        Top = 26
+        Width = 307
+        Height = 157
+        Caption = 'main video window'
+        TabOrder = 11
+        object Label74: TLabel
+          Left = 120
+          Top = 120
+          Width = 80
+          Height = 13
+          Caption = 'pan-scan(0..100)'
+        end
+        object chk1stEmbedded: TCheckBox
+          Left = 8
+          Top = 32
+          Width = 73
+          Height = 17
+          Caption = 'embedded'
           TabOrder = 0
+          OnClick = chk1stEmbeddedClick
         end
-        object chkIncludeAudioStream: TCheckBox
-          Left = 207
-          Top = 48
-          Width = 178
-          Height = 21
-          Caption = 'includes the audio stream'
+        object chk1stFullScreen: TCheckBox
+          Left = 96
+          Top = 16
+          Width = 73
+          Height = 17
+          Caption = 'full screen'
           TabOrder = 1
+          OnClick = chk1stFullScreenClick
         end
-        object chkUseCurrentVideoCompressor: TCheckBox
-          Left = 10
-          Top = 73
-          Width = 405
-          Height = 21
-          Caption = 
-            'use the current video compressor (selected in the "recording" ta' +
-            'b)'
+        object chk1stStayOnTop: TCheckBox
+          Left = 8
+          Top = 64
+          Width = 81
+          Height = 17
+          Caption = 'stay on top'
           TabOrder = 2
+          OnClick = chk1stStayOnTopClick
         end
-        object chkUseCurrentAudioCompressor: TCheckBox
-          Left = 10
-          Top = 98
-          Width = 424
-          Height = 21
-          Caption = 
-            'use the current audio compressor (selected in the "recording" ta' +
-            'b)'
+        object rdg1stDisplayedOn: TRadioGroup
+          Left = 208
+          Top = 7
+          Width = 89
+          Height = 49
+          Caption = 'displayed on...'
+          ItemIndex = 0
+          Items.Strings = (
+            '1st monitor'
+            '2nd monitor')
           TabOrder = 3
+          OnClick = rdg1stDisplayedOnClick
         end
-        object chkUseFrameGrabber: TCheckBox
-          Left = 10
-          Top = 123
-          Width = 517
-          Height = 21
-          Caption = 
-            'use the frame grabber (allows text overlay, graphics overlay, vi' +
-            'deo processing, etc...)'
+        object chk1stMouseMovesWindow: TCheckBox
+          Left = 96
+          Top = 48
+          Width = 129
+          Height = 17
+          Caption = 'mouse moves window'
           TabOrder = 4
+          OnClick = chk1stMouseMovesWindowClick
         end
-        object chkWMVOutput: TCheckBox
-          Left = 10
-          Top = 22
-          Width = 109
-          Height = 21
-          Caption = 'WMV output'
-          TabOrder = 5
-        end
-      end
-      object edtSourceVideoClip: TEdit
-        Left = 295
-        Top = 7
-        Width = 287
-        Height = 21
-        TabOrder = 1
-      end
-      object edtDestinationVideoClip: TEdit
-        Left = 295
-        Top = 42
-        Width = 287
-        Height = 21
-        TabOrder = 2
-      end
-      object grbStartStopTime: TGroupBox
-        Left = 0
-        Top = 79
-        Width = 582
-        Height = 144
-        Caption = 
-          'START / STOP   (OPTIONAL). Times are expressed in 100ns units, e' +
-          '.g. 2 seconds = 20000000'
-        TabOrder = 3
-        object Label78: TLabel
-          Left = 23
-          Top = 84
-          Width = 185
-          Height = 13
-          Caption = 'START position (-1 = beginning of clip):'
-        end
-        object Label79: TLabel
-          Left = 63
-          Top = 113
-          Width = 150
-          Height = 13
-          Caption = 'STOP position (-1 = end of clip):'
-        end
-        object Label61: TLabel
-          Left = 266
-          Top = 30
-          Width = 118
-          Height = 13
-          Caption = 'the TIME (in 100ns units)'
-        end
-        object Label62: TLabel
-          Left = 446
-          Top = 30
-          Width = 105
-          Height = 13
-          Caption = 'the FRAME NUMBER'
-        end
-        object Label63: TLabel
-          Left = 418
-          Top = 30
-          Width = 23
-          Height = 16
-          Caption = 'OR'
+        object chk1stAutoSize: TCheckBox
+          Left = 8
+          Top = 48
+          Width = 81
+          Height = 17
+          Caption = 'auto size'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
+          Font.Height = -11
           Font.Name = 'MS Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
-        end
-        object Label64: TLabel
-          Left = 197
-          Top = 30
-          Width = 64
-          Height = 16
-          Caption = 'SPECIFY'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object edtReencStartTime: TEdit
-          Left = 266
-          Top = 79
-          Width = 149
-          Height = 21
-          TabOrder = 0
-          Text = '-1'
-        end
-        object edtReencDuration: TEdit
-          Left = 266
-          Top = 49
-          Width = 149
-          Height = 21
-          Color = clBtnFace
-          ReadOnly = True
-          TabOrder = 1
-        end
-        object edtReencStopTime: TEdit
-          Left = 266
-          Top = 108
-          Width = 149
-          Height = 21
-          TabOrder = 2
-          Text = '-1'
-        end
-        object btnDuration: TButton
-          Left = 5
-          Top = 52
-          Width = 242
-          Height = 21
-          Caption = 'source duration and/or frame count?'
-          TabOrder = 3
-          OnClick = btnDurationClick
-        end
-        object edtReencFrameCount: TEdit
-          Left = 463
-          Top = 49
-          Width = 98
-          Height = 21
-          Color = clBtnFace
-          ReadOnly = True
-          TabOrder = 4
-        end
-        object edtReencStartFrame: TEdit
-          Left = 463
-          Top = 79
-          Width = 98
-          Height = 21
           TabOrder = 5
-          Text = '-1'
+          OnClick = chk1stAutoSizeClick
         end
-        object edtReencStopFrame: TEdit
-          Left = 463
-          Top = 108
-          Width = 98
-          Height = 21
+        object btnEG1stNewLocation2: TButton
+          Left = 96
+          Top = 64
+          Width = 137
+          Height = 18
+          Caption = 'e.g. pos. 20,20 (640x480)'
           TabOrder = 6
-          Text = '-1'
+          OnClick = btnEG1stNewLocation2Click
+        end
+        object rdg1AspectRatio: TRadioGroup
+          Left = 8
+          Top = 82
+          Width = 105
+          Height = 71
+          Caption = 'aspect ratio'
+          Items.Strings = (
+            'box'
+            'no resize'
+            'stretch'
+            'pan-scan')
+          TabOrder = 7
+          OnClick = rdg1AspectRatioClick
+        end
+        object chk1stVisible: TCheckBox
+          Left = 8
+          Top = 16
+          Width = 57
+          Height = 17
+          Caption = 'visible'
+          TabOrder = 8
+          OnClick = chk1stVisibleClick
+        end
+        object tbr1PanScan: TTrackBar
+          Left = 112
+          Top = 136
+          Width = 137
+          Height = 17
+          Max = 100
+          Position = 50
+          TabOrder = 9
+          ThumbLength = 15
+          OnChange = tbr1PanScanChange
+        end
+        object btnTestPanScan: TButton
+          Left = 204
+          Top = 122
+          Width = 97
+          Height = 17
+          Caption = 'test pan-scan, e.g.:'
+          TabOrder = 10
+          OnClick = btnTestPanScanClick
+        end
+        object chk1stAlphablend: TCheckBox
+          Left = 120
+          Top = 84
+          Width = 81
+          Height = 17
+          Caption = 'alphablend:'
+          TabOrder = 11
+          OnClick = chk1stAlphablendClick
+        end
+        object chk1stTranspColor: TCheckBox
+          Left = 120
+          Top = 100
+          Width = 113
+          Height = 17
+          Caption = 'transp.color (hex):'
+          TabOrder = 12
+          OnClick = chk1stTranspColorClick
+        end
+        object tbr1stAlphablend: TTrackBar
+          Left = 200
+          Top = 82
+          Width = 97
+          Height = 17
+          Max = 255
+          Position = 180
+          TabOrder = 13
+          ThumbLength = 15
+        end
+        object edt1sttranspColor: TEdit
+          Left = 232
+          Top = 100
+          Width = 65
+          Height = 21
+          TabOrder = 14
+          OnChange = edt1sttranspColorChange
         end
       end
-      object btnStartReencoding: TButton
-        Left = 876
-        Top = 178
-        Width = 100
-        Height = 26
-        Caption = 'Start'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 4
-        OnClick = btnStartReencodingClick
-      end
-      object btnStopReencoding: TButton
-        Left = 985
-        Top = 178
-        Width = 99
-        Height = 26
-        Caption = 'Stop'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 5
-        OnClick = btnStopReencodingClick
-      end
-      object rdgReencodingMethod: TRadioGroup
-        Left = 591
-        Top = 165
-        Width = 227
-        Height = 53
-        Caption = 'reencoding method'
-        Columns = 2
-        Items.Strings = (
-          'AVI / MPEG '
-          'ASF (wmv)')
-        TabOrder = 6
+      object grb2ndVideoWindow: TGroupBox
+        Left = 776
+        Top = 26
+        Width = 313
+        Height = 157
+        Caption = '2nd video window'
+        TabOrder = 12
+        object Label45: TLabel
+          Left = 120
+          Top = 120
+          Width = 109
+          Height = 13
+          Caption = 'pan-scan ratio: (0..100)'
+        end
+        object chk2ndEmbedded: TCheckBox
+          Left = 8
+          Top = 32
+          Width = 81
+          Height = 17
+          Caption = 'embedded'
+          TabOrder = 0
+          OnClick = chk2ndEmbeddedClick
+        end
+        object chk2ndFullScreen: TCheckBox
+          Left = 96
+          Top = 16
+          Width = 73
+          Height = 17
+          Caption = 'full screen'
+          TabOrder = 1
+          OnClick = chk2ndFullScreenClick
+        end
+        object chk2ndStayOnTop: TCheckBox
+          Left = 8
+          Top = 64
+          Width = 73
+          Height = 17
+          Caption = 'stay on top'
+          TabOrder = 2
+          OnClick = chk2ndStayOnTopClick
+        end
+        object rdg2ndDisplayedOn: TRadioGroup
+          Left = 216
+          Top = 7
+          Width = 89
+          Height = 49
+          Caption = 'displayed on...'
+          ItemIndex = 0
+          Items.Strings = (
+            '1st monitor'
+            '2nd monitor')
+          TabOrder = 3
+          OnClick = rdg2ndDisplayedOnClick
+        end
+        object chk2ndMouseMovesWindow: TCheckBox
+          Left = 96
+          Top = 48
+          Width = 129
+          Height = 17
+          Caption = 'mouse moves window'
+          TabOrder = 4
+          OnClick = chk2ndMouseMovesWindowClick
+        end
+        object chk2ndAutoSize: TCheckBox
+          Left = 8
+          Top = 48
+          Width = 81
+          Height = 17
+          Caption = 'auto size'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 5
+          OnClick = chk2ndAutoSizeClick
+        end
+        object btnEG2ndNewLocation2: TButton
+          Left = 96
+          Top = 64
+          Width = 145
+          Height = 18
+          Caption = 'e.g. pos. 30,30 (640x480)'
+          TabOrder = 6
+          OnClick = btnEG2ndNewLocation2Click
+        end
+        object chk2ndVisible: TCheckBox
+          Left = 8
+          Top = 16
+          Width = 57
+          Height = 17
+          Caption = 'visible'
+          TabOrder = 7
+          OnClick = chk2ndVisibleClick
+        end
+        object rdg2AspectRatio: TRadioGroup
+          Left = 8
+          Top = 82
+          Width = 105
+          Height = 71
+          Caption = 'aspect ratio'
+          Items.Strings = (
+            'box'
+            'no resize'
+            'stretch'
+            'pan-scan')
+          TabOrder = 8
+          OnClick = rdg2AspectRatioClick
+        end
+        object tbr2PanScan: TTrackBar
+          Left = 112
+          Top = 136
+          Width = 137
+          Height = 17
+          Max = 100
+          Position = 50
+          TabOrder = 9
+          ThumbLength = 15
+          OnChange = tbr2PanScanChange
+        end
+        object chk2ndAlphaBlend: TCheckBox
+          Left = 120
+          Top = 84
+          Width = 81
+          Height = 17
+          Caption = 'alphablend:'
+          TabOrder = 10
+          OnClick = chk2ndAlphaBlendClick
+        end
+        object chk2ndTranspColor: TCheckBox
+          Left = 120
+          Top = 100
+          Width = 113
+          Height = 17
+          Caption = 'transp.color (hex):'
+          TabOrder = 11
+          OnClick = chk2ndTranspColorClick
+        end
+        object edt2ndTranspColor: TEdit
+          Left = 232
+          Top = 100
+          Width = 73
+          Height = 21
+          TabOrder = 12
+          OnChange = edt2ndTranspColorChange
+        end
+        object tbr2ndAlphaBlend: TTrackBar
+          Left = 200
+          Top = 82
+          Width = 105
+          Height = 17
+          Max = 255
+          Position = 180
+          TabOrder = 13
+          ThumbLength = 15
+        end
       end
     end
   end

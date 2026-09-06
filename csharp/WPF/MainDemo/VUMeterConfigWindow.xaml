@@ -1,0 +1,163 @@
+<Window x:Class="MainDemoWPF.VUMeterConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Configure VU-Meters"
+        Width="478" Height="578"
+        FontFamily="Tahoma" FontSize="11"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize"
+        ShowInTaskbar="True">
+    <Grid>
+        <TabControl x:Name="pcMain" Margin="8,8,8,44">
+
+            <!-- ===== Type & Display ===== -->
+            <TabItem Header="Type / Display">
+                <Canvas>
+                    <TextBlock Canvas.Left="12" Canvas.Top="14" Text="VU Meter type:" />
+                    <ComboBox x:Name="cboVUMeter" Canvas.Left="100" Canvas.Top="11" Width="230"
+                              SelectionChanged="cboVUMeter_SelectionChanged" />
+
+                    <GroupBox Canvas.Left="12" Canvas.Top="44" Width="426" Height="165" Header="Display options">
+                        <Canvas>
+                            <CheckBox x:Name="chkOverlayOverVideo" Canvas.Left="10" Canvas.Top="10" Width="320"
+                                      Content="Draw VU meter as overlay over the video frame"
+                                      Checked="chkOverlayOverVideo_Changed" Unchecked="chkOverlayOverVideo_Changed" />
+                            <CheckBox x:Name="chkTransparent" Canvas.Left="10" Canvas.Top="36" Width="320"
+                                      Content="Transparent background (overlay mode)"
+                                      Checked="chkTransparent_Changed" Unchecked="chkTransparent_Changed" />
+                            <CheckBox x:Name="chkFlipVert" Canvas.Left="10" Canvas.Top="62" Width="190"
+                                      Content="Flip vertically"
+                                      Checked="chkFlipVert_Changed" Unchecked="chkFlipVert_Changed" />
+                            <CheckBox x:Name="chkFlipHorz" Canvas.Left="214" Canvas.Top="62" Width="190"
+                                      Content="Flip horizontally"
+                                      Checked="chkFlipHorz_Changed" Unchecked="chkFlipHorz_Changed" />
+                            <CheckBox x:Name="chkLogarithmic" Canvas.Left="10" Canvas.Top="88" Width="380"
+                                      Content="Logarithmic scale (PPM-style)"
+                                      Checked="chkLogarithmic_Changed" Unchecked="chkLogarithmic_Changed" />
+                            <Button x:Name="btnDisablePeak" Canvas.Left="10" Canvas.Top="112" Width="390" Height="26"
+                                    Content="Disable peak indicator (sets vu_PeakHoldMs to 0)"
+                                    Click="btnDisablePeak_Click" />
+                        </Canvas>
+                    </GroupBox>
+
+                    <GroupBox Canvas.Left="12" Canvas.Top="220" Width="426" Height="100"
+                              Header="Overlay rect (used when &quot;draw as overlay&quot; is enabled)">
+                        <Canvas>
+                            <TextBlock Canvas.Left="14" Canvas.Top="14" Text="Left:" />
+                            <TextBlock Canvas.Left="218" Canvas.Top="14" Text="Top:" />
+                            <TextBlock Canvas.Left="14" Canvas.Top="48" Text="Width:" />
+                            <TextBlock Canvas.Left="218" Canvas.Top="48" Text="Height:" />
+                            <TextBox x:Name="edtOverlayLeft" Canvas.Left="78" Canvas.Top="10" Width="80" Text="10"
+                                     TextChanged="edtOverlayLeft_TextChanged" />
+                            <TextBox x:Name="edtOverlayTop" Canvas.Left="288" Canvas.Top="10" Width="80" Text="10"
+                                     TextChanged="edtOverlayTop_TextChanged" />
+                            <TextBox x:Name="edtOverlayWidth" Canvas.Left="78" Canvas.Top="44" Width="80" Text="120"
+                                     TextChanged="edtOverlayWidth_TextChanged" />
+                            <TextBox x:Name="edtOverlayHeight" Canvas.Left="288" Canvas.Top="44" Width="80" Text="70"
+                                     TextChanged="edtOverlayHeight_TextChanged" />
+                        </Canvas>
+                    </GroupBox>
+                </Canvas>
+            </TabItem>
+
+            <!-- ===== Levels & Colors ===== -->
+            <TabItem Header="Levels / Colors">
+                <Canvas>
+                    <GroupBox Canvas.Left="12" Canvas.Top="8" Width="426" Height="62"
+                              Header="Warning threshold (vu_WarningPercent)">
+                        <Canvas>
+                            <Slider x:Name="tbrWarningPercent" Canvas.Left="12" Canvas.Top="10" Width="350"
+                                    Minimum="0" Maximum="100" TickFrequency="10" Value="70"
+                                    ValueChanged="tbrWarningPercent_ValueChanged" />
+                            <TextBlock x:Name="lblWarningPercentValue" Canvas.Left="366" Canvas.Top="10"
+                                       Width="44" TextAlignment="Right" Text="70 %" />
+                        </Canvas>
+                    </GroupBox>
+
+                    <GroupBox Canvas.Left="12" Canvas.Top="76" Width="426" Height="62"
+                              Header="Peak threshold (vu_PeakPercent)">
+                        <Canvas>
+                            <Slider x:Name="tbrPeakPercent" Canvas.Left="12" Canvas.Top="10" Width="350"
+                                    Minimum="0" Maximum="100" TickFrequency="10" Value="90"
+                                    ValueChanged="tbrPeakPercent_ValueChanged" />
+                            <TextBlock x:Name="lblPeakPercentValue" Canvas.Left="366" Canvas.Top="10"
+                                       Width="44" TextAlignment="Right" Text="90 %" />
+                        </Canvas>
+                    </GroupBox>
+
+                    <GroupBox Canvas.Left="12" Canvas.Top="144" Width="426" Height="200" Header="Colors">
+                        <Canvas>
+                            <TextBlock Canvas.Left="14" Canvas.Top="14" Text="Background:" />
+                            <Border x:Name="pnBkgndColor" Canvas.Left="98" Canvas.Top="8" Width="200" Height="24"
+                                    BorderBrush="Gray" BorderThickness="1" Background="Black" />
+                            <Button Canvas.Left="310" Canvas.Top="8" Width="90" Height="24" Tag="0"
+                                    Content="Choose..." Click="btnColor_Click" />
+
+                            <TextBlock Canvas.Left="14" Canvas.Top="54" Text="Normal:" />
+                            <Border x:Name="pnNormalColor" Canvas.Left="98" Canvas.Top="48" Width="200" Height="24"
+                                    BorderBrush="Gray" BorderThickness="1" Background="Lime" />
+                            <Button Canvas.Left="310" Canvas.Top="48" Width="90" Height="24" Tag="1"
+                                    Content="Choose..." Click="btnColor_Click" />
+
+                            <TextBlock Canvas.Left="14" Canvas.Top="94" Text="Warning:" />
+                            <Border x:Name="pnWarningColor" Canvas.Left="98" Canvas.Top="88" Width="200" Height="24"
+                                    BorderBrush="Gray" BorderThickness="1" Background="Yellow" />
+                            <Button Canvas.Left="310" Canvas.Top="88" Width="90" Height="24" Tag="2"
+                                    Content="Choose..." Click="btnColor_Click" />
+
+                            <TextBlock Canvas.Left="14" Canvas.Top="134" Text="Peak:" />
+                            <Border x:Name="pnPeakColor" Canvas.Left="98" Canvas.Top="128" Width="200" Height="24"
+                                    BorderBrush="Gray" BorderThickness="1" Background="Red" />
+                            <Button Canvas.Left="310" Canvas.Top="128" Width="90" Height="24" Tag="3"
+                                    Content="Choose..." Click="btnColor_Click" />
+                        </Canvas>
+                    </GroupBox>
+                </Canvas>
+            </TabItem>
+
+            <!-- ===== Drawing ===== -->
+            <TabItem Header="Drawing">
+                <Canvas>
+                    <TextBlock Canvas.Left="16" Canvas.Top="22" Text="Tick size:" />
+                    <TextBox x:Name="edtTickSize" Canvas.Left="200" Canvas.Top="18" Width="80" Text="6"
+                             TextChanged="edtTickSize_TextChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="62" Text="Tick interval:" />
+                    <TextBox x:Name="edtTickInterval" Canvas.Left="200" Canvas.Top="58" Width="80" Text="10"
+                             TextChanged="edtTickInterval_TextChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="102" Text="Needle thickness (px):" />
+                    <TextBox x:Name="edtNeedleThickness" Canvas.Left="200" Canvas.Top="98" Width="80" Text="2"
+                             TextChanged="edtNeedleThickness_TextChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="160" Width="410" TextWrapping="Wrap"
+                               Text="Tick size and tick interval affect mainly the Analog and Analog Vintage meters (length and spacing of the ticks on the arc). Needle thickness controls the analog meter needle width in pixels." />
+                </Canvas>
+            </TabItem>
+
+            <!-- ===== Ballistics ===== -->
+            <TabItem Header="Ballistics">
+                <Canvas>
+                    <TextBlock Canvas.Left="16" Canvas.Top="22" Text="Quick preset:" />
+                    <ComboBox x:Name="cboBallisticProfile" Canvas.Left="120" Canvas.Top="18" Width="280"
+                              SelectionChanged="cboBallisticProfile_SelectionChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="70" Text="Attack (ms):" />
+                    <TextBox x:Name="edtAttackMs" Canvas.Left="200" Canvas.Top="66" Width="96" Text="10"
+                             TextChanged="edtAttackMs_TextChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="110" Text="Release (ms):" />
+                    <TextBox x:Name="edtReleaseMs" Canvas.Left="200" Canvas.Top="106" Width="96" Text="300"
+                             TextChanged="edtReleaseMs_TextChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="150" Text="Peak hold (ms):" />
+                    <TextBox x:Name="edtPeakHoldMs" Canvas.Left="200" Canvas.Top="146" Width="96" Text="800"
+                             TextChanged="edtPeakHoldMs_TextChanged" />
+                    <TextBlock Canvas.Left="16" Canvas.Top="200" Width="410" TextWrapping="Wrap"
+                               Text="Pick a preset to fill the three values at once, or tweak them manually.&#10;&#10;* Attack: time constant for level rises (lower = peakier).&#10;* Release: time constant for level falls (lower = bouncier).&#10;* Peak hold: time the peak LED stays lit after a peak (0 disables it).&#10;&#10;Defaults: 10 / 300 / 800 ms (dynamic, snappy look)." />
+                </Canvas>
+            </TabItem>
+        </TabControl>
+
+        <Button x:Name="btnRefresh" Content="Refresh from TVideoGrabber"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,0,10"
+                Width="180" Height="26" Click="btnRefresh_Click" />
+        <Button x:Name="btnClose" Content="Close"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,8,10"
+                Width="90" Height="26" Click="btnClose_Click" />
+    </Grid>
+</Window>

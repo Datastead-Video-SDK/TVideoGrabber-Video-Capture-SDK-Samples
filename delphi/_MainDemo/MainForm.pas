@@ -49,7 +49,6 @@ type
       Label43: TLabel;
       rgdFrameGrabberFormat: TRadioGroup;
       rgdFrameGrabber: TRadioGroup;
-      tbsClipReencoding: TTabSheet;
       TabSheet1: TTabSheet;
       mmoSensitivityGrid: TMemo;
       mmoMotionGrid: TMemo;
@@ -59,14 +58,6 @@ type
       btnFreeHandErase: TButton;
       tbsVideoProcessing: TTabSheet;
       tbsDisplay: TTabSheet;
-      grbMainVideoWindow: TGroupBox;
-      chkEmbedded: TCheckBox;
-      chkFullScreen: TCheckBox;
-      chkStayOnTop: TCheckBox;
-      chkUseVideoPort: TCheckBox;
-      chkMouseMovesWindow: TCheckBox;
-      chkAutoSize: TCheckBox;
-      btnNewLocation2: TButton;
       chkPlayerAudioRendering: TCheckBox;
       grbOneShot: TGroupBox;
       edtUseThisFileName: TEdit;
@@ -90,28 +81,6 @@ type
       btnResetCaptureZoomSize: TButton;
       mmoFrameCaptureLog: TMemo;
       chkRefreshPausedDisplay: TCheckBox;
-      grbReencodingSettings: TGroupBox;
-      chkIncludeVideoStream: TCheckBox;
-      chkIncludeAudioStream: TCheckBox;
-      chkUseCurrentVideoCompressor: TCheckBox;
-      chkUseCurrentAudioCompressor: TCheckBox;
-      chkUseFrameGrabber: TCheckBox;
-      chkWMVOutput: TCheckBox;
-      btnSourceVideoClip: TSpeedButton;
-      edtSourceVideoClip: TEdit;
-      edtDestinationVideoClip: TEdit;
-      Label75: TLabel;
-      Label45: TLabel;
-      grbStartStopTime: TGroupBox;
-      Label78: TLabel;
-      Label79: TLabel;
-      edtReencStartTime: TEdit;
-      edtReencDuration: TEdit;
-      edtReencStopTime: TEdit;
-      btnDuration: TButton;
-      btnStartReencoding: TButton;
-      btnStopReencoding: TButton;
-      rdgReencodingMethod: TRadioGroup;
       btnOpenLastClipPlayed: TSpeedButton;
       grbVsVideoCaptureDevice: TGroupBox;
       Label2: TLabel;
@@ -231,7 +200,7 @@ type
       chkAVISaveToThisFile: TCheckBox;
       edtRecordingFileName: TEdit;
       btnAboutFrameRate: TButton;
-      rdgVUMeters: TRadioGroup;
+      btnConfigureVUMeters: TButton;
       pnLeftVUMeter: TPanel;
       pnRightVUMeter: TPanel;
       GroupBox2: TGroupBox;
@@ -259,32 +228,20 @@ type
       btnPlaylistStop: TButton;
       lstPlaylist: TListBox;
       btnClosePlaylist: TButton;
-      rdgAspectRatio: TRadioGroup;
       btnOneShotClipboard: TButton;
       btnBurstModeClipboard: TButton;
       cboAudioRenderers: TComboBox;
       Label50: TLabel;
       edtPixellization: TEdit;
       updPixellization: TUpDown;
-      chkVisible: TCheckBox;
       rdgDetectVideoSignal: TRadioGroup;
       Label60: TLabel;
       edtCustomRotationAngle: TEdit;
-      Label61: TLabel;
-      Label62: TLabel;
-      edtReencFrameCount: TEdit;
-      edtReencStartFrame: TEdit;
-      edtReencStopFrame: TEdit;
-      Label63: TLabel;
-      Label64: TLabel;
       rdgRecordingMethod: TRadioGroup;
       Label72: TLabel;
       Label73: TLabel;
       edtFrameCaptureWidth: TEdit;
       edtFrameCaptureHeight: TEdit;
-      tbrPanScan: TTrackBar;
-      Label74: TLabel;
-      btnTestPanScan: TButton;
       btnOpenAtFrames: TButton;
       btnOpenAtTimes: TButton;
       Label77: TLabel;
@@ -333,10 +290,6 @@ type
       Label107: TLabel;
       btnPausePreview: TButton;
       btnResumePreview: TButton;
-      chkAlphablend: TCheckBox;
-      chkTranspColor: TCheckBox;
-      tbrAlphablend: TTrackBar;
-      edttranspColor: TEdit;
       chkChangePixels: TCheckBox;
       chkDrawGridOverFrames: TCheckBox;
       chkDrawTarget: TCheckBox;
@@ -367,10 +320,6 @@ type
       btnAudioCompressorSettings: TButton;
       rdgCompressMode: TRadioGroup;
       chkOpenURLAsync: TCheckBox;
-      rdgDisplaySelected: TRadioGroup;
-      chkDisplayActive: TCheckBox;
-      edtAssignToMonitorLabel: TLabel;
-      edtAssignToMonitorNumber: TEdit;
       tbsMPE: TTabSheet;
       grbTextOverlay: TGroupBox;
       Label13: TLabel;
@@ -430,7 +379,6 @@ type
       chkOverlayOrientation: TRadioGroup;
       chkZeroLatency: TCheckBox;
       Label76: TLabel;
-      btnBargraphOverlay: TButton;
       chkTextOverlayAlphablend: TCheckBox;
       Label106: TLabel;
       tbrTextOverlayAlphablendValue: TTrackBar;
@@ -464,65 +412,9 @@ type
       chkStreamingVideoEnabled: TCheckBox;
       chkStreamingAudioEnabled: TCheckBox;
       Label120: TLabel;
-      rdgPreferredVideoSize: TRadioGroup;
       chkretchPreferredVideoSize: TCheckBox;
       chk360VideoDecoding: TCheckBox;
-      PageControl2: TPageControl;
-      tbsDatasteadEncoder: TTabSheet;
-      TabSheet7: TTabSheet;
-      pgcMPE: TPageControl;
-      tshMPESettings: TTabSheet;
-      GroupBox1: TGroupBox;
-      chkMPEStreaming: TCheckBox;
-      edtMPEStreaming: TEdit;
-      grbMPErecord: TGroupBox;
-      chkMPERecording: TCheckBox;
-      edtMPERecording: TEdit;
-      GroupBox6: TGroupBox;
-      edtMPEReencoding: TEdit;
-      btnStartMPEReencoding: TButton;
-      btnStopMPEReencoding: TButton;
-      tbsMPERecordingLog: TTabSheet;
-      lblMPERecordingProgressInfo: TLabel;
-      mmoMPERecordingLog: TMemo;
-      tbsMPEStreamingLog: TTabSheet;
-      lblMPEStreamingProgressInfo: TLabel;
-      mmoMPEStreamingLog: TMemo;
-      tbsMPEReencodingLog: TTabSheet;
-      lblMPEReencodingProgressInfo: TLabel;
-      mmoMPEReencodingLog: TMemo;
-      video: TGroupBox;
-      edtDatasteadEncoder_VideoCodecName: TEdit;
-      Label128: TLabel;
-      Label129: TLabel;
-      edtDatasteadEncoder_Video_Bitrate_kb: TEdit;
-      Label130: TLabel;
-      GroupBox10: TGroupBox;
-      edtDatasteadEncoder_Video_rc_MinBitRate_kb: TEdit;
-      edtDatasteadEncoder_Video_rc_MaxBitRate_kb: TEdit;
-      edtDatasteadEncoder_Video_rc_BufferSize_kb: TEdit;
-      edtDatasteadEncoder_Video_IDRInterval: TEdit;
-      edtDatasteadEncoder_Video_MaxBframes: TEdit;
-      edtDatasteadEncoder_Video_ThreadCount: TEdit;
-      Label131: TLabel;
-      Label132: TLabel;
-      Label133: TLabel;
-      Label134: TLabel;
-      Label135: TLabel;
-      Label137: TLabel;
-      GroupBox12: TGroupBox;
-      edtDatasteadEncoder_Audio_SamplesPerSecond: TEdit;
-      edtDatasteadEncoder_Audio_BitRate_kb: TEdit;
-      Label138: TLabel;
-      Label139: TLabel;
-      Label140: TLabel;
       BtnCodecExamples: TButton;
-      Memo2: TMemo;
-      mmoExtraParameters: TMemo;
-      Label11: TLabel;
-      Label38: TLabel;
-      cmbGPUEncoder: TComboBox;
-      Label136: TLabel;
       GroupBox3: TGroupBox;
       btnMultipurposeUDPStreaming: TButton;
       btnPauseStreaming: TButton;
@@ -573,8 +465,6 @@ type
       tbrPTZSpeedRatio: TTrackBar;
       btnHelpPTZSpeedRatio: TButton;
       Label5: TLabel;
-      edtDatasteadEncoder_AudioCodecName: TEdit;
-      Label32: TLabel;
       GroupBox7: TGroupBox;
       Label34: TLabel;
       Label39: TLabel;
@@ -607,6 +497,95 @@ type
     Label70: TLabel;
     edtDiscoveryTimeoutSeconds: TEdit;
     btnCancelDiscovery: TButton;
+    Encryption: TTabSheet;
+    Label30: TLabel;
+    Label71: TLabel;
+    edtDecryptionKey: TEdit;
+    Memo1: TMemo;
+    btnClearEncryption: TButton;
+    btnClearDecryption: TButton;
+    GroupBox4: TGroupBox;
+    edtSourceClip: TLabel;
+    btnEcryptVideoClip: TButton;
+    btnDecryptVideoClip: TButton;
+    spdSourceVideoClip: TSpeedButton;
+    Label83: TLabel;
+    btnSetEncryptionKey: TButton;
+    btnSetDecryptionKey: TButton;
+    edtEncryptionKey: TEdit;
+    edtEncryptDecryptSourceVideoClip: TEdit;
+    edtEncryptDecryptDestinationVideoClip: TEdit;
+    chkEncryptDecryptOverwriteDestination: TCheckBox;
+    GroupBox8: TGroupBox;
+    rdbFastEncryption: TRadioButton;
+    rdbAESencryption: TRadioButton;
+    Memo2: TMemo;
+    video: TGroupBox;
+    Label128: TLabel;
+    Label129: TLabel;
+    Label130: TLabel;
+    Label134: TLabel;
+    Label135: TLabel;
+    Label137: TLabel;
+    Label136: TLabel;
+    edtDatasteadEncoder_VideoCodecName: TEdit;
+    edtDatasteadEncoder_Video_Bitrate_kb: TEdit;
+    GroupBox10: TGroupBox;
+    Label131: TLabel;
+    Label132: TLabel;
+    Label133: TLabel;
+    edtDatasteadEncoder_Video_rc_MinBitRate_kb: TEdit;
+    edtDatasteadEncoder_Video_rc_MaxBitRate_kb: TEdit;
+    edtDatasteadEncoder_Video_rc_BufferSize_kb: TEdit;
+    edtDatasteadEncoder_Video_IDRInterval: TEdit;
+    edtDatasteadEncoder_Video_MaxBframes: TEdit;
+    edtDatasteadEncoder_Video_ThreadCount: TEdit;
+    cmbGPUEncoder: TComboBox;
+    GroupBox12: TGroupBox;
+    Label138: TLabel;
+    Label139: TLabel;
+    Label38: TLabel;
+    Label32: TLabel;
+    edtDatasteadEncoder_Audio_SamplesPerSecond: TEdit;
+    edtDatasteadEncoder_Audio_BitRate_kb: TEdit;
+    edtDatasteadEncoder_AudioCodecName: TEdit;
+    Label11: TLabel;
+    mmoExtraParameters: TMemo;
+    chk1stVideoWindowActive: TCheckBox;
+    chk2ndVideoWindowActive: TCheckBox;
+    grbMainVideoWindow: TGroupBox;
+    Label74: TLabel;
+    chk1stEmbedded: TCheckBox;
+    chk1stFullScreen: TCheckBox;
+    chk1stStayOnTop: TCheckBox;
+    rdg1stDisplayedOn: TRadioGroup;
+    chk1stMouseMovesWindow: TCheckBox;
+    chk1stAutoSize: TCheckBox;
+    btnEG1stNewLocation2: TButton;
+    rdg1AspectRatio: TRadioGroup;
+    chk1stVisible: TCheckBox;
+    tbr1PanScan: TTrackBar;
+    btnTestPanScan: TButton;
+    chk1stAlphablend: TCheckBox;
+    chk1stTranspColor: TCheckBox;
+    tbr1stAlphablend: TTrackBar;
+    edt1sttranspColor: TEdit;
+    grb2ndVideoWindow: TGroupBox;
+    Label45: TLabel;
+    chk2ndEmbedded: TCheckBox;
+    chk2ndFullScreen: TCheckBox;
+    chk2ndStayOnTop: TCheckBox;
+    rdg2ndDisplayedOn: TRadioGroup;
+    chk2ndMouseMovesWindow: TCheckBox;
+    chk2ndAutoSize: TCheckBox;
+    btnEG2ndNewLocation2: TButton;
+    chk2ndVisible: TCheckBox;
+    rdg2AspectRatio: TRadioGroup;
+    tbr2PanScan: TTrackBar;
+    chk2ndAlphaBlend: TCheckBox;
+    chk2ndTranspColor: TCheckBox;
+    edt2ndTranspColor: TEdit;
+    tbr2ndAlphaBlend: TTrackBar;
       procedure btnAudioCompressorSettingsClick(Sender: TObject);
       procedure btnAutoPlayClick(Sender: TObject);
       procedure btnAutoRefreshPreviewClick(Sender: TObject);
@@ -616,7 +595,6 @@ type
       procedure btnBurstModeTBitmapClick(Sender: TObject);
       procedure btnCameraControlDialogClick(Sender: TObject);
       procedure btnDeviceDialogClick(Sender: TObject);
-      procedure btnNewLocation2Click(Sender: TObject);
       procedure btnFrameRateClick(Sender: TObject);
       procedure btnFreeHandEraseClick(Sender: TObject);
       procedure btnOneShotBMPFileClick(Sender: TObject);
@@ -650,13 +628,6 @@ type
       procedure cboVideoInputsChange(Sender: TObject);
       procedure cboVideoSizesChange(Sender: TObject);
       procedure cboVideoSubtypesChange(Sender: TObject);
-      procedure chkAutoSizeClick(Sender: TObject);
-      procedure chkEmbeddedClick(Sender: TObject);
-      procedure chkFullScreenClick(Sender: TObject);
-      procedure chkMouseMovesWindowClick(Sender: TObject);
-      procedure chkStayOnTopClick(Sender: TObject);
-      procedure chkUseVideoPortClick(Sender: TObject);
-      procedure chkDisplayActiveClick(Sender: TObject);
       procedure chkRecordingCanPauseClick(Sender: TObject);
       procedure chkBorderClick(Sender: TObject);
       procedure chkFlipHorizontalClick(Sender: TObject);
@@ -744,10 +715,6 @@ type
         SourceFile, DestFile: String; Success: Boolean);
       procedure btnViewDirectNetworkStreamingClick(Sender: TObject);
       procedure VideoGrabberInactive(Sender: TObject);
-      procedure btnSourceVideoClipClick(Sender: TObject);
-      procedure btnStartReencodingClick(Sender: TObject);
-      procedure btnStopReencodingClick(Sender: TObject);
-      procedure btnDurationClick(Sender: TObject);
       procedure VideoGrabberRecordingReadyToStart(Sender: TObject);
       procedure btnStartRecordingControlledClick(Sender: TObject);
       procedure chkRefreshPausedDisplayClick(Sender: TObject);
@@ -787,7 +754,8 @@ type
       procedure chkRecordingPauseCreatesNewFileClick(Sender: TObject);
       procedure btnGeneralInfoClick(Sender: TObject);
       procedure btnHeaderInfoClick(Sender: TObject);
-      procedure rdgVUMetersClick(Sender: TObject);
+      procedure btnConfigureVUMetersClick(Sender: TObject);
+      procedure VUMeterConfigFormClose(Sender: TObject; var Action: TCloseAction);
       procedure chkTextOverlayShadowClick(Sender: TObject);
       procedure updTextOverlaySizeClick(Sender: TObject; Button: TUDBtnType);
       procedure btnAboutFrameRateClick(Sender: TObject);
@@ -812,7 +780,6 @@ type
       procedure btnClosePlaylistClick(Sender: TObject);
       procedure VideoGrabberDVDiscontinuity(Sender: TObject;
         var DeliverNewFrame: Boolean);
-      procedure rdgAspectRatioClick(Sender: TObject);
       procedure btnOneShotClipboardClick(Sender: TObject);
       procedure btnBurstModeClipboardClick(Sender: TObject);
       procedure cboAudioRenderersChange(Sender: TObject);
@@ -822,12 +789,9 @@ type
       procedure rdgTextOverlaySelectorClick(Sender: TObject);
       procedure btnTextOverlayColorClick(Sender: TObject);
       procedure btnBkgndColorClick(Sender: TObject);
-      procedure chkVisibleClick(Sender: TObject);
       procedure edtCustomRotationAngleChange(Sender: TObject);
       procedure edtFrameCaptureWidthChange(Sender: TObject);
       procedure edtFrameCaptureHeightChange(Sender: TObject);
-      procedure tbrPanScanChange(Sender: TObject);
-      procedure btnTestPanScanClick(Sender: TObject);
       procedure btnOpenAtFramesClick(Sender: TObject);
       procedure btnOpenAtTimesClick(Sender: TObject);
       procedure edtMonitorNumberChange(Sender: TObject);
@@ -883,10 +847,6 @@ type
         BitmapInfo: pFrameBitmapInfo);
       procedure btnPausePreviewClick(Sender: TObject);
       procedure btnResumePreviewClick(Sender: TObject);
-      procedure chkAlphablendClick(Sender: TObject);
-      procedure chkTranspColorClick(Sender: TObject);
-      procedure edttranspColorChange(Sender: TObject);
-      procedure tbrAlphablendChange(Sender: TObject);
       procedure btnPlayerFrameStepClick(Sender: TObject);
       procedure btnPIPFromAnotherTVideoGrabberClick(Sender: TObject);
       procedure VideoGrabberRecordingPaused(Sender: TObject);
@@ -901,17 +861,6 @@ type
       procedure btnTargetDisplayInfoClick(Sender: TObject);
       procedure edtImageOverlayTargetDisplayChange(Sender: TObject);
       procedure chkOpenURLAsyncClick(Sender: TObject);
-      procedure rdgDisplaySelectedClick(Sender: TObject);
-      procedure edtAssignToMonitorNumberChange(Sender: TObject);
-      procedure edtMPERecordingChange(Sender: TObject);
-      procedure chkMPERecordingClick(Sender: TObject);
-      procedure chkMPEStreamingClick(Sender: TObject);
-      procedure edtMPEStreamingChange(Sender: TObject);
-      procedure VideoGrabberMultipurposeEncoderProgress(Sender: TObject;
-        MultipurposeEncoderInstance: TMultipurposeEncoderInstance);
-      procedure edtMPEReencodingChange(Sender: TObject);
-      procedure btnStartMPEReencodingClick(Sender: TObject);
-      procedure btnStopMPEReencodingClick(Sender: TObject);
       procedure chkModuloClick(Sender: TObject);
       procedure chkOverlayOrientationClick(Sender: TObject);
       procedure chkZeroLatencyClick(Sender: TObject);
@@ -961,8 +910,6 @@ type
       procedure btnViewNDIStreamingHelpClick(Sender: TObject);
       procedure btnNDIStreamingClientViewClick(Sender: TObject);
       procedure btnNDIClientHelpClick(Sender: TObject);
-      procedure rdgPreferredVideoSizeClick(Sender: TObject);
-      procedure chkretchPreferredVideoSizeClick(Sender: TObject);
       procedure chk360VideoDecodingClick(Sender: TObject);
       procedure edtDatasteadEncoder_Video_Bitrate_kbChange(Sender: TObject);
       procedure edtDatasteadEncoder_Video_rc_MinBitRate_kbChange
@@ -1011,6 +958,42 @@ type
     procedure VideoGrabberONVIFDiscoveryCompleted(Sender: TObject;
       DiscoveryCallbackStatus: TDiscoveryCallbackStatus; CameraCount: LongInt);
     procedure chkUseExternalAudioforRTSPClick(Sender: TObject);
+    procedure btnSetEncryptionKeyClick(Sender: TObject);
+    procedure btnSetDecryptionKeyClick(Sender: TObject);
+    procedure btnClearEncryptionClick(Sender: TObject);
+    procedure btnClearDecryptionClick(Sender: TObject);
+    procedure spdSourceVideoClipClick(Sender: TObject);
+    procedure rdbFastEncryptionClick(Sender: TObject);
+    procedure rdbAESencryptionClick(Sender: TObject);
+    procedure chk1stVideoWindowActiveClick(Sender: TObject);
+    procedure chk2ndVideoWindowActiveClick(Sender: TObject);
+    procedure chk1stVisibleClick(Sender: TObject);
+    procedure chk1stEmbeddedClick(Sender: TObject);
+    procedure chk1stAutoSizeClick(Sender: TObject);
+    procedure chk1stStayOnTopClick(Sender: TObject);
+    procedure chk1stFullScreenClick(Sender: TObject);
+    procedure chk1stMouseMovesWindowClick(Sender: TObject);
+    procedure rdg1stDisplayedOnClick(Sender: TObject);
+    procedure btnEG1stNewLocation2Click(Sender: TObject);
+    procedure rdg1AspectRatioClick(Sender: TObject);
+    procedure chk1stAlphablendClick(Sender: TObject);
+    procedure chk1stTranspColorClick(Sender: TObject);
+    procedure edt1sttranspColorChange(Sender: TObject);
+    procedure btnTestPanScanClick(Sender: TObject);
+    procedure tbr1PanScanChange(Sender: TObject);
+    procedure chk2ndVisibleClick(Sender: TObject);
+    procedure chk2ndEmbeddedClick(Sender: TObject);
+    procedure chk2ndAutoSizeClick(Sender: TObject);
+    procedure chk2ndStayOnTopClick(Sender: TObject);
+    procedure chk2ndFullScreenClick(Sender: TObject);
+    procedure chk2ndMouseMovesWindowClick(Sender: TObject);
+    procedure rdg2ndDisplayedOnClick(Sender: TObject);
+    procedure btnEG2ndNewLocation2Click(Sender: TObject);
+    procedure rdg2AspectRatioClick(Sender: TObject);
+    procedure chk2ndAlphaBlendClick(Sender: TObject);
+    procedure chk2ndTranspColorClick(Sender: TObject);
+    procedure edt2ndTranspColorChange(Sender: TObject);
+    procedure tbr2PanScanChange(Sender: TObject);
 
    private
       FStartupWidth: Integer;
@@ -1023,6 +1006,8 @@ type
 
       FImageOverlayIndex: LongInt;
       FTextOverlayIndex: LongInt;
+
+      FEncryptionMethod: TEncryptionMethod;
 
       FDisplaySelected: LongInt;
 
@@ -1046,6 +1031,18 @@ type
 
       FMultipurposeUDPStreamingID: LongInt;
 
+      // VU-meter configuration window (non-modal, instantiated on demand)
+      FVUMeterConfigForm: TForm;
+
+      // Design-time (DFM) sizes of the VU-meter host panels. Captured in
+      // FormCreate so that the resize done by ConfigureVUMeters always uses
+      // the SAME reference, instead of compounding successive ratios (which
+      // would shrink the panels a bit more on every type switch).
+      FInitialLeftVUMeterWidth   : Integer;
+      FInitialLeftVUMeterHeight  : Integer;
+      FInitialRightVUMeterWidth  : Integer;
+      FInitialRightVUMeterHeight : Integer;
+
       procedure ShowFormAboveVideo(Form: TForm);
       procedure RefreshDeviceControls;
       procedure RefreshDisplayOptions;
@@ -1055,6 +1052,7 @@ type
       procedure DoPTZAbsolute();
 
       procedure ChangeVideoSource (VideoSource: TVideoSource);
+      procedure ConfigureVUMeters (VUMeter: TVUMeter);
    end;
 
 var
@@ -1067,7 +1065,8 @@ implementation
 uses
    typinfo,
    miscVideoQuality,
-   miscCameraControl;
+   miscCameraControl,
+   VUMeterConfigForm;
 
 const
    AUDIO_CLIPS = '*.mp3;*.wav;*.wma;*.mid';
@@ -1110,7 +1109,18 @@ begin
    FImageOverlayIndex := 0;
    FTextOverlayIndex := 0;
 
+   FEncryptionMethod := em_Fast_Encryption;
+   rdbFastEncryption.Checked := true;
+
    FMultipurposeUDPStreamingID := -1;
+
+   // Capture the design-time sizes of the VU-meter host panels
+   // (FInitial*VUMeter* fields) - used as the resize reference by
+   // ConfigureVUMeters.
+   FInitialLeftVUMeterWidth   := pnLeftVUMeter.Width;
+   FInitialLeftVUMeterHeight  := pnLeftVUMeter.Height;
+   FInitialRightVUMeterWidth  := pnRightVUMeter.Width;
+   FInitialRightVUMeterHeight := pnRightVUMeter.Height;
 
    FFreeHandMouseDrawingEnabled := False; // used for free-hand mouse drawing
    FiFreeHandMouseDrawing := 0; // used for free-hand mouse drawing
@@ -1155,7 +1165,11 @@ begin
      VideoGrabber.AudioRenderer);
    chkRenderAudioDevice.Checked := VideoGrabber.AudioDeviceRendering;
    chkMuteAudioRendering.Checked := VideoGrabber.MuteAudioRendering;
-   rdgVUMeters.ItemIndex := Integer(VideoGrabber.VUMeter);
+
+   // Activate the Spectrum analyzer as the default VU meter.
+   // Safe to call here: the FInitial*VUMeter* reference sizes have already
+   // been captured earlier in this FormCreate.
+   ConfigureVUMeters (vu_Spectrum);
 
    /// ////////////////////// RECORDING tab
    rdgRecordingMethod.ItemIndex := Integer(VideoGrabber.RecordingMethod);
@@ -1276,21 +1290,6 @@ begin
    chkTransparency.Checked := VideoGrabber.ColorKeyEnabled;
    rdgVideoRenderer.ItemIndex := Integer(VideoGrabber.VideoRenderer);
    RefreshDisplayOptions;
-
-   /// ////////////////////// reencoding tab
-   chkWMVOutput.Checked := VideoGrabber.Reencoding_WMVOutput;
-   chkIncludeVideoStream.Checked := VideoGrabber.Reencoding_IncludeVideoStream;
-   chkIncludeAudioStream.Checked := VideoGrabber.Reencoding_IncludeAudioStream;
-   chkUseFrameGrabber.Checked := VideoGrabber.Reencoding_UseFrameGrabber;
-   chkUseCurrentVideoCompressor.Checked :=
-     VideoGrabber.Reencoding_UseVideoCompressor;
-   chkUseCurrentAudioCompressor.Checked :=
-     VideoGrabber.Reencoding_UseAudioCompressor;
-   edtReencStartTime.Text := IntToStr(VideoGrabber.Reencoding_StartTime);
-   edtReencStopTime.Text := IntToStr(VideoGrabber.Reencoding_StopTime);
-   edtReencStartFrame.Text := IntToStr(VideoGrabber.Reencoding_StartFrame);
-   edtReencStopFrame.Text := IntToStr(VideoGrabber.Reencoding_StopFrame);
-   rdgReencodingMethod.ItemIndex := Integer(VideoGrabber.Reencoding_Method);
 
 end;
 
@@ -1447,12 +1446,6 @@ begin
    begin
       VideoGrabber.LogoDisplayed := False;
    end;
-end;
-
-procedure TfrmMainForm.btnDeviceDialogClick(Sender: TObject);
-begin
-   VideoGrabber.ShowDialog(dlg_VideoDevice);
-   RefreshDeviceControls;
 end;
 
 procedure TfrmMainForm.btnCameraControlDialogClick(Sender: TObject);
@@ -1721,6 +1714,16 @@ begin
    VideoGrabber.AudioVolume := tbrAudioVolume.Position;
 end;
 
+procedure TfrmMainForm.tbr1PanScanChange(Sender: TObject);
+begin
+   VideoGrabber.Display_PanScanRatio := tbr1PanScan.Position;
+end;
+
+procedure TfrmMainForm.tbr2PanScanChange(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_PanScanRatio := tbr2PanScan.Position;
+end;
+
 procedure TfrmMainForm.tbrAudioBalanceChange(Sender: TObject);
 begin
    VideoGrabber.AudioBalance := tbrAudioBalance.Position;
@@ -1731,54 +1734,108 @@ begin
    VideoGrabber.MuteAudioRendering := chkMuteAudioRendering.Checked;
 end;
 
-procedure TfrmMainForm.rdgVUMetersClick(Sender: TObject);
+procedure TfrmMainForm.ConfigureVUMeters (VUMeter: TVUMeter);
+// Applies the selected VU-meter type: resizes the host panels
+// (pnLeftVUMeter / pnRightVUMeter) according to the type and attaches
+// (or detaches) the native window handles.
+//
+// IMPORTANT: resizes ALWAYS start from the initial sizes (FInitial*VUMeter*)
+// captured in FormCreate, never from the current sizes. Otherwise, chaining
+// several type changes (e.g. Analog -> Vintage -> Analog -> Vintage ...)
+// would shrink the panels progressively, each ratio compounding onto the
+// previous result.
+//
+// Called either directly or through the TfrmVUMeterConfig dialog
+// (OnApplyType callback).
 const
-   VU_LEFT = 0;
+   VU_LEFT  = 0;
    VU_RIGHT = 1;
 begin
-   case rdgVUMeters.ItemIndex of
-      0:
-         begin
-            VideoGrabber.VUMeter := vu_Disabled;
-         end;
-      1:
-         begin
-            VideoGrabber.VUMeter := vu_Analog;
+   VideoGrabber.VUMeter := VUMeter;
 
-            pnLeftVUMeter.Width := (pnLeftVUMeter.Height * 4) div 3;
-            pnRightVUMeter.Width := (pnRightVUMeter.Height * 4) div 3;
-
-            VideoGrabber.SetVUMeterSetting(VU_LEFT, vu_bkGndColor, clBlack);
+   case VUMeter of
+      vu_Analog:
+         begin
+            // 4:3 aspect for the analog galvanometer: keep the initial
+            // height and compute the width from it.
+            pnLeftVUMeter.Width   := (FInitialLeftVUMeterHeight  * 4) div 3;
+            pnLeftVUMeter.Height  :=  FInitialLeftVUMeterHeight;
+            pnRightVUMeter.Width  := (FInitialRightVUMeterHeight * 4) div 3;
+            pnRightVUMeter.Height :=  FInitialRightVUMeterHeight;
+            VideoGrabber.SetVUMeterSetting(VU_LEFT,  vu_bkGndColor, clBlack);
             VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_bkGndColor, clBlack);
          end;
-      2:
+      vu_AnalogVintage, vu_Spectrum:
          begin
-            VideoGrabber.VUMeter := vu_Bargraph;
-
-            pnLeftVUMeter.Width := (pnLeftVUMeter.Height * 2) div 10;
-            pnRightVUMeter.Width := (pnRightVUMeter.Height * 2) div 10;
-
-            VideoGrabber.SetVUMeterSetting(VU_LEFT, vu_bkGndColor,
-              TColor($404040));
-            VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_bkGndColor,
-              TColor($404040));
-
+            // 2:1 horizontal aspect: keep the initial width and compute
+            // the height from it.
+            pnLeftVUMeter.Width   :=  FInitialLeftVUMeterWidth;
+            pnLeftVUMeter.Height  := (FInitialLeftVUMeterWidth  * 2) div 4;
+            pnRightVUMeter.Width  :=  FInitialRightVUMeterWidth;
+            pnRightVUMeter.Height := (FInitialRightVUMeterWidth * 2) div 4;
+            VideoGrabber.SetVUMeterSetting(VU_LEFT,  vu_bkGndColor, clBlack);
+            VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_bkGndColor, clBlack);
+         end;
+      vu_Bargraph, vu_SegmentLed, vu_SmoothBar, vu_MixingTable:
+         begin
+            // Thin vertical column: keep the initial height and compute
+            // the (narrow) width from it.
+            pnLeftVUMeter.Width   := (FInitialLeftVUMeterHeight  * 2) div 10;
+            pnLeftVUMeter.Height  :=  FInitialLeftVUMeterHeight;
+            pnRightVUMeter.Width  := (FInitialRightVUMeterHeight * 2) div 10;
+            pnRightVUMeter.Height :=  FInitialRightVUMeterHeight;
+            VideoGrabber.SetVUMeterSetting(VU_LEFT,  vu_bkGndColor, TColor($404040));
+            VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_bkGndColor, TColor($404040));
+         end;
+      vu_Disabled:
+         begin
+            // Off state: restore the exact design-time sizes so the next
+            // selection starts from a clean baseline.
+            pnLeftVUMeter.Width   := FInitialLeftVUMeterWidth;
+            pnLeftVUMeter.Height  := FInitialLeftVUMeterHeight;
+            pnRightVUMeter.Width  := FInitialRightVUMeterWidth;
+            pnRightVUMeter.Height := FInitialRightVUMeterHeight;
          end;
    end;
-   if VideoGrabber.VUMeter <> vu_Disabled then
+
+   if VUMeter <> vu_Disabled then
    begin
-      VideoGrabber.SetVUMeterSetting(VU_LEFT, vu_Handle, pnLeftVUMeter.Handle);
-      // we use a TPanel to display the VU meters,
-      VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_Handle,
-        pnRightVUMeter.Handle);
-      // this is activated by assigning the TPanel's handle...
+      // Use the TPanel as a container: the SDK paints onto its HWND
+      VideoGrabber.SetVUMeterSetting(VU_LEFT,  vu_Handle, pnLeftVUMeter.Handle);
+      VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_Handle, pnRightVUMeter.Handle);
    end
    else
    begin
-      VideoGrabber.SetVUMeterSetting(VU_LEFT, vu_Handle, 0);
-      // ...and the TPanel is freed by passing 0 as handle
+      // Detach: passing 0 as the handle releases the TPanel
+      VideoGrabber.SetVUMeterSetting(VU_LEFT,  vu_Handle, 0);
       VideoGrabber.SetVUMeterSetting(VU_RIGHT, vu_Handle, 0);
    end;
+end;
+
+procedure TfrmMainForm.btnConfigureVUMetersClick(Sender: TObject);
+// Opens the VU-meter configuration window (non-modal).
+// The form is instantiated on first open and freed on close (caFree),
+// with FVUMeterConfigForm reset to nil in VUMeterConfigFormClose.
+var
+   ConfigForm: TfrmVUMeterConfig;
+begin
+   if FVUMeterConfigForm = nil then
+   begin
+      ConfigForm := TfrmVUMeterConfig.Create(Self);
+      ConfigForm.VideoGrabber := VideoGrabber;
+      ConfigForm.OnApplyType := ConfigureVUMeters;
+      ConfigForm.OnClose := VUMeterConfigFormClose;
+      FVUMeterConfigForm := ConfigForm;
+   end;
+   FVUMeterConfigForm.Show;
+   FVUMeterConfigForm.BringToFront;
+end;
+
+procedure TfrmMainForm.VUMeterConfigFormClose(Sender: TObject;
+   var Action: TCloseAction);
+begin
+   Action := caFree;
+   FVUMeterConfigForm := nil;
 end;
 
 procedure TfrmMainForm.btnBargraphOverlayClick(Sender: TObject);
@@ -1955,6 +2012,28 @@ begin
    VideoGrabber.ShowDialog(dlg_AudioCompressor);
 end;
 
+procedure TfrmMainForm.rdg1AspectRatioClick(Sender: TObject);
+begin
+   VideoGrabber.Display_AspectRatio := TAspectRatio (rdg1AspectRatio.ItemIndex);
+end;
+
+procedure TfrmMainForm.rdg1stDisplayedOnClick(Sender: TObject);
+begin
+   VideoGrabber.Display_Monitor := rdg1stDisplayedOn.ItemIndex; // 0 or 1
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.rdg2AspectRatioClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_AspectRatio := TAspectRatio (rdg2AspectRatio.ItemIndex);
+end;
+
+procedure TfrmMainForm.rdg2ndDisplayedOnClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_Monitor := rdg2ndDisplayedOn.ItemIndex; // 0 or 1
+   RefreshDisplayOptions;
+end;
+
 procedure TfrmMainForm.rdgCompressModeClick(Sender: TObject);
 begin
    VideoGrabber.CompressionMode := TCompressionMode(rdgCompressMode.ItemIndex);
@@ -2044,6 +2123,16 @@ procedure TfrmMainForm.rgdFrameGrabberFormatClick(Sender: TObject);
 begin
    VideoGrabber.FrameGrabberRGBFormat :=
      TFrameGrabberRGBFormat(rgdFrameGrabberFormat.ItemIndex);
+end;
+
+procedure TfrmMainForm.edt1sttranspColorChange(Sender: TObject);
+begin
+   VideoGrabber.Display_TransparentColorValue := StrToIntDef ('$' + edt1stTranspColor.Text, 0);
+end;
+
+procedure TfrmMainForm.edt2ndTranspColorChange(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_TransparentColorValue := StrToIntDef ('$' + edt2ndTranspColor.Text, 0);
 end;
 
 procedure TfrmMainForm.edtAVIAutoFilePrefixChange(Sender: TObject);
@@ -2758,6 +2847,111 @@ begin
    VideoGrabber.AutoStartPlayer := btnAutoPlay.Checked;
 end;
 
+procedure TfrmMainForm.chk1stAlphablendClick(Sender: TObject);
+begin
+   VideoGrabber.Display_AlphaBlendEnabled := chk1stAlphablend.Checked;
+end;
+
+procedure TfrmMainForm.chk1stAutoSizeClick(Sender: TObject);
+begin
+   VideoGrabber.Display_AutoSize := chk1stAutoSize.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk1stEmbeddedClick(Sender: TObject);
+begin
+   VideoGrabber.Display_Embedded := chk1stEmbedded.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk1stFullScreenClick(Sender: TObject);
+begin
+   VideoGrabber.Display_FullScreen := chk1stFullScreen.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk1stMouseMovesWindowClick(Sender: TObject);
+begin
+   VideoGrabber.Display_MouseMovesWindow := chk1stMouseMovesWindow.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk1stStayOnTopClick(Sender: TObject);
+begin
+   VideoGrabber.Display_StayOnTop := chk1stStayOnTop.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk1stTranspColorClick(Sender: TObject);
+begin
+   VideoGrabber.Display_TransparentColorEnabled := chk1stTranspColor.Checked;
+end;
+
+procedure TfrmMainForm.chk1stVideoWindowActiveClick(Sender: TObject);
+begin
+   VideoGrabber.Display_Active := chk1stVideoWindowActive.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk1stVisibleClick(Sender: TObject);
+begin
+   VideoGrabber.Display_Visible := chk1stVisible.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndAlphaBlendClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_AlphaBlendEnabled := chk2ndAlphablend.Checked;
+end;
+
+procedure TfrmMainForm.chk2ndAutoSizeClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_AutoSize := chk2ndAutoSize.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndEmbeddedClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_Embedded := chk2ndEmbedded.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndFullScreenClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_FullScreen := chk2ndFullScreen.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndMouseMovesWindowClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_MouseMovesWindow := chk2ndMouseMovesWindow.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndStayOnTopClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_StayOnTop := chk2ndStayOnTop.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndTranspColorClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_TransparentColorEnabled := chk2ndTranspColor.Checked;
+end;
+
+procedure TfrmMainForm.chk2ndVideoWindowActiveClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_Active := chk2ndVideoWindowActive.Checked;
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.chk2ndVisibleClick(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_Visible := chk2ndVisible.Checked;
+   RefreshDisplayOptions;
+
+end;
+
 procedure TfrmMainForm.chk360VideoDecodingClick(Sender: TObject);
 begin
    VideoGrabber.v360_Enabled := chk360VideoDecoding.Checked;
@@ -2976,6 +3170,22 @@ begin
 	end;
 end;
 
+procedure TfrmMainForm.btnEG1stNewLocation2Click(Sender: TObject);
+begin
+   VideoGrabber.Display_AutoSize := False; // we will specify the size below
+   VideoGrabber.Display_Embedded := False; // detach from component
+   VideoGrabber.Display_SetLocation (20, 20, 640, 480); // Display_AutoSize=false, we can specify a size
+   RefreshDisplayOptions;
+end;
+
+procedure TfrmMainForm.btnEG2ndNewLocation2Click(Sender: TObject);
+begin
+   VideoGrabber.DualDisplay_AutoSize := False; // we will specify the size below
+   VideoGrabber.DualDisplay_Embedded := False; // detach from component
+   VideoGrabber.DualDisplay_SetLocation (30, 30, 640, 480); // DualDisplay_AutoSize=false, we can specify a size
+   RefreshDisplayOptions;
+end;
+
 procedure TfrmMainForm.lsbOnvifURLsDiscoveredClick(Sender: TObject);
 var
 	CameraInfo: string;
@@ -3072,6 +3282,16 @@ procedure TfrmMainForm.edtTextOverlayScrollingSpeedChange(Sender: TObject);
 begin
    VideoGrabber.SetTextOverlay_ScrollingSpeed(FTextOverlayIndex,
      StrToIntDef(edtTextOverlayScrollingSpeed.Text, 0));
+end;
+
+procedure TfrmMainForm.btnTestPanScanClick(Sender: TObject);
+begin
+   rdg1AspectRatio.ItemIndex := integer (ar_PanScan);
+   VideoGrabber.Display_AspectRatio := ar_PanScan;
+   VideoGrabber.Display_Embedded := True;
+   VideoGrabber.Display_AutoSize := False;
+   VideoGrabber.Width := 600;
+   VideoGrabber.Height := VideoGrabber.Width * 9 div 16;
 end;
 
 procedure TfrmMainForm.btnTextOverlayColorClick(Sender: TObject);
@@ -3744,56 +3964,63 @@ end;
 procedure TfrmMainForm.RefreshDisplayOptions;
 begin
    // this procedure is called each time a setting of this form is changed,
-   // to show what features can be used, according to their respective states
+   // to show what features can be used, according to the respective states of other display settings
 
    // NOTE: duplicating 2 times all the components of this form for the 2 windows
-   // is not very efficient, this has been done only for a better readability.
+   // is not useful, this is only for better readability purpose.
 
-   chkDisplayActive.Checked := VideoGrabber.GetDisplayActive(FDisplaySelected);
-   chkVisible.Checked := VideoGrabber.GetDisplayVisible(FDisplaySelected);
-   chkEmbedded.Checked := VideoGrabber.GetDisplayEmbedded(FDisplaySelected);
-   chkFullScreen.Checked := VideoGrabber.GetDisplayFullScreen(FDisplaySelected);
-   chkStayOnTop.Checked := VideoGrabber.GetDisplayStayOnTop(FDisplaySelected);
-   chkUseVideoPort.Checked := VideoGrabber.GetDisplayVideoPortEnabled
-     (FDisplaySelected);
-   chkMouseMovesWindow.Checked := VideoGrabber.GetDisplayMouseMovesWindow
-     (FDisplaySelected);
-   chkAutoSize.Checked := VideoGrabber.GetDisplayAutoSize(FDisplaySelected);
-   rdgAspectRatio.ItemIndex :=
-     Integer(VideoGrabber.GetDisplayAspectRatio(FDisplaySelected));
-   tbrPanScan.Position := VideoGrabber.GetDisplayPanScanRatio(FDisplaySelected);
-   chkAlphablend.Checked := VideoGrabber.GetDisplayAlphaBlendEnabled
-     (FDisplaySelected);
-   tbrAlphablend.Position := VideoGrabber.GetDisplayAlphaBlendValue
-     (FDisplaySelected);
-   chkTranspColor.Checked := VideoGrabber.GetDisplayTransparentColorEnabled
-     (FDisplaySelected);
-   edttranspColor.Text := Format('%.6X',
-     [VideoGrabber.GetDisplayTransparentColorValue(FDisplaySelected)]);
-   edtAssignToMonitorNumber.Text :=
-     IntToStr(VideoGrabber.GetDisplayMonitor(FDisplaySelected));
+   chk1stVideoWindowActive.Checked := VideoGrabber.Display_Active;
+   chk1stVisible.Checked := VideoGrabber.Display_Visible;
+   chk1stEmbedded.Checked          := VideoGrabber.Display_Embedded;
+   chk1stFullScreen.Checked        := VideoGrabber.Display_FullScreen;
+   chk1stStayOnTop.Checked         := VideoGrabber.Display_StayOnTop;
+   chk1stMouseMovesWindow.Checked  := VideoGrabber.Display_MouseMovesWindow;
+   chk1stAutoSize.Checked          := VideoGrabber.Display_AutoSize;
+   rdg1AspectRatio.ItemIndex       := Integer (VideoGrabber.Display_AspectRatio);
+   tbr1PanScan.Position            := VideoGrabber.Display_PanScanRatio;
+   chk1stAlphablend.Checked        := VideoGrabber.Display_AlphaBlendEnabled;
+   tbr1stAlphablend.Position       := VideoGrabber.Display_AlphaBlendValue;
+   chk1stTranspColor.Checked       := VideoGrabber.Display_TransparentColorEnabled;
+   edt1stTranspColor.Text          := Format ('%.6X', [VideoGrabber.Display_TransparentColorValue]);
 
-   EnableOrDisableGroupBoxControls(grbMainVideoWindow,
-     VideoGrabber.GetDisplayActive(FDisplaySelected));
 
-   if VideoGrabber.GetDisplayActive(FDisplaySelected) then
-   begin
-      chkStayOnTop.Enabled :=
-        (not VideoGrabber.GetDisplayEmbedded(FDisplaySelected)) or
-        VideoGrabber.GetDisplayFullScreen(FDisplaySelected);
-      edtAssignToMonitorLabel.Enabled := VideoGrabber.MonitorsCount > 1;
-      edtAssignToMonitorNumber.Enabled := VideoGrabber.MonitorsCount > 1;
-      chkMouseMovesWindow.Enabled := not VideoGrabber.GetDisplayEmbedded
-        (FDisplaySelected);
-      btnNewLocation2.Enabled := not VideoGrabber.GetDisplayEmbedded
-        (FDisplaySelected);
-      chkUseVideoPort.Enabled := VideoGrabber.IsVideoPortAvailable;
-      chkAlphablend.Enabled := not VideoGrabber.GetDisplayEmbedded
-        (FDisplaySelected);
-      chkTranspColor.Enabled := not VideoGrabber.GetDisplayEmbedded
-        (FDisplaySelected);
+   rdg1stDisplayedOn.ItemIndex     := VideoGrabber.Display_Monitor;
+
+   EnableOrDisableGroupBoxControls (grbMainVideoWindow, VideoGrabber.Display_Active);
+
+   if VideoGrabber.Display_Active then begin
+      chk1stStayOnTop.Enabled         := (not VideoGrabber.Display_Embedded) or VideoGrabber.Display_FullScreen;
+      rdg1stDisplayedOn.Enabled       := VideoGrabber.MonitorsCount > 1;
+      chk1stMouseMovesWindow.Enabled  := not VideoGrabber.Display_Embedded;
+      btnEG1stNewLocation2.Enabled    := not VideoGrabber.Display_Embedded;
+      chk1stAlphablend.Enabled        := not VideoGrabber.Display_Embedded;
+      chk1stTranspColor.Enabled       := not VideoGrabber.Display_Embedded;
    end;
 
+   chk2ndVideoWindowActive.Checked := VideoGrabber.DualDisplay_Active;
+   chk2ndVisible.Checked := VideoGrabber.DualDisplay_Visible;
+   chk2ndEmbedded.Checked          := VideoGrabber.DualDisplay_Embedded;
+   chk2ndFullScreen.Checked        := VideoGrabber.DualDisplay_FullScreen;
+   chk2ndStayOnTop.Checked         := VideoGrabber.DualDisplay_StayOnTop;
+   chk2ndMouseMovesWindow.Checked  := VideoGrabber.DualDisplay_MouseMovesWindow;
+   chk2ndAutoSize.Checked          := VideoGrabber.DualDisplay_AutoSize;
+   rdg2AspectRatio.ItemIndex       := Integer (VideoGrabber.DualDisplay_AspectRatio);
+   tbr2PanScan.Position            := VideoGrabber.DualDisplay_PanScanRatio;
+   rdg2ndDisplayedOn.ItemIndex     := VideoGrabber.DualDisplay_Monitor;
+   chk2ndAlphablend.Checked        := VideoGrabber.DualDisplay_AlphaBlendEnabled;
+   tbr2ndAlphablend.Position       := VideoGrabber.DualDisplay_AlphaBlendValue;
+   chk2ndTranspColor.Checked       := VideoGrabber.DualDisplay_TransparentColorEnabled;
+   edt2ndTranspColor.Text          := Format ('%.6X', [VideoGrabber.DualDisplay_TransparentColorValue]);
+
+   EnableOrDisableGroupBoxControls (grb2ndVideoWindow, VideoGrabber.DualDisplay_Active);
+
+   if VideoGrabber.DualDisplay_Active then begin
+      chk2ndStayOnTop.Enabled         := (not VideoGrabber.DualDisplay_Embedded) or VideoGrabber.DualDisplay_FullScreen;
+      rdg2ndDisplayedOn.Enabled       := VideoGrabber.MonitorsCount > 1;
+      chk2ndMouseMovesWindow.Enabled  := not VideoGrabber.DualDisplay_Embedded;
+      chk2ndAlphablend.Enabled        := not VideoGrabber.Display_Embedded;
+      chk2ndTranspColor.Enabled       := not VideoGrabber.Display_Embedded;
+   end;
 end;
 
 procedure TfrmMainForm.chkBlackMagicDecklinkClick(Sender: TObject);
@@ -3902,121 +4129,14 @@ begin
    VideoGrabber.VideoRenderer := TVideoRenderer(rdgVideoRenderer.ItemIndex);
 end;
 
-procedure TfrmMainForm.chkDisplayActiveClick(Sender: TObject);
+procedure TfrmMainForm.rdbAESencryptionClick(Sender: TObject);
 begin
-   VideoGrabber.SetDisplayActive(FDisplaySelected, chkDisplayActive.Checked);
-   RefreshDisplayOptions;
+   FEncryptionMethod := em_AES_Encryption;
 end;
 
-procedure TfrmMainForm.chkVisibleClick(Sender: TObject);
+procedure TfrmMainForm.rdbFastEncryptionClick(Sender: TObject);
 begin
-   VideoGrabber.SetDisplayVisible(FDisplaySelected, chkVisible.Checked);
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.chkEmbeddedClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayEmbedded(FDisplaySelected, chkEmbedded.Checked);
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.chkAutoSizeClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayAutoSize(FDisplaySelected, chkAutoSize.Checked);
-   if not VideoGrabber.GetDisplayAutoSize(FDisplaySelected) then
-   begin
-      VideoGrabber.SetDisplayWidth(FDisplaySelected, 320);
-      VideoGrabber.SetDisplayHeight(FDisplaySelected, 240);
-   end;
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.chkFullScreenClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayFullScreen(FDisplaySelected, chkFullScreen.Checked);
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.chkStayOnTopClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayStayOnTop(FDisplaySelected, chkStayOnTop.Checked);
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.chkUseVideoPortClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayVideoPortEnabled(FDisplaySelected,
-     chkUseVideoPort.Checked);
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.btnNewLocation2Click(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayAutoSize(FDisplaySelected, False);
-   // we will specify the size below
-   VideoGrabber.SetDisplayEmbedded(FDisplaySelected, False);
-   // detach from component
-   VideoGrabber.SetDisplayLocation(FDisplaySelected, 20, 20, 640, 480);
-   // DisplayAutoSize=false, we can specify a size
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.chkMouseMovesWindowClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayMouseMovesWindow(FDisplaySelected,
-     chkMouseMovesWindow.Checked);
-   RefreshDisplayOptions;
-end;
-
-procedure TfrmMainForm.rdgAspectRatioClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayAspectRatio(FDisplaySelected,
-     TAspectRatio(rdgAspectRatio.ItemIndex));
-end;
-
-procedure TfrmMainForm.tbrPanScanChange(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayPanScanRatio(FDisplaySelected, tbrPanScan.Position);
-end;
-
-procedure TfrmMainForm.btnTestPanScanClick(Sender: TObject);
-begin
-   rdgAspectRatio.ItemIndex := Integer(ar_PanScan);
-   VideoGrabber.SetDisplayAspectRatio(FDisplaySelected, ar_PanScan);
-   VideoGrabber.SetDisplayEmbedded(FDisplaySelected, true);
-   VideoGrabber.SetDisplayAutoSize(FDisplaySelected, False);
-   VideoGrabber.Width := 600;
-   VideoGrabber.Height := VideoGrabber.Width * 9 div 16;
-end;
-
-procedure TfrmMainForm.chkAlphablendClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayAlphaBlendEnabled(FDisplaySelected,
-     chkAlphablend.Checked);
-end;
-
-procedure TfrmMainForm.edtAssignToMonitorNumberChange(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayMonitor(FDisplaySelected,
-     StrToIntDef(edtAssignToMonitorNumber.Text, 0));
-end;
-
-procedure TfrmMainForm.tbrAlphablendChange(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayAlphaBlendValue(FDisplaySelected,
-     tbrAlphablend.Position);
-end;
-
-procedure TfrmMainForm.chkTranspColorClick(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayTransparentColorEnabled(FDisplaySelected,
-     chkTranspColor.Checked);
-end;
-
-procedure TfrmMainForm.edttranspColorChange(Sender: TObject);
-begin
-   VideoGrabber.SetDisplayTransparentColorValue(FDisplaySelected,
-     StrToIntDef('$' + edttranspColor.Text, 0));
+   FEncryptionMethod := em_Fast_Encryption;
 end;
 
 /// /////////////////////////////////////////////////////////////////////////////
@@ -4168,69 +4288,6 @@ begin
    mmoMotionGrid.Text := VideoGrabber.MotionDetector_Get2DTextMotion;
 end;
 
-/// /////////////////////////////////////////////////////////////////////////////
-// "CLIP REENCODING" TAB
-/// /////////////////////////////////////////////////////////////////////////////
-
-procedure TfrmMainForm.btnSourceVideoClipClick(Sender: TObject);
-var
-   OpenDlg: TOpenDialog;
-begin
-   edtDestinationVideoClip.Text := '';
-   OpenDlg := TOpenDialog.Create(nil);
-   OpenDlg.Filter := OPEN_MEDIA_FILES;
-   if OpenDlg.Execute then
-   begin
-      edtSourceVideoClip.Text := OpenDlg.FileName;
-   end;
-   OpenDlg.Free;
-end;
-
-procedure TfrmMainForm.btnDurationClick(Sender: TObject);
-var
-   Duration: int64;
-   FrameCount: int64;
-begin
-   if VideoGrabber.AVIDuration(edtSourceVideoClip.Text, Duration, FrameCount)
-   then
-   begin
-      edtReencDuration.Text := IntToStr(Duration);
-      edtReencFrameCount.Text := IntToStr(FrameCount);
-   end;
-end;
-
-procedure TfrmMainForm.btnStartReencodingClick(Sender: TObject);
-begin
-   VideoGrabber.Reencoding_SourceVideoClip := edtSourceVideoClip.Text;
-   VideoGrabber.Reencoding_NewVideoClip := edtDestinationVideoClip.Text;
-
-   VideoGrabber.Reencoding_WMVOutput := chkWMVOutput.Checked;
-   VideoGrabber.Reencoding_IncludeVideoStream := chkIncludeVideoStream.Checked;
-   VideoGrabber.Reencoding_IncludeAudioStream := chkIncludeAudioStream.Checked;
-   VideoGrabber.Reencoding_UseFrameGrabber := chkUseFrameGrabber.Checked;
-   VideoGrabber.Reencoding_UseVideoCompressor :=
-     chkUseCurrentVideoCompressor.Checked;
-   VideoGrabber.Reencoding_UseAudioCompressor :=
-     chkUseCurrentAudioCompressor.Checked;
-   VideoGrabber.Reencoding_Method :=
-     TRecordingMethod(rdgReencodingMethod.ItemIndex);
-
-   // if a frame number is specified (<> -1), it is mandatory, so the time is ignored
-   VideoGrabber.Reencoding_StartTime :=
-     StrToInt64Def(edtReencStartTime.Text, -1);
-   VideoGrabber.Reencoding_StartFrame :=
-     StrToInt64Def(edtReencStartFrame.Text, -1);
-   VideoGrabber.Reencoding_StopTime := StrToInt64Def(edtReencStopTime.Text, -1);
-   VideoGrabber.Reencoding_StopFrame :=
-     StrToInt64Def(edtReencStopFrame.Text, -1);
-
-   VideoGrabber.StartReencoding;
-end;
-
-procedure TfrmMainForm.btnStopReencodingClick(Sender: TObject);
-begin
-   VideoGrabber.Stop;
-end;
 
 /// /////////////////////////////////////////////////////////////////////////////
 // MISC.
@@ -4686,54 +4743,6 @@ begin
    ShowTargetDisplayInfo();
 end;
 
-procedure TfrmMainForm.rdgDisplaySelectedClick(Sender: TObject);
-begin
-   FDisplaySelected := rdgDisplaySelected.ItemIndex;
-   RefreshDisplayOptions();
-end;
-
-procedure TfrmMainForm.VideoGrabberMultipurposeEncoderProgress(Sender: TObject;
-  MultipurposeEncoderInstance: TMultipurposeEncoderInstance);
-var
-   InputsTotalDurationMs: Cardinal;
-   FrameCount: Cardinal;
-   fps: Double;
-   quality: Double;
-   SizeWrittenKb: Double;
-   TimeMs: Cardinal;
-   BitRate: Double;
-	DuplicatedCount: Cardinal;
-   DroppedCount: Cardinal;
-   ExitCode: LongInt;
-   ProgressInfo: string;
-begin
-   VideoGrabber.MultipurposeEncoder_GetCurrentInfo(MultipurposeEncoderInstance,
-     InputsTotalDurationMs, FrameCount, fps, quality, SizeWrittenKb, TimeMs,
-     BitRate, DuplicatedCount, DroppedCount, ExitCode);
-   ProgressInfo :=
-     Format('Frame count: %4d       Fps: %2.1f        Time(ms):%10d       Written(kb): %5.1f       Bitrate(kbps): %5.1f       Dropped:  %4d',
-     [FrameCount, fps, TimeMs, SizeWrittenKb, BitRate, DroppedCount]);
-
-   if MultipurposeEncoderInstance = mpe_Recording then
-   begin
-      lblMPERecordingProgressInfo.Caption := ProgressInfo;
-      mmoMPERecordingLog.Lines.Add(VideoGrabber.MultipurposeEncoder_GetLastLog
-        (mpe_Recording));
-   end
-   else if MultipurposeEncoderInstance = mpe_Streaming then
-   begin
-      lblMPEStreamingProgressInfo.Caption := ProgressInfo;
-      mmoMPEStreamingLog.Lines.Add(VideoGrabber.MultipurposeEncoder_GetLastLog
-        (mpe_Streaming));
-   end
-   else if MultipurposeEncoderInstance = mpe_Reencoding then
-   begin
-      lblMPEReencodingProgressInfo.Caption := ProgressInfo;
-      mmoMPEReencodingLog.Lines.Add(VideoGrabber.MultipurposeEncoder_GetLastLog
-        (mpe_Reencoding));
-   end;
-end;
-
 procedure TfrmMainForm.VideoGrabberONVIFDiscoveryCompleted(Sender: TObject;
   DiscoveryCallbackStatus: TDiscoveryCallbackStatus; CameraCount: LongInt);
 var
@@ -4762,54 +4771,10 @@ begin
 	end;
 end;
 
-procedure TfrmMainForm.chkMPERecordingClick(Sender: TObject);
-begin
-   VideoGrabber.EnableMultipurposeEncoder(mpe_Recording,
-     chkMPERecording.Checked);
-   edtMPERecordingChange(Self); // to apply the recording settings
-end;
-
-procedure TfrmMainForm.chkMPEStreamingClick(Sender: TObject);
-begin
-   VideoGrabber.EnableMultipurposeEncoder(mpe_Streaming,
-     chkMPEStreaming.Checked);
-   edtMPEStreamingChange(Self); // to apply the streaming settings
-end;
-
-procedure TfrmMainForm.edtMPERecordingChange(Sender: TObject);
-begin
-   VideoGrabber.SetMultipurposeEncoderSettings(mpe_Recording,
-     edtMPERecording.Text);
-end;
-
-procedure TfrmMainForm.edtMPEReencodingChange(Sender: TObject);
-begin
-   VideoGrabber.SetMultipurposeEncoderSettings(mpe_Reencoding,
-     edtMPEReencoding.Text);
-end;
-
-procedure TfrmMainForm.edtMPEStreamingChange(Sender: TObject);
-begin
-   VideoGrabber.SetMultipurposeEncoderSettings(mpe_Streaming,
-     edtMPEStreaming.Text);
-end;
-
 procedure TfrmMainForm.edtNDIReceiveTimeoutChange(Sender: TObject);
 begin
    VideoGrabber.NDIReceiveTimeoutMs :=
      StrToIntDef(edtNDIReceiveTimeout.Text, 0);
-end;
-
-procedure TfrmMainForm.btnStartMPEReencodingClick(Sender: TObject);
-begin
-   edtMPEReencodingChange(Self); // to apply the reencoding settings
-   VideoGrabber.EnableMultipurposeEncoder(mpe_Reencoding, true);
-   VideoGrabber.StartReencoding();
-end;
-
-procedure TfrmMainForm.btnStopMPEReencodingClick(Sender: TObject);
-begin
-   VideoGrabber.Stop();
 end;
 
 procedure TfrmMainForm.tbrPTZSpeedRatioChange(Sender: TObject);
@@ -5073,31 +5038,6 @@ begin
      ('select "NewTek NDI Video" in the "video devices" list and click "Start Preview"');
 end;
 
-procedure TfrmMainForm.rdgPreferredVideoSizeClick(Sender: TObject);
-begin
-   case rdgPreferredVideoSize.ItemIndex of
-      0:
-         VideoGrabber.UseNearestVideoSize(0, 0,
-           chkretchPreferredVideoSize.Checked);
-         // disables the nearest size feature, uses the device's VideoSize index in the VideoSizes list
-      1:
-         VideoGrabber.UseNearestVideoSize(640, 360,
-           chkretchPreferredVideoSize.Checked);
-      2:
-         VideoGrabber.UseNearestVideoSize(1280, 720,
-           chkretchPreferredVideoSize.Checked);
-      3:
-         VideoGrabber.UseNearestVideoSize(1920, 1080,
-           chkretchPreferredVideoSize.Checked);
-      // or any other custom value
-   end;
-end;
-
-procedure TfrmMainForm.chkretchPreferredVideoSizeClick(Sender: TObject);
-begin
-   rdgPreferredVideoSizeClick(Self);
-end;
-
 procedure TfrmMainForm.edtDatasteadEncoder_VideoCodecNameChange
   (Sender: TObject);
 begin
@@ -5194,4 +5134,46 @@ begin
      cmbGPUEncoder.ItemIndex);
 end;
 
+procedure TfrmMainForm.btnClearDecryptionClick(Sender: TObject);
+begin
+   edtDecryptionKey.Text := '';
+   VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text);
+end;
+
+procedure TfrmMainForm.btnClearEncryptionClick(Sender: TObject);
+begin
+   edtEncryptionKey.Text := '';
+   VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text);
+end;
+
+procedure TfrmMainForm.btnSetDecryptionKeyClick(Sender: TObject);
+begin
+   VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text);
+end;
+
+procedure TfrmMainForm.btnSetEncryptionKeyClick(Sender: TObject);
+begin
+   VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text);
+end;
+
+procedure TfrmMainForm.spdSourceVideoClipClick(Sender: TObject);
+var
+   OpenDlg: TOpenDialog;
+begin
+   OpenDlg := TOpenDialog.Create(nil);
+   OpenDlg.Filter := OPEN_MEDIA_FILES_EXTENDED;
+   if OpenDlg.Execute then
+   begin
+      edtEncryptDecryptSourceVideoClip.Text := OpenDlg.FileName;
+   end;
+   OpenDlg.Free;
+end;
+
+procedure TfrmMainForm.btnDeviceDialogClick(Sender: TObject);
+begin
+   VideoGrabber.ShowDialog(dlg_VideoDevice);
+   RefreshDeviceControls;
+end;
+
 end.
+

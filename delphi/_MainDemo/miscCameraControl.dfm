@@ -1,19 +1,18 @@
 object frmCameraControl: TfrmCameraControl
   Left = 413
   Top = 334
-  Width = 441
-  Height = 327
+  AutoSize = True
   Caption = 'Camera Control settings'
+  ClientHeight = 288
+  ClientWidth = 425
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 80
@@ -70,14 +69,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 185
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 0
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrPan: TTrackBar
@@ -86,14 +80,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 185
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 1
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrRoll: TTrackBar
@@ -102,14 +91,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 185
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 2
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrZoom: TTrackBar
@@ -118,14 +102,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 185
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 3
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrExposure: TTrackBar
@@ -134,14 +113,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 170
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 4
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrIris: TTrackBar
@@ -150,14 +124,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 185
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 5
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrFocus: TTrackBar
@@ -166,14 +135,9 @@ object frmCameraControl: TfrmCameraControl
     Width = 40
     Height = 185
     Orientation = trVertical
-    Frequency = 1
-    Position = 0
-    SelEnd = 0
-    SelStart = 0
     TabOrder = 6
     ThumbLength = 18
     TickMarks = tmBoth
-    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object btnClose: TButton

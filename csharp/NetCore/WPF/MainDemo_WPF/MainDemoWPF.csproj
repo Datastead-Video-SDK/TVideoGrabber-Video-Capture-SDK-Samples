@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <StartupObject>MainDemoWPF.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="VideoGrabberNET">
+      <HintPath>..\..\..\..\..\DLL\NET_6.0\VideoGrabberNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
