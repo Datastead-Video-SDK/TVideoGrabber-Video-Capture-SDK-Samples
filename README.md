@@ -11,6 +11,8 @@ The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP,
 - FAQ: https://www.datastead.com/faq/
 - NuGet package (.NET): https://www.nuget.org/packages/TVideoGrabber-SDK
 
+Current SDK version: **16.6.2.0** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
+
 ## Prerequisites
 
 1. Download and install the TVideoGrabber SDK evaluation version from https://www.datastead.com/downloads/ (fully functional, with a nag screen). For .NET you can also add the [TVideoGrabber-SDK](https://www.nuget.org/packages/TVideoGrabber-SDK) NuGet package.
@@ -21,7 +23,7 @@ The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP,
 
 Supported compilers: Delphi and C++Builder from version 4 to the current RAD Studio release, Visual Studio (MSVC), MinGW 32/64, Qt (MSVC or MinGW kits), .NET Framework 3.5 to 4.8.1 and .NET Core 3.0 to .NET 10, Java 8+, VB6. See the [product page](https://www.datastead.com/video-sdk/) for the up-to-date list.
 
-The projects are the samples shipped in the SDK (`_DEMOS` folders of the SDK distribution), refreshed at each release; the SDK version they come from is in `SDK_VERSION.txt`. Some of them reference the SDK files (`TVideoGrabber.h`/`.cpp`, `VideoGrabberNET.dll`) with relative paths valid inside the SDK folder tree: after cloning, adjust these references to your SDK installation folder.
+The projects are the samples shipped in the SDK (`_DEMOS` folders of the SDK distribution), refreshed at each release (the exact SDK version they come from is in `SDK_VERSION.txt`). Some of them reference the SDK files (`TVideoGrabber.h`/`.cpp`, `VideoGrabberNET.dll`) with relative paths valid inside the SDK folder tree: after cloning, adjust these references to your SDK installation folder.
 
 ## Repository layout
 

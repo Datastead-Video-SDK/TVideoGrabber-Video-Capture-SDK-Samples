@@ -1,2 +1,1 @@
-
- TVideoGrabber v16.6 (version 16.6.2.0) - September 3, 2026
+16.6.2.0
