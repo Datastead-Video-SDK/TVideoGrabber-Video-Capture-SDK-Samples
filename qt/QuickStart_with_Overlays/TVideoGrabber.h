@@ -572,7 +572,8 @@
    enum class TIPCameraSetting
    {
    ips_ConnectionTimeout = 0,
-   ips_ReceiveTimeout = 1
+   ips_ReceiveTimeout = 1,
+   ips_RetryInitialConnect = 2
    };
    
    enum class TJPEGPerformance

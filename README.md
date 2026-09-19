@@ -1,6 +1,6 @@
-# TVideoGrabber SDK samples: Delphi, C++Builder, C++, Qt, C#, VB.NET, Java and VB6
+# TVideoGrabber video capture SDK samples: Delphi, C++Builder, C++, Qt, C#, VB.NET, Java and VB6
 
-Sample projects for the [TVideoGrabber SDK](https://www.datastead.com/video-sdk/), the Datastead video capture, recording, streaming and player component for Windows 10/11.
+Sample projects for [TVideoGrabber](https://www.datastead.com/video-sdk/), the Datastead video capture SDK for Windows 10/11: capture, recording, streaming and playback component.
 
 The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP, ONVIF), screen capture, video mixing, frame grabbing, re-encoding, RTSP server and playback, in **Delphi**, **C++Builder**, **Visual C++ (MSVC)**, **MinGW**, **MFC**, **Qt**, **C#** and **VB.NET** (.NET Framework and .NET Core/.NET 5+, WinForms, WPF, console), **Java** (Swing, JavaFX, headless) and **VB6** (ActiveX).
 
@@ -11,7 +11,7 @@ The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP,
 - FAQ: https://www.datastead.com/faq/
 - NuGet package (.NET): https://www.nuget.org/packages/TVideoGrabber-SDK
 
-Current SDK version: **16.6.2.0** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
+Current SDK version: **16.6.2.4** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
 
 ## Prerequisites
 
