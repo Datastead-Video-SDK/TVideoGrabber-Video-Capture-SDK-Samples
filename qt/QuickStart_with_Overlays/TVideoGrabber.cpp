@@ -186,6 +186,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
       typedef BOOL (STDCALL *tGetCameraControlSettings) ( void *TVGObject);
       typedef double (STDCALL *tGetCameraExposure) ( void *TVGObject);
       typedef wchar_t * (STDCALL *tGetCameraExposureAsString) ( void *TVGObject);
+      typedef BOOL (STDCALL *tGetCameraLowLightCompensation) ( void *TVGObject);
       typedef wchar_t * (STDCALL *tGetCaptureFileExt) ( void *TVGObject);
       typedef int (STDCALL *tGetColorKey) ( void *TVGObject);
       typedef BOOL (STDCALL *tGetColorKeyEnabled) ( void *TVGObject);
@@ -817,6 +818,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
       typedef BOOL (STDCALL *tSetCameraControl) ( void *TVGObject, TCameraControl Setting, BOOL SetAuto, BOOL SetDefault, int SetValue);
       typedef void (STDCALL *tSetCameraControlSettings) ( void *TVGObject, BOOL Value);
       typedef void (STDCALL *tSetCameraExposure) ( void *TVGObject, double Value);
+      typedef void (STDCALL *tSetCameraLowLightCompensation) ( void *TVGObject, BOOL Value);
       typedef void (STDCALL *tSetCaptureFileExt) ( void *TVGObject,  wchar_t *Value);
       typedef void (STDCALL *tSetColorKey) ( void *TVGObject, int Value);
       typedef void (STDCALL *tSetColorKeyEnabled) ( void *TVGObject, BOOL Value);
@@ -1533,6 +1535,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
    static tGetCameraControlSettings _GetCameraControlSettings;
    static tGetCameraExposure _GetCameraExposure;
    static tGetCameraExposureAsString _GetCameraExposureAsString;
+   static tGetCameraLowLightCompensation _GetCameraLowLightCompensation;
    static tGetCaptureFileExt _GetCaptureFileExt;
    static tGetColorKey _GetColorKey;
    static tGetColorKeyEnabled _GetColorKeyEnabled;
@@ -2164,6 +2167,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
    static tSetCameraControl _SetCameraControl;
    static tSetCameraControlSettings _SetCameraControlSettings;
    static tSetCameraExposure _SetCameraExposure;
+   static tSetCameraLowLightCompensation _SetCameraLowLightCompensation;
    static tSetCaptureFileExt _SetCaptureFileExt;
    static tSetColorKey _SetColorKey;
    static tSetColorKeyEnabled _SetColorKeyEnabled;
@@ -2915,6 +2919,7 @@ bool InitVideoGrabberLib()
                _GetCameraControlSettings = TGetProcAddress<tGetCameraControlSettings>(h, "_GetCameraControlSettings");
                _GetCameraExposure = TGetProcAddress<tGetCameraExposure>(h, "_GetCameraExposure");
                _GetCameraExposureAsString = TGetProcAddress<tGetCameraExposureAsString>(h, "_GetCameraExposureAsString");
+               _GetCameraLowLightCompensation = TGetProcAddress<tGetCameraLowLightCompensation>(h, "_GetCameraLowLightCompensation");
                _GetCaptureFileExt = TGetProcAddress<tGetCaptureFileExt>(h, "_GetCaptureFileExt");
                _GetColorKey = TGetProcAddress<tGetColorKey>(h, "_GetColorKey");
                _GetColorKeyEnabled = TGetProcAddress<tGetColorKeyEnabled>(h, "_GetColorKeyEnabled");
@@ -3546,6 +3551,7 @@ bool InitVideoGrabberLib()
                _SetCameraControl = TGetProcAddress<tSetCameraControl>(h, "_SetCameraControl");
                _SetCameraControlSettings = TGetProcAddress<tSetCameraControlSettings>(h, "_SetCameraControlSettings");
                _SetCameraExposure = TGetProcAddress<tSetCameraExposure>(h, "_SetCameraExposure");
+               _SetCameraLowLightCompensation = TGetProcAddress<tSetCameraLowLightCompensation>(h, "_SetCameraLowLightCompensation");
                _SetCaptureFileExt = TGetProcAddress<tSetCaptureFileExt>(h, "_SetCaptureFileExt");
                _SetColorKey = TGetProcAddress<tSetColorKey>(h, "_SetColorKey");
                _SetColorKeyEnabled = TGetProcAddress<tSetColorKeyEnabled>(h, "_SetColorKeyEnabled");
@@ -5091,6 +5097,9 @@ CVideoGrabber::~CVideoGrabber()
    
    BOOL CVideoGrabber::GetCameraControlSettings () { return _GetCameraControlSettings (m_VideoGrabber); };
    void CVideoGrabber::SetCameraControlSettings (BOOL Value) { _SetCameraControlSettings (m_VideoGrabber, Value); };
+   
+   BOOL CVideoGrabber::GetCameraLowLightCompensation () { return _GetCameraLowLightCompensation (m_VideoGrabber); };
+   void CVideoGrabber::SetCameraLowLightCompensation (BOOL Value) { _SetCameraLowLightCompensation (m_VideoGrabber, Value); };
    
     wchar_t *CVideoGrabber::GetCaptureFileExt () { return _GetCaptureFileExt (m_VideoGrabber); };
    void CVideoGrabber::SetCaptureFileExt ( wchar_t *Value) { _SetCaptureFileExt (m_VideoGrabber, Value); };

@@ -1,0 +1,927 @@
+object frmVUMeterConfig: TfrmVUMeterConfig
+  Left = 0
+  Top = 0
+  Caption = 'Configure VU-Meters'
+  ClientHeight = 540
+  ClientWidth = 470
+  Position = ScreenCenter
+  BorderStyle = SizeToolWin
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object pcMain: TTabControl
+    TabOrder = 0
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 454.000000000000000000
+    Size.Height = 488.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabPosition = PlatformDefault
+    object tsType: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      StyleLookup = ''
+      TabOrder = 0
+      TextSettings.Font.Family = 'Tahoma'
+      TextSettings.Font.Size = 11.000000000000000000
+      StyledSettings = [Style, FontColor, Other]
+      Text = 'Type && Display'
+      object lblVUMeter: TLabel
+        AutoSize = True
+        Position.X = 12.000000000000000000
+        Position.Y = 14.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'VU Meter type:'
+      end
+      object cboVUMeter: TComboBox
+        TabOrder = 0
+        Position.X = 100.000000000000000000
+        Position.Y = 11.000000000000000000
+        Size.Width = 230.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = cboVUMeterChange
+      end
+      object grbDisplayOptions: TGroupBox
+        TabOrder = 1
+        Position.X = 12.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 165.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Display options'
+        object chkOverlayOverVideo: TCheckBox
+          TabOrder = 0
+          Position.X = 16.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 290.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Draw VU meter as overlay over the video frame'
+          OnChange = chkOverlayOverVideoClick
+        end
+        object chkTransparent: TCheckBox
+          TabOrder = 1
+          Position.X = 16.000000000000000000
+          Position.Y = 50.000000000000000000
+          Size.Width = 290.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Transparent background (overlay mode)'
+          OnChange = chkTransparentClick
+        end
+        object chkFlipVert: TCheckBox
+          TabOrder = 2
+          Position.X = 16.000000000000000000
+          Position.Y = 76.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Flip vertically'
+          OnChange = chkFlipVertClick
+        end
+        object chkFlipHorz: TCheckBox
+          TabOrder = 3
+          Position.X = 220.000000000000000000
+          Position.Y = 76.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Flip horizontally'
+          OnChange = chkFlipHorzClick
+        end
+        object chkLogarithmic: TCheckBox
+          TabOrder = 4
+          Position.X = 16.000000000000000000
+          Position.Y = 102.000000000000000000
+          Size.Width = 380.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Logarithmic scale (PPM-style)'
+          OnChange = chkLogarithmicClick
+        end
+        object btnDisablePeak: TButton
+          TabOrder = 5
+          Position.X = 16.000000000000000000
+          Position.Y = 128.000000000000000000
+          Size.Width = 380.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 
+            'Peak indicator disabled (sets vu_PeakHoldMs to 0 in the "Ballist' +
+            'ics" tab)'
+          OnClick = btnDisablePeakClick
+        end
+      end
+      object grbOverlayRect: TGroupBox
+        TabOrder = 2
+        Position.X = 12.000000000000000000
+        Position.Y = 224.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 100.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Overlay rect (used when "draw as overlay" is enabled)'
+        object lblOverlayLeft: TLabel
+          AutoSize = True
+          Position.X = 16.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 23.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Left:'
+        end
+        object lblOverlayTop: TLabel
+          AutoSize = True
+          Position.X = 220.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Top:'
+        end
+        object lblOverlayWidth: TLabel
+          AutoSize = True
+          Position.X = 16.000000000000000000
+          Position.Y = 62.000000000000000000
+          Size.Width = 32.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Width:'
+        end
+        object lblOverlayHeight: TLabel
+          AutoSize = True
+          Position.X = 220.000000000000000000
+          Position.Y = 62.000000000000000000
+          Size.Width = 35.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Height:'
+        end
+        object edtOverlayLeft: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 80.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = '10'
+          OnChangeTracking = edtOverlayLeftChange
+        end
+        object edtOverlayTop: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 290.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = '10'
+          OnChangeTracking = edtOverlayTopChange
+        end
+        object edtOverlayWidth: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          Position.X = 80.000000000000000000
+          Position.Y = 58.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = '120'
+          OnChangeTracking = edtOverlayWidthChange
+        end
+        object edtOverlayHeight: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 290.000000000000000000
+          Position.Y = 58.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = '70'
+          OnChangeTracking = edtOverlayHeightChange
+        end
+      end
+    end
+    object tsLevelsColors: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      StyleLookup = ''
+      TabOrder = 0
+      TextSettings.Font.Family = 'Tahoma'
+      TextSettings.Font.Size = 11.000000000000000000
+      StyledSettings = [Style, FontColor, Other]
+      Text = 'Levels && Colors'
+      object grbWarningPercent: TGroupBox
+        TabOrder = 0
+        Position.X = 12.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Warning threshold (vu_WarningPercent)'
+        object lblWarningPercentValue: TLabel
+          AutoSize = True
+          Position.X = 376.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 26.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = '70 %'
+        end
+        object tbrWarningPercent: TTrackBar
+          TabOrder = 0
+          CanParentFocus = True
+          Frequency = 1.000000000000000000
+          Min = 0.000000000000000000
+          Max = 100.000000000000000000
+          Position.X = 12.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 360.000000000000000000
+          Size.Height = 38.000000000000000000
+          Size.PlatformDefault = False
+          Value = 70.000000000000000000
+          OnChange = tbrWarningPercentChange
+        end
+      end
+      object grbPeakPercent: TGroupBox
+        TabOrder = 1
+        Position.X = 12.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Peak threshold (vu_PeakPercent)'
+        object lblPeakPercentValue: TLabel
+          AutoSize = True
+          Position.X = 376.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 26.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = '90 %'
+        end
+        object tbrPeakPercent: TTrackBar
+          TabOrder = 0
+          CanParentFocus = True
+          Frequency = 1.000000000000000000
+          Min = 0.000000000000000000
+          Max = 100.000000000000000000
+          Position.X = 12.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 360.000000000000000000
+          Size.Height = 38.000000000000000000
+          Size.PlatformDefault = False
+          Value = 90.000000000000000000
+          OnChange = tbrPeakPercentChange
+        end
+      end
+      object grbColors: TGroupBox
+        TabOrder = 2
+        Position.X = 12.000000000000000000
+        Position.Y = 152.000000000000000000
+        Size.Width = 426.000000000000000000
+        Size.Height = 200.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Colors'
+        object lblBkgndColor: TLabel
+          AutoSize = True
+          Position.X = 16.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Background:'
+        end
+        object lblNormalColor: TLabel
+          AutoSize = True
+          Position.X = 16.000000000000000000
+          Position.Y = 68.000000000000000000
+          Size.Width = 37.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Normal:'
+        end
+        object lblWarningColor: TLabel
+          AutoSize = True
+          Position.X = 16.000000000000000000
+          Position.Y = 108.000000000000000000
+          Size.Width = 44.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Warning:'
+        end
+        object lblPeakColor: TLabel
+          AutoSize = True
+          Position.X = 16.000000000000000000
+          Position.Y = 148.000000000000000000
+          Size.Width = 27.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Peak:'
+        end
+        object pnBkgndColor: TRectangle
+          Position.X = 100.000000000000000000
+          Position.Y = 22.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Fill.Color = xFF000000
+          Stroke.Color = xFF808080
+        end
+        object btnBkgndColor: TButton
+          TabOrder = 1
+          Position.X = 312.000000000000000000
+          Position.Y = 22.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Choose...'
+          OnClick = btnColorClick
+        end
+        object pnNormalColor: TRectangle
+          Position.X = 100.000000000000000000
+          Position.Y = 62.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Fill.Color = xFF00FF00
+          Stroke.Color = xFF808080
+        end
+        object btnNormalColor: TButton
+          Tag = 1
+          TabOrder = 3
+          Position.X = 312.000000000000000000
+          Position.Y = 62.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Choose...'
+          OnClick = btnColorClick
+        end
+        object pnWarningColor: TRectangle
+          Position.X = 100.000000000000000000
+          Position.Y = 102.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Fill.Color = xFFFFFF00
+          Stroke.Color = xFF808080
+        end
+        object btnWarningColor: TButton
+          Tag = 2
+          TabOrder = 5
+          Position.X = 312.000000000000000000
+          Position.Y = 102.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Choose...'
+          OnClick = btnColorClick
+        end
+        object pnPeakColor: TRectangle
+          Position.X = 100.000000000000000000
+          Position.Y = 142.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Fill.Color = xFFFF0000
+          Stroke.Color = xFF808080
+        end
+        object btnPeakColor: TButton
+          Tag = 3
+          TabOrder = 7
+          Position.X = 312.000000000000000000
+          Position.Y = 142.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Tahoma'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'Choose...'
+          OnClick = btnColorClick
+        end
+      end
+    end
+    object tsDrawing: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      StyleLookup = ''
+      TabOrder = 0
+      TextSettings.Font.Family = 'Tahoma'
+      TextSettings.Font.Size = 11.000000000000000000
+      StyledSettings = [Style, FontColor, Other]
+      Text = 'Drawing'
+      object lblTickSize: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 22.000000000000000000
+        Size.Width = 43.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Tick size:'
+      end
+      object lblTickInterval: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 62.000000000000000000
+        Size.Width = 61.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Tick interval:'
+      end
+      object lblNeedleThickness: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 102.000000000000000000
+        Size.Width = 107.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Needle thickness (px):'
+      end
+      object lblDrawingHint: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 160.000000000000000000
+        Size.Width = 410.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = True
+        StyledSettings = [Style, FontColor, Other]
+        Text = 
+          'Tick size and tick interval affect mainly the Analog and Analog ' +
+          'Vintage meters (length and spacing of the ticks on the arc).'#13#10'Ne' +
+          'edle thickness controls the analog meter needle width in pixels.'
+      end
+      object edtTickSize: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 200.000000000000000000
+        Position.Y = 18.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = '6'
+        OnChangeTracking = edtTickSizeChange
+      end
+      object lay_updTickSize: TLayout
+        Position.X = 260.000000000000000000
+        Position.Y = 18.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        object updTickSize_Up: TSpeedButton
+          Align = Top
+          Size.Height = 10.000000000000000000
+          Size.PlatformDefault = False
+          RepeatClick = True
+          Text = '+'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+        object updTickSize_Down: TSpeedButton
+          Align = Client
+          RepeatClick = True
+          Text = '-'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+      end
+      object edtTickInterval: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 200.000000000000000000
+        Position.Y = 58.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = '10'
+        OnChangeTracking = edtTickIntervalChange
+      end
+      object lay_updTickInterval: TLayout
+        Position.X = 260.000000000000000000
+        Position.Y = 58.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        object updTickInterval_Up: TSpeedButton
+          Align = Top
+          Size.Height = 10.000000000000000000
+          Size.PlatformDefault = False
+          RepeatClick = True
+          Text = '+'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+        object updTickInterval_Down: TSpeedButton
+          Align = Client
+          RepeatClick = True
+          Text = '-'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+      end
+      object edtNeedleThickness: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 200.000000000000000000
+        Position.Y = 98.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = '2'
+        OnChangeTracking = edtNeedleThicknessChange
+      end
+      object lay_updNeedleThickness: TLayout
+        Position.X = 260.000000000000000000
+        Position.Y = 98.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        object updNeedleThickness_Up: TSpeedButton
+          Align = Top
+          Size.Height = 10.000000000000000000
+          Size.PlatformDefault = False
+          RepeatClick = True
+          Text = '+'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+        object updNeedleThickness_Down: TSpeedButton
+          Align = Client
+          RepeatClick = True
+          Text = '-'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+      end
+    end
+    object tsBallistics: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      StyleLookup = ''
+      TabOrder = 0
+      TextSettings.Font.Family = 'Tahoma'
+      TextSettings.Font.Size = 11.000000000000000000
+      StyledSettings = [Style, FontColor, Other]
+      Text = 'Ballistics'
+      object lblBallisticProfile: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 22.000000000000000000
+        Size.Width = 64.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Quick preset:'
+      end
+      object lblAttackMs: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 59.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Attack (ms):'
+      end
+      object lblReleaseMs: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 110.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Release (ms):'
+      end
+      object lblPeakHoldMs: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 150.000000000000000000
+        Size.Width = 74.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Peak hold (ms):'
+      end
+      object lblBallisticHint: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 210.000000000000000000
+        Size.Width = 410.000000000000000000
+        Size.Height = 130.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = True
+        StyledSettings = [Style, FontColor, Other]
+        Text = 
+          'Pick a preset to fill the three values at once, or tweak them ma' +
+          'nually.'#13#10#13#10'* Attack: time constant for level rises (lower = peak' +
+          'ier).'#13#10'* Release: time constant for level falls (lower = bouncie' +
+          'r).'#13#10'* Peak hold: time the peak LED stays lit after a peak (0 di' +
+          'sables it).'#13#10#13#10'Defaults: 10 / 300 / 800 ms (dynamic, snappy look' +
+          ').'
+      end
+      object cboBallisticProfile: TComboBox
+        TabOrder = 0
+        Position.X = 120.000000000000000000
+        Position.Y = 18.000000000000000000
+        Size.Width = 280.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = cboBallisticProfileChange
+      end
+      object edtAttackMs: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 200.000000000000000000
+        Position.Y = 66.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = '10'
+        OnChangeTracking = edtAttackMsChange
+      end
+      object lay_updAttackMs: TLayout
+        Position.X = 280.000000000000000000
+        Position.Y = 66.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        object updAttackMs_Up: TSpeedButton
+          Align = Top
+          Size.Height = 10.000000000000000000
+          Size.PlatformDefault = False
+          RepeatClick = True
+          Text = '+'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+        object updAttackMs_Down: TSpeedButton
+          Align = Client
+          RepeatClick = True
+          Text = '-'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+      end
+      object edtReleaseMs: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Position.X = 200.000000000000000000
+        Position.Y = 106.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = '300'
+        OnChangeTracking = edtReleaseMsChange
+      end
+      object lay_updReleaseMs: TLayout
+        Position.X = 280.000000000000000000
+        Position.Y = 106.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        object updReleaseMs_Up: TSpeedButton
+          Align = Top
+          Size.Height = 10.000000000000000000
+          Size.PlatformDefault = False
+          RepeatClick = True
+          Text = '+'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+        object updReleaseMs_Down: TSpeedButton
+          Align = Client
+          RepeatClick = True
+          Text = '-'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+      end
+      object edtPeakHoldMs: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Position.X = 200.000000000000000000
+        Position.Y = 146.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Tahoma'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = '800'
+        OnChangeTracking = edtPeakHoldMsChange
+      end
+      object lay_updPeakHoldMs: TLayout
+        Position.X = 280.000000000000000000
+        Position.Y = 146.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        object updPeakHoldMs_Up: TSpeedButton
+          Align = Top
+          Size.Height = 10.000000000000000000
+          Size.PlatformDefault = False
+          RepeatClick = True
+          Text = '+'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+        object updPeakHoldMs_Down: TSpeedButton
+          Align = Client
+          RepeatClick = True
+          Text = '-'
+          TextSettings.Font.Size = 9.000000000000000000
+          StyledSettings = [Family, Style, FontColor, Other]
+        end
+      end
+    end
+  end
+  object btnRefresh: TButton
+    TabOrder = 1
+    Position.X = 8.000000000000000000
+    Position.Y = 506.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Tahoma'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'Refresh from TVideoGrabber'
+    OnClick = btnRefreshClick
+  end
+  object btnClose: TButton
+    TabOrder = 2
+    Position.X = 376.000000000000000000
+    Position.Y = 506.000000000000000000
+    Size.Width = 86.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Tahoma'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'Close'
+    OnClick = btnCloseClick
+  end
+end

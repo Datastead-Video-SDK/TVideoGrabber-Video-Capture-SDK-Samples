@@ -339,7 +339,7 @@ Begin VB.Form MainForm
       TVUseFrequencyOverrides=   0   'False
       TunerFrequency  =   -1
       UseClock        =   -1  'True
-      Version         =   "v16.6.2.4 (build 4318.220211) - Copyright (c)2022 Datastead"
+      Version         =   "v17.0.0.1 (build 4318.220211) - Copyright (c)2022 Datastead"
       v360_Enabled    =   0   'False
       v360_AspectRatio=   -1
       v360_MouseActionPercent=   10

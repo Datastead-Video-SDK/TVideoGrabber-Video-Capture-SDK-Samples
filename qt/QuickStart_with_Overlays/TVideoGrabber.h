@@ -566,7 +566,8 @@
    hw_Cuda = 1,
    hw_QuickSync = 2,
    hw_Dxva2 = 3,
-   hw_d3d11 = 4
+   hw_d3d11 = 4,
+   hw_Auto = 5
    };
    
    enum class TIPCameraSetting
@@ -2541,6 +2542,9 @@ public:
        
        BOOL GetCameraControlSettings ();
        void SetCameraControlSettings (BOOL Value);
+       
+       BOOL GetCameraLowLightCompensation ();
+       void SetCameraLowLightCompensation (BOOL Value);
        
         wchar_t *GetCaptureFileExt ();
        void SetCaptureFileExt ( wchar_t *Value);

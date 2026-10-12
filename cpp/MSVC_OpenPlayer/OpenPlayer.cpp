@@ -20,12 +20,6 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	VideoGrabber->SetDisplay_Embedded (false);
 	VideoGrabber->SetOnPlayerOpened (OnPlayerOpened);
 	VideoGrabber->Display_SetLocation (100, 100, 1280, 720);
-	// the LAV filters codecs are recommended for the file playback, download them from https://github.com/Nevcairiel/LAVFilters/releases
-	#ifdef _WIN64
-	VideoGrabber->SetExtraDLLPath(L"C:\\LAV_Folder\\LAVFilters-0.76-x64");
-	#else _WIN64
-	VideoGrabber->SetExtraDLLPath(L"C:\\LAV_Folder\\LAVFilters-0.76-x86");
-	#endif _WIN64
 	VideoGrabber->SetPlayerFileName(L"C:\\videos\\the_clip_to_open.mp4");
 	if (! VideoGrabber->OpenPlayer())
 		MessageBoxW (0, L"failed to open", NULL, 0);

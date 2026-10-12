@@ -452,15 +452,15 @@ object frmMainForm: TfrmMainForm
       object Label28: TLabel
         Left = 598
         Top = 0
-        Width = 542
-        Height = 16
+        Width = 503
+        Height = 15
         Caption = 
           'to select programmatically an item by name in a list, use the Fi' +
           'ndIndexInListByName function'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
       end
@@ -510,79 +510,79 @@ object frmMainForm: TfrmMainForm
         Caption = 'video source = video capture device'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
         object Label2: TLabel
           Left = 522
           Top = 7
-          Width = 68
-          Height = 16
+          Width = 62
+          Height = 15
           Caption = 'video input:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
         object Label19: TLabel
           Left = 522
           Top = 47
-          Width = 135
-          Height = 16
+          Width = 121
+          Height = 15
           Caption = 'analog video standard'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
         object Label81: TLabel
           Left = 246
           Top = 47
-          Width = 249
-          Height = 16
+          Width = 227
+          Height = 15
           Caption = 'video format (size and subtype combined)'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
         object Label104: TLabel
           Left = 49
           Top = 47
-          Width = 156
-          Height = 16
+          Width = 137
+          Height = 15
           Caption = 'video size / video subtype'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
         object Label4: TLabel
           Left = 217
           Top = 59
-          Width = 23
-          Height = 16
+          Width = 20
+          Height = 15
           Caption = 'OR'
         end
         object cboVideoInputs: TComboBox
           Left = 522
           Top = 23
           Width = 139
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 0
@@ -592,11 +592,11 @@ object frmMainForm: TfrmMainForm
           Left = 522
           Top = 63
           Width = 168
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 1
@@ -606,11 +606,11 @@ object frmMainForm: TfrmMainForm
           Left = 10
           Top = 20
           Width = 474
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 2
@@ -621,11 +621,11 @@ object frmMainForm: TfrmMainForm
           Left = 246
           Top = 63
           Width = 248
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 3
@@ -635,11 +635,11 @@ object frmMainForm: TfrmMainForm
           Left = 113
           Top = 63
           Width = 100
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 4
@@ -649,11 +649,11 @@ object frmMainForm: TfrmMainForm
           Left = 10
           Top = 63
           Width = 100
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 5
@@ -668,8 +668,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Auto refresh preview'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 2
@@ -683,8 +683,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'video source = file or URL'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 3
@@ -696,8 +696,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'open'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           Glyph.Data = {
             76010000424D7601000000000000760000002800000020000000100000000100
@@ -719,26 +719,26 @@ object frmMainForm: TfrmMainForm
         object Label100: TLabel
           Left = 441
           Top = 21
-          Width = 29
-          Height = 16
+          Width = 27
+          Height = 15
           Caption = 'user:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
         object Label101: TLabel
           Left = 411
           Top = 50
-          Width = 62
-          Height = 16
+          Width = 56
+          Height = 15
           Caption = 'password:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
@@ -746,11 +746,11 @@ object frmMainForm: TfrmMainForm
           Left = 89
           Top = 17
           Width = 336
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 0
@@ -763,11 +763,11 @@ object frmMainForm: TfrmMainForm
           Left = 473
           Top = 16
           Width = 60
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 1
@@ -777,11 +777,11 @@ object frmMainForm: TfrmMainForm
           Left = 473
           Top = 46
           Width = 60
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 2
@@ -796,8 +796,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'VIDEO SOURCE'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 4
@@ -805,11 +805,11 @@ object frmMainForm: TfrmMainForm
           Left = 10
           Top = 20
           Width = 188
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 0
@@ -831,8 +831,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'start'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clRed
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
@@ -846,8 +846,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'stop'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 1
@@ -861,8 +861,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'pause'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 2
@@ -876,8 +876,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'resume'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 3
@@ -926,8 +926,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'webcam snapshot button'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlue
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 7
@@ -941,34 +941,34 @@ object frmMainForm: TfrmMainForm
         Caption = 'video source = screen recording'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 8
         object Label35: TLabel
           Left = 118
           Top = 27
-          Width = 292
-          Height = 16
+          Width = 274
+          Height = 15
           Caption = 'use this window: (or an empty string for full screen)'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
         object Label90: TLabel
           Left = 10
           Top = 27
-          Width = 95
-          Height = 16
+          Width = 91
+          Height = 15
           Caption = 'monitor number:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
         end
@@ -976,11 +976,11 @@ object frmMainForm: TfrmMainForm
           Left = 118
           Top = 44
           Width = 267
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 0
@@ -994,8 +994,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'ok'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 1
@@ -1005,11 +1005,11 @@ object frmMainForm: TfrmMainForm
           Left = 10
           Top = 44
           Width = 40
-          Height = 24
+          Height = 23
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 2
@@ -1024,8 +1024,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'info?'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 3
@@ -1039,8 +1039,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'with cursor'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = []
           ParentFont = False
           TabOrder = 4
@@ -1064,13 +1064,13 @@ object frmMainForm: TfrmMainForm
       object lblChooseIPCamera: TLabel
         Left = 182
         Top = 4
-        Width = 181
-        Height = 16
+        Width = 164
+        Height = 15
         Caption = '(VideoSource = vs_IPCamera)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
       end
@@ -1097,13 +1097,13 @@ object frmMainForm: TfrmMainForm
       object Label98: TLabel
         Left = 19
         Top = 138
-        Width = 286
-        Height = 16
+        Width = 257
+        Height = 15
         Caption = '(other recording settings in the "Recording" tab)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsItalic]
         ParentFont = False
       end
@@ -1168,8 +1168,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Start preview'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
@@ -1193,8 +1193,8 @@ object frmMainForm: TfrmMainForm
         Checked = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         State = cbChecked
@@ -1209,8 +1209,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Stop'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 4
@@ -1224,8 +1224,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Start MP4 recording'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 5
@@ -1279,8 +1279,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'backtimed recording (pre-roll):'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 8
@@ -1311,8 +1311,8 @@ object frmMainForm: TfrmMainForm
           'in the "Audio Devices" list'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 11
@@ -1391,8 +1391,8 @@ object frmMainForm: TfrmMainForm
               Caption = '^'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 0
@@ -1407,8 +1407,8 @@ object frmMainForm: TfrmMainForm
               Caption = '<'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 1
@@ -1423,8 +1423,8 @@ object frmMainForm: TfrmMainForm
               Caption = '>'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 2
@@ -1439,8 +1439,8 @@ object frmMainForm: TfrmMainForm
               Caption = 'v'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 3
@@ -1455,8 +1455,8 @@ object frmMainForm: TfrmMainForm
               Caption = '<'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 4
@@ -1471,8 +1471,8 @@ object frmMainForm: TfrmMainForm
               Caption = '>'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 5
@@ -1616,8 +1616,8 @@ object frmMainForm: TfrmMainForm
               Caption = '<'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 1
@@ -1631,8 +1631,8 @@ object frmMainForm: TfrmMainForm
               Caption = '^'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 2
@@ -1646,8 +1646,8 @@ object frmMainForm: TfrmMainForm
               Caption = '>'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 3
@@ -1661,8 +1661,8 @@ object frmMainForm: TfrmMainForm
               Caption = 'v'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 4
@@ -1676,8 +1676,8 @@ object frmMainForm: TfrmMainForm
               Caption = '<'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 5
@@ -1691,8 +1691,8 @@ object frmMainForm: TfrmMainForm
               Caption = '>'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -15
-              Font.Name = 'MS Sans Serif'
+              Font.Height = -12
+              Font.Name = 'Microsoft Sans Serif'
               Font.Style = [fsBold]
               ParentFont = False
               TabOrder = 6
@@ -1708,8 +1708,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'STOP'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -14
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 1
@@ -1753,17 +1753,17 @@ object frmMainForm: TfrmMainForm
         Caption = 'Start PTZ control only (onvifurl://...)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 15
         OnClick = btnIPCamStartPTZClick
       end
       object btnDiscoverONVIFFromMulticast: TButton
-        Left = 369
+        Left = 405
         Top = -1
-        Width = 233
+        Width = 213
         Height = 21
         Caption = 'discover ONVIF cameras (multicast)'
         Font.Charset = DEFAULT_CHARSET
@@ -1801,9 +1801,9 @@ object frmMainForm: TfrmMainForm
         OnClick = lsbOnvifURLsDiscoveredClick
       end
       object btnDiscoverONVIFFromIPRange: TButton
-        Left = 608
+        Left = 624
         Top = -1
-        Width = 233
+        Width = 217
         Height = 21
         Caption = 'discover ONVIF cameras (IP range)'
         Font.Charset = DEFAULT_CHARSET
@@ -1913,8 +1913,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Configure VU-Meters...'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
@@ -1999,8 +1999,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'AUDIO DEVICE RENDERING'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 5
@@ -2083,26 +2083,26 @@ object frmMainForm: TfrmMainForm
       object Label6: TLabel
         Left = 916
         Top = 6
-        Width = 126
-        Height = 16
+        Width = 113
+        Height = 15
         Caption = 'video compressor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
       object Label16: TLabel
         Left = 918
         Top = 70
-        Width = 126
-        Height = 16
+        Width = 115
+        Height = 15
         Caption = 'audio compressor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
@@ -2160,8 +2160,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'start (controlled)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 2
@@ -2175,8 +2175,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'start (immediately)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 3
@@ -2190,8 +2190,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'audio recording'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 4
@@ -2205,8 +2205,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'RECORD IN NATIVE FORMAT'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 5
@@ -2303,8 +2303,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'recording can pause'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 10
@@ -2362,8 +2362,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Settings'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 16
@@ -2385,8 +2385,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Settings'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 18
@@ -2431,6 +2431,7 @@ object frmMainForm: TfrmMainForm
         Height = 21
         TabOrder = 22
         Text = 'guid'
+        OnChange = cboAutoFileNameChange
         Items.Strings = (
           'sequential'
           'date/time'
@@ -2445,234 +2446,6 @@ object frmMainForm: TfrmMainForm
         Height = 21
         TabOrder = 23
         OnChange = edtAVIAutoFilePrefixChange
-      end
-    end
-    object Encryption: TTabSheet
-      Caption = 'Encryption'
-      ImageIndex = 13
-      object Label30: TLabel
-        Left = 1
-        Top = 48
-        Width = 150
-        Height = 13
-        Caption = 'Encryption key (16 or 32 chars):'
-      end
-      object Label71: TLabel
-        Left = 0
-        Top = 75
-        Width = 151
-        Height = 13
-        Caption = 'Decryption key (16 or 32 chars):'
-      end
-      object edtEncryptionKey: TEdit
-        Left = 167
-        Top = 45
-        Width = 219
-        Height = 21
-        TabOrder = 0
-      end
-      object edtDecryptionKey: TEdit
-        Left = 167
-        Top = 72
-        Width = 219
-        Height = 21
-        TabOrder = 1
-      end
-      object Memo1: TMemo
-        Left = 615
-        Top = 3
-        Width = 692
-        Height = 222
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -10
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        Lines.Strings = (
-          
-            'THIS FEATURE REQUIRES THE DATASTEAD MULTIPURPOSE ENCODER TO BE I' +
-            'NSTALLED'
-          ''
-          
-            '- the key used for decryption must be the key that have been use' +
-            'd for encryption, so set both to the same value (the only case w' +
-            'here it is different '
-          
-            'is to decrypt a source with a key while encrypting it with anoth' +
-            'er key)'
-          
-            '- the key length must be exactly 16 characters (128 bits) or 32 ' +
-            'characters (256 bits)'
-          '- to disable the encryption or decryption, just set an empty key'
-          ''
-          'OPTION 1: REAL-TIME ENCRYPTION/DECRYPTION'
-          
-            'A) real-time encryption: set the encryption key, then go to the ' +
-            'source tab or IP camera tab and select the source to record, the' +
-            'n start the recording '
-          'and it will be encrypted "on the fly"'
-          
-            'B) real-time decryption: set the decryption key, then go to the ' +
-            'player tab and select the encrypted video clip to play, then cli' +
-            'ck "OpenPlayer"'
-          ''
-          'OPTION 2: PRE OR POST ENCRYPTION/DECRYPTION'
-          
-            'A) encryption of existing video files : set the encryption key, ' +
-            'set the unencrypted file as source, set the name of the output v' +
-            'ideo clip to be '
-          'encrypted, then click "Encrypt"'
-          
-            'B) decryption of existing video files : set the decryption key, ' +
-            'set the encrypted file as source, set the name of the output vid' +
-            'eo clip to be decrypted, '
-          'then click "Decrypt"')
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 2
-      end
-      object btnClearEncryption: TButton
-        Left = 439
-        Top = 47
-        Width = 41
-        Height = 17
-        Caption = 'clear'
-        TabOrder = 3
-        OnClick = btnClearEncryptionClick
-      end
-      object btnClearDecryption: TButton
-        Left = 439
-        Top = 70
-        Width = 41
-        Height = 17
-        Caption = 'clear'
-        TabOrder = 4
-        OnClick = btnClearDecryptionClick
-      end
-      object GroupBox4: TGroupBox
-        Left = 3
-        Top = 99
-        Width = 593
-        Height = 110
-        Caption = 'process video files (OPTION 2) :'
-        TabOrder = 5
-        object edtSourceClip: TLabel
-          Left = 16
-          Top = 32
-          Width = 3
-          Height = 13
-        end
-        object spdSourceVideoClip: TSpeedButton
-          Left = 6
-          Top = 20
-          Width = 152
-          Height = 26
-          Caption = 'source video clip (input) :'
-          Glyph.Data = {
-            76010000424D7601000000000000760000002800000020000000100000000100
-            0400000000000001000000000000000000001000000010000000000000000000
-            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
-            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
-            5555555555555555555555555555555555555555555555555555555555555555
-            555555555555555555555555555555555555555FFFFFFFFFF555550000000000
-            55555577777777775F55500B8B8B8B8B05555775F555555575F550F0B8B8B8B8
-            B05557F75F555555575F50BF0B8B8B8B8B0557F575FFFFFFFF7F50FBF0000000
-            000557F557777777777550BFBFBFBFB0555557F555555557F55550FBFBFBFBF0
-            555557F555555FF7555550BFBFBF00055555575F555577755555550BFBF05555
-            55555575FFF75555555555700007555555555557777555555555555555555555
-            5555555555555555555555555555555555555555555555555555}
-          NumGlyphs = 2
-          OnClick = spdSourceVideoClipClick
-        end
-        object Label83: TLabel
-          Left = 14
-          Top = 52
-          Width = 144
-          Height = 13
-          Caption = 'destination video clip (output) :'
-        end
-        object edtEncryptDecryptSourceVideoClip: TEdit
-          Left = 164
-          Top = 23
-          Width = 393
-          Height = 21
-          TabOrder = 0
-        end
-        object edtEncryptDecryptDestinationVideoClip: TEdit
-          Left = 164
-          Top = 50
-          Width = 397
-          Height = 21
-          TabOrder = 1
-        end
-        object btnEcryptVideoClip: TButton
-          Left = 317
-          Top = 77
-          Width = 90
-          Height = 24
-          Caption = 'ENCRYPT'
-          TabOrder = 2
-        end
-        object btnDecryptVideoClip: TButton
-          Left = 430
-          Top = 77
-          Width = 90
-          Height = 24
-          Caption = 'DECRYPT'
-          TabOrder = 3
-        end
-        object chkEncryptDecryptOverwriteDestination: TCheckBox
-          Left = 9
-          Top = 79
-          Width = 166
-          Height = 17
-          Caption = 'overwrite destination if exists'
-          TabOrder = 4
-        end
-      end
-      object btnSetEncryptionKey: TButton
-        Left = 392
-        Top = 47
-        Width = 41
-        Height = 17
-        Caption = 'SET'
-        TabOrder = 6
-        OnClick = btnSetEncryptionKeyClick
-      end
-      object btnSetDecryptionKey: TButton
-        Left = 392
-        Top = 70
-        Width = 41
-        Height = 17
-        Caption = 'SET'
-        TabOrder = 7
-        OnClick = btnSetDecryptionKeyClick
-      end
-      object GroupBox8: TGroupBox
-        Left = 167
-        Top = 2
-        Width = 361
-        Height = 36
-        Caption = 'Encryption method'
-        TabOrder = 8
-        object rdbFastEncryption: TRadioButton
-          Left = 121
-          Top = 10
-          Width = 113
-          Height = 24
-          Caption = 'Fast encryption'
-          TabOrder = 0
-          OnClick = rdbFastEncryptionClick
-        end
-        object rdbAESencryption: TRadioButton
-          Left = 240
-          Top = 10
-          Width = 105
-          Height = 25
-          Caption = 'AES encryption'
-          TabOrder = 1
-          OnClick = rdbAESencryptionClick
-        end
       end
     end
     object tbsMPE: TTabSheet
@@ -2693,29 +2466,31 @@ object frmMainForm: TfrmMainForm
         Color = clBtnFace
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         Lines.Strings = (
-          'These settings apply to the Datastead Multipurpose Encoder '
-          'audio and video compressors: n the "Recording" tab, select '
-          '"Datastead '
-          'Multipurpose Encoder" as video and/or audio '
-          'compressor, and set CompressionMode = '
-          'cm_CompressOnTheFly.'
+          
+            'If the Datastead Multipurpose Encoder is installed, these settin' +
+            'gs '
+          
+            'apply to it: in the "Recording" tab, select "Datastead Multipurp' +
+            'ose '
+          'Encoder" as video and/or audio compressor, and set '
+          'CompressionMode = cm_CompressOnTheFly.'
           ''
-          'The values set here are saved in the registry and '
-          'restored automatically when the app restarts.'#11
+          'The values set here are saved in the registry and restored '
+          'automatically when the app restarts.'
           ''
-          'Alternatively the encoder configuration can be set '
-          'programmatically : if at least one value is set '
-          'programmatically, the '
-          'settings from the registry are ignored.'#11
-          'E.g.:'#11
-          'VideoGrabber.Encoder_SetStr (0, '
-          'Enc_Video_Codec, '#39'h264'#39');'
-          'VideoGrabber.Encoder_SetInt (0, '
-          'Enc_Video_BitRate_kb, 9000);')
+          
+            'Alternatively the encoder configuration can be set programmatica' +
+            'lly '
+          
+            ': if at least one value is set programmatically, the settings fr' +
+            'om the '
+          'registry are ignored. E.g.:'
+          'VideoGrabber.Encoder_SetStr (0, Enc_Video_Codec, '#39'h264'#39');'
+          'VideoGrabber.Encoder_SetInt (0, Enc_Video_BitRate_kb, 9000);')
         ParentFont = False
         ReadOnly = True
         ScrollBars = ssVertical
@@ -2867,6 +2642,7 @@ object frmMainForm: TfrmMainForm
           Width = 90
           Height = 21
           TabOrder = 6
+          OnChange = cmbGPUEncoderChange
           Items.Strings = (
             'None'
             'Auto'
@@ -2945,13 +2721,13 @@ object frmMainForm: TfrmMainForm
       object Label120: TLabel
         Left = 943
         Top = 5
-        Width = 271
-        Height = 16
+        Width = 252
+        Height = 15
         Caption = 'NDI (requires the Datastead NDI filters)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
@@ -2977,8 +2753,8 @@ object frmMainForm: TfrmMainForm
         Checked = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         State = cbChecked
@@ -2992,8 +2768,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'audio enabled'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
@@ -3202,21 +2978,21 @@ object frmMainForm: TfrmMainForm
       object Label40: TLabel
         Left = 0
         Top = 0
-        Width = 115
-        Height = 16
+        Width = 106
+        Height = 15
         Caption = 'Player functions.'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
       object Label41: TLabel
         Left = 374
         Top = 2
-        Width = 751
-        Height = 16
+        Width = 684
+        Height = 15
         Caption = 
           'to use only the player and disable the live video functions, set' +
           ' VideoDevice = -1 and AudioDevice = -1 from the Object Inspector' +
@@ -3224,8 +3000,8 @@ object frmMainForm: TfrmMainForm
         Color = clBtnFace
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentColor = False
         ParentFont = False
@@ -3264,13 +3040,13 @@ object frmMainForm: TfrmMainForm
       object Label89: TLabel
         Left = 207
         Top = 183
-        Width = 373
-        Height = 16
+        Width = 352
+        Height = 15
         Caption = '(times are expressed in 100ns units, e.g. 3 seconds = 30000000)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
       end
@@ -3328,8 +3104,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'render player audio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 5
@@ -3354,8 +3130,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Open'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 7
@@ -3369,8 +3145,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Close'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 8
@@ -3411,8 +3187,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'use clock'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 12
@@ -3616,8 +3392,8 @@ object frmMainForm: TfrmMainForm
         Caption = '360'#176' video decoding with mouse control'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -14
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 24
@@ -3629,13 +3405,13 @@ object frmMainForm: TfrmMainForm
       object Label42: TLabel
         Left = 0
         Top = 0
-        Width = 108
-        Height = 16
+        Width = 99
+        Height = 15
         Caption = 'Frame grabber.'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
@@ -3688,8 +3464,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'Frame grabber'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clNavy
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         Items.Strings = (
           'both streams'
@@ -3976,26 +3752,26 @@ object frmMainForm: TfrmMainForm
       object Label53: TLabel
         Left = 0
         Top = 0
-        Width = 115
-        Height = 16
+        Width = 107
+        Height = 15
         Caption = 'Motion detection'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
       object lblMotionDetectorRequiresFrameGrabber: TLabel
         Left = 138
         Top = 0
-        Width = 218
-        Height = 16
+        Width = 200
+        Height = 15
         Caption = 'The frame grabber must be enabled.'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
       end
@@ -4391,13 +4167,13 @@ object frmMainForm: TfrmMainForm
       object lblFrameOverlayRequiresFrameGrabber: TLabel
         Left = 946
         Top = 10
-        Width = 188
-        Height = 16
+        Width = 173
+        Height = 15
         Caption = 'frame grabber must be enabled'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
       end
@@ -4409,8 +4185,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'PIP from other TVideoGrabber (e.g. clip)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         Glyph.Data = {
           76010000424D7601000000000000760000002800000020000000100000000100
@@ -4536,13 +4312,13 @@ object frmMainForm: TfrmMainForm
         object Label37: TLabel
           Left = 98
           Top = 20
-          Width = 100
-          Height = 16
+          Width = 90
+          Height = 15
           Caption = 'target display:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
         end
@@ -4583,8 +4359,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'enabled'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
@@ -4701,8 +4477,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'high resolution font'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 12
@@ -4725,8 +4501,8 @@ object frmMainForm: TfrmMainForm
           Caption = '?'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 14
@@ -4793,8 +4569,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'adjust overlay aspect ratio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 2
@@ -4883,13 +4659,13 @@ object frmMainForm: TfrmMainForm
         object Label97: TLabel
           Left = 246
           Top = 162
-          Width = 100
-          Height = 16
+          Width = 90
+          Height = 15
           Caption = 'target display:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
         end
@@ -4944,8 +4720,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'enabled'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
@@ -4977,8 +4753,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'transparent'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 4
@@ -5059,8 +4835,8 @@ object frmMainForm: TfrmMainForm
           Caption = 'chroma key'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 13
@@ -5092,8 +4868,8 @@ object frmMainForm: TfrmMainForm
           Caption = '?'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'MS Sans Serif'
+          Font.Height = -12
+          Font.Name = 'Microsoft Sans Serif'
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 17
@@ -6095,8 +5871,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'VIDEO RENDERER'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         Items.Strings = (
           'Auto select'
@@ -6165,8 +5941,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'adjust pixel aspect ratio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = []
         ParentFont = False
         TabOrder = 6
@@ -6189,8 +5965,8 @@ object frmMainForm: TfrmMainForm
         Caption = 'no latency'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -12
+        Font.Name = 'Microsoft Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 8

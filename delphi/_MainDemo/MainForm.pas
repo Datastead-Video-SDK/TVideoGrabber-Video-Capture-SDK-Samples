@@ -497,28 +497,6 @@ type
     Label70: TLabel;
     edtDiscoveryTimeoutSeconds: TEdit;
     btnCancelDiscovery: TButton;
-    Encryption: TTabSheet;
-    Label30: TLabel;
-    Label71: TLabel;
-    edtDecryptionKey: TEdit;
-    Memo1: TMemo;
-    btnClearEncryption: TButton;
-    btnClearDecryption: TButton;
-    GroupBox4: TGroupBox;
-    edtSourceClip: TLabel;
-    btnEcryptVideoClip: TButton;
-    btnDecryptVideoClip: TButton;
-    spdSourceVideoClip: TSpeedButton;
-    Label83: TLabel;
-    btnSetEncryptionKey: TButton;
-    btnSetDecryptionKey: TButton;
-    edtEncryptionKey: TEdit;
-    edtEncryptDecryptSourceVideoClip: TEdit;
-    edtEncryptDecryptDestinationVideoClip: TEdit;
-    chkEncryptDecryptOverwriteDestination: TCheckBox;
-    GroupBox8: TGroupBox;
-    rdbFastEncryption: TRadioButton;
-    rdbAESencryption: TRadioButton;
     Memo2: TMemo;
     video: TGroupBox;
     Label128: TLabel;
@@ -958,13 +936,6 @@ type
     procedure VideoGrabberONVIFDiscoveryCompleted(Sender: TObject;
       DiscoveryCallbackStatus: TDiscoveryCallbackStatus; CameraCount: LongInt);
     procedure chkUseExternalAudioforRTSPClick(Sender: TObject);
-    procedure btnSetEncryptionKeyClick(Sender: TObject);
-    procedure btnSetDecryptionKeyClick(Sender: TObject);
-    procedure btnClearEncryptionClick(Sender: TObject);
-    procedure btnClearDecryptionClick(Sender: TObject);
-    procedure spdSourceVideoClipClick(Sender: TObject);
-    procedure rdbFastEncryptionClick(Sender: TObject);
-    procedure rdbAESencryptionClick(Sender: TObject);
     procedure chk1stVideoWindowActiveClick(Sender: TObject);
     procedure chk2ndVideoWindowActiveClick(Sender: TObject);
     procedure chk1stVisibleClick(Sender: TObject);
@@ -1006,8 +977,6 @@ type
 
       FImageOverlayIndex: LongInt;
       FTextOverlayIndex: LongInt;
-
-      FEncryptionMethod: TEncryptionMethod;
 
       FDisplaySelected: LongInt;
 
@@ -1108,9 +1077,6 @@ begin
 
    FImageOverlayIndex := 0;
    FTextOverlayIndex := 0;
-
-   FEncryptionMethod := em_Fast_Encryption;
-   rdbFastEncryption.Checked := true;
 
    FMultipurposeUDPStreamingID := -1;
 
@@ -1450,6 +1416,10 @@ end;
 
 procedure TfrmMainForm.btnCameraControlDialogClick(Sender: TObject);
 begin
+   if not assigned(frmCameraControl) then
+   begin
+      frmCameraControl := TfrmCameraControl.Create(Application);
+   end;
    ShowFormAboveVideo(frmCameraControl);
 end;
 
@@ -1460,6 +1430,10 @@ end;
 
 procedure TfrmMainForm.btnVideoQualityDialogClick(Sender: TObject);
 begin
+   if not assigned(frmVideoQuality) then
+   begin
+      frmVideoQuality := TfrmVideoQuality.Create(Application);
+   end;
    ShowFormAboveVideo(frmVideoQuality);
 end;
 
@@ -4129,16 +4103,6 @@ begin
    VideoGrabber.VideoRenderer := TVideoRenderer(rdgVideoRenderer.ItemIndex);
 end;
 
-procedure TfrmMainForm.rdbAESencryptionClick(Sender: TObject);
-begin
-   FEncryptionMethod := em_AES_Encryption;
-end;
-
-procedure TfrmMainForm.rdbFastEncryptionClick(Sender: TObject);
-begin
-   FEncryptionMethod := em_Fast_Encryption;
-end;
-
 /// /////////////////////////////////////////////////////////////////////////////
 // MOTION DETECTOR TAB
 /// /////////////////////////////////////////////////////////////////////////////
@@ -4840,14 +4804,14 @@ end;
 procedure TfrmMainForm.btnPTZTiltUpMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-   VideoGrabber.ONVIFPTZStartMove('Tilt', False, FPTZSpeedRatio,
+   VideoGrabber.ONVIFPTZStartMove('Tilt', true, FPTZSpeedRatio,
      FPTZMoveDurationMs);
 end;
 
 procedure TfrmMainForm.btnPTZTiltDownMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-   VideoGrabber.ONVIFPTZStartMove('Tilt', true, FPTZSpeedRatio,
+   VideoGrabber.ONVIFPTZStartMove('Tilt', false, FPTZSpeedRatio,
      FPTZMoveDurationMs);
 end;
 
@@ -5132,41 +5096,6 @@ procedure TfrmMainForm.cmbGPUEncoderChange(Sender: TObject);
 begin
    VideoGrabber.Encoder_SetInt(ENCODER_RECORDING_ID, Enc_Video_GPU_Encoder,
      cmbGPUEncoder.ItemIndex);
-end;
-
-procedure TfrmMainForm.btnClearDecryptionClick(Sender: TObject);
-begin
-   edtDecryptionKey.Text := '';
-   VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text);
-end;
-
-procedure TfrmMainForm.btnClearEncryptionClick(Sender: TObject);
-begin
-   edtEncryptionKey.Text := '';
-   VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text);
-end;
-
-procedure TfrmMainForm.btnSetDecryptionKeyClick(Sender: TObject);
-begin
-   VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text);
-end;
-
-procedure TfrmMainForm.btnSetEncryptionKeyClick(Sender: TObject);
-begin
-   VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text);
-end;
-
-procedure TfrmMainForm.spdSourceVideoClipClick(Sender: TObject);
-var
-   OpenDlg: TOpenDialog;
-begin
-   OpenDlg := TOpenDialog.Create(nil);
-   OpenDlg.Filter := OPEN_MEDIA_FILES_EXTENDED;
-   if OpenDlg.Execute then
-   begin
-      edtEncryptDecryptSourceVideoClip.Text := OpenDlg.FileName;
-   end;
-   OpenDlg.Free;
 end;
 
 procedure TfrmMainForm.btnDeviceDialogClick(Sender: TObject);

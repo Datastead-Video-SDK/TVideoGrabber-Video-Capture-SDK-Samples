@@ -1,7 +1,6 @@
 object frmCameraControl: TfrmCameraControl
   Left = 413
   Top = 334
-  AutoSize = True
   Caption = 'Camera Control settings'
   ClientHeight = 288
   ClientWidth = 425

@@ -2,7 +2,7 @@
 
 Sample projects for [TVideoGrabber](https://www.datastead.com/video-sdk/), the Datastead video capture SDK for Windows 10/11: capture, recording, streaming and playback component.
 
-The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP, ONVIF), screen capture, video mixing, frame grabbing, re-encoding, RTSP server and playback, in **Delphi**, **C++Builder**, **Visual C++ (MSVC)**, **MinGW**, **MFC**, **Qt**, **C#** and **VB.NET** (.NET Framework and .NET Core/.NET 5+, WinForms, WPF, console), **Java** (Swing, JavaFX, headless) and **VB6** (ActiveX).
+The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP, ONVIF), screen capture, video mixing, frame grabbing, re-encoding, RTSP server and playback, in **Delphi** (VCL and FireMonkey), **C++Builder**, **Visual C++ (MSVC)**, **MinGW**, **MFC**, **Qt**, **C#** and **VB.NET** (.NET Framework and .NET Core/.NET 5+, WinForms, WPF, console), **Java** (Swing, JavaFX, headless) and **VB6** (ActiveX).
 
 - Product page: https://www.datastead.com/video-sdk/
 - Documentation: https://www.datastead.com/docs/vidgrab/
@@ -11,7 +11,7 @@ The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP,
 - FAQ: https://www.datastead.com/faq/
 - NuGet package (.NET): https://www.nuget.org/packages/TVideoGrabber-SDK
 
-Current SDK version: **16.6.2.4** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
+Current SDK version: **17.0.0.1** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ The projects are the samples shipped in the SDK (`_DEMOS` folders of the SDK dis
 
 | Folder | Language / toolchain |
 |---|---|
-| [`delphi/`](delphi) | Delphi (VCL). |
+| [`delphi/`](delphi) | Delphi (VCL and FireMonkey), Delphi XE and later; older Delphi versions (up to XE) in [`delphi/legacy/`](delphi/legacy). |
 | [`cppbuilder/`](cppbuilder) | C++Builder (VCL). Same component, properties and methods as Delphi: the Delphi projects are also a reference for C++Builder. |
 | [`cpp/`](cpp) | Visual C++ (MSVC), MFC, MinGW, using the `TVideoGrabber.h` / `TVideoGrabber.cpp` C++ wrapper (no VCL, no .NET, no COM registration). |
 | [`qt/`](qt) | Qt, same C++ wrapper. |
@@ -40,9 +40,12 @@ The projects are the samples shipped in the SDK (`_DEMOS` folders of the SDK dis
 
 ## Delphi samples (`delphi/`)
 
+Projects for Delphi XE and later. The same VCL projects for older Delphi versions (up to XE), without the FireMonkey demo, are in [`delphi/legacy/`](delphi/legacy).
+
 | Folder | What it shows |
 |---|---|
 | `_MainDemo` | Full-featured demo: video sources, preview, recording, IP cameras, camera control, video quality, special controls. Start here. |
+| `_MainDemoFMX` | FireMonkey (FMX) version of the main demo, Windows only (`VidgrabFMX` unit). |
 | `CreatedAtRuntime/Webcam` | Creating the component at runtime (no DFM) to preview and record a webcam. |
 | `CreatedAtRuntime/IP_Camera_or_URL` | Creating the component at runtime to open an IP camera or URL source. |
 | `FrameCapture` | Capturing frames from a capture device: single frames and burst mode (`CaptureFrameTo`, `BurstMode`, `BurstInterval`, `BurstCount`). |
@@ -52,7 +55,6 @@ The projects are the samples shipped in the SDK (`_DEMOS` folders of the SDK dis
 | `PlayerControlByFrame` | Frame-accurate player control: `PlayerFramePosition`, pause/step, `UseClock`. |
 | `StreamInterface` | Opening a source from a stream interface (`StreamInterface_Format`, `StreamInterface_FrameRate`, `StreamInterface_IsRealTime`). |
 | `Surveillance4Webcams` | Four webcams previewed simultaneously, one component per camera. |
-| `SynchronizedPlayers` | Several players started and controlled in sync (`SynchronizationRole`, `StartSynchronized`). |
 | `VideoFromBMPorJPEGfiles` | Building a video from a folder of BMP/JPEG files. |
 | `VideoFromTBitmaps` | Building a video from TBitmap objects generated at runtime. |
 | `Multipurpose_Merge_Clips_SideBySide` | Re-encoding two clips side by side with the Multipurpose Encoder (`StartReencoding`, `Reencoding_NewVideoClip`). |

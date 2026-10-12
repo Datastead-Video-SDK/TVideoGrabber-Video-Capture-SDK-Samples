@@ -1,0 +1,556 @@
+object frmVideoQuality: TfrmVideoQuality
+  Left = 0
+  Top = 0
+  Caption = 'Video quality settings'
+  ClientHeight = 309
+  ClientWidth = 599
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    AutoSize = True
+    Position.X = 8.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'brightness'
+  end
+  object Label2: TLabel
+    AutoSize = True
+    Position.X = 72.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 38.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'contrast'
+  end
+  object Label3: TLabel
+    AutoSize = True
+    Position.X = 144.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 18.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'hue'
+  end
+  object Label4: TLabel
+    AutoSize = True
+    Position.X = 184.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 46.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'saturation'
+  end
+  object Label5: TLabel
+    AutoSize = True
+    Position.X = 240.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'sharpness'
+  end
+  object Label6: TLabel
+    AutoSize = True
+    Position.X = 307.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 34.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'gamma'
+  end
+  object Label7: TLabel
+    AutoSize = True
+    Position.X = 357.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 45.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'white bal.'
+  end
+  object Label8: TLabel
+    AutoSize = True
+    Position.X = 494.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 20.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'gain'
+  end
+  object Label9: TLabel
+    AutoSize = True
+    Position.X = 408.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 75.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'backlight comp.'
+  end
+  object Label10: TLabel
+    AutoSize = True
+    Position.X = 529.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 58.000000000000000000
+    Size.Height = 13.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.WordWrap = False
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'color enable'
+  end
+  object btnClose: TButton
+    TabOrder = 0
+    Position.X = 264.000000000000000000
+    Position.Y = 279.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 23.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'Close'
+    OnClick = btnCloseClick
+  end
+  object tbrHue: TTrackBar
+    TabOrder = 1
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 132.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object tbrContrast: TTrackBar
+    TabOrder = 2
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 74.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object tbrSaturation: TTrackBar
+    TabOrder = 3
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 191.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object tbrBrightness: TTrackBar
+    TabOrder = 4
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object tbrSharpness: TTrackBar
+    TabOrder = 5
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 249.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object tbrGamma: TTrackBar
+    TabOrder = 6
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 308.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object tbrWhiteBalance: TTrackBar
+    TabOrder = 7
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 366.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object chkBrightness: TCheckBox
+    TabOrder = 8
+    Position.X = 16.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object chkContrast: TCheckBox
+    TabOrder = 9
+    Position.X = 74.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object chkHue: TCheckBox
+    TabOrder = 10
+    Position.X = 133.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object chkSaturation: TCheckBox
+    TabOrder = 11
+    Position.X = 192.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object chkSharpness: TCheckBox
+    TabOrder = 12
+    Position.X = 251.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object chkGamma: TCheckBox
+    TabOrder = 13
+    Position.X = 310.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object chkWhiteBalance: TCheckBox
+    TabOrder = 14
+    Position.X = 369.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object btnBrightness: TButton
+    TabOrder = 15
+    Position.X = 16.000000000000000000
+    Position.Y = 223.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object btnContrast: TButton
+    TabOrder = 16
+    Position.X = 74.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object btnHue: TButton
+    TabOrder = 17
+    Position.X = 133.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object btnSaturation: TButton
+    TabOrder = 18
+    Position.X = 192.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object btnSharpness: TButton
+    TabOrder = 19
+    Position.X = 251.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object btnGamma: TButton
+    TabOrder = 20
+    Position.X = 310.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object btnWhiteBalance: TButton
+    TabOrder = 21
+    Position.X = 369.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object tbrGain: TTrackBar
+    TabOrder = 22
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 483.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object btnGain: TButton
+    TabOrder = 23
+    Position.X = 487.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object chkGain: TCheckBox
+    TabOrder = 24
+    Position.X = 487.000000000000000000
+    Position.Y = 247.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object tbrBacklight: TTrackBar
+    TabOrder = 25
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 425.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object btnBacklight: TButton
+    TabOrder = 26
+    Position.X = 428.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object chkBacklight: TCheckBox
+    TabOrder = 27
+    Position.X = 428.000000000000000000
+    Position.Y = 247.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+  object tbrColorEnable: TTrackBar
+    TabOrder = 28
+    CanParentFocus = True
+    Orientation = Vertical
+    Frequency = 1.000000000000000000
+    Min = 0.000000000000000000
+    Max = 10.000000000000000000
+    Position.X = 542.000000000000000000
+    Position.Y = 35.000000000000000000
+    Size.Width = 40.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = OnSetValue
+  end
+  object btnColorEnable: TButton
+    TabOrder = 29
+    Position.X = 546.000000000000000000
+    Position.Y = 223.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'default'
+    OnClick = OnSetDefault
+  end
+  object chkColorEnable: TCheckBox
+    TabOrder = 30
+    Position.X = 546.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Microsoft Sans Serif'
+    TextSettings.Font.Size = 11.000000000000000000
+    StyledSettings = [Style, FontColor, Other]
+    Text = 'auto'
+    OnChange = OnSetValue
+  end
+end

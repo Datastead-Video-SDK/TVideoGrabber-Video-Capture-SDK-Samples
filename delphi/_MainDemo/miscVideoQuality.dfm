@@ -1,18 +1,19 @@
 object frmVideoQuality: TfrmVideoQuality
   Left = 413
   Top = 334
-  AutoSize = True
+  Width = 615
+  Height = 348
   Caption = 'Video quality settings'
-  ClientHeight = 336
-  ClientWidth = 618
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  OldCreateOrder = False
   OnCreate = FormCreate
   OnShow = FormShow
+  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 8
@@ -99,9 +100,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 1
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrContrast: TTrackBar
@@ -110,9 +116,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 2
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrSaturation: TTrackBar
@@ -121,9 +132,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 3
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrBrightness: TTrackBar
@@ -132,9 +148,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 4
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrSharpness: TTrackBar
@@ -143,9 +164,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 5
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrGamma: TTrackBar
@@ -154,9 +180,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 6
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object tbrWhiteBalance: TTrackBar
@@ -165,9 +196,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 7
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object chkBrightness: TCheckBox
@@ -302,9 +338,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 22
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object btnGain: TButton
@@ -331,9 +372,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 25
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object btnBacklight: TButton
@@ -360,9 +406,14 @@ object frmVideoQuality: TfrmVideoQuality
     Width = 40
     Height = 185
     Orientation = trVertical
+    Frequency = 1
+    Position = 0
+    SelEnd = 0
+    SelStart = 0
     TabOrder = 28
     ThumbLength = 18
     TickMarks = tmBoth
+    TickStyle = tsAuto
     OnChange = OnSetValue
   end
   object btnColorEnable: TButton
