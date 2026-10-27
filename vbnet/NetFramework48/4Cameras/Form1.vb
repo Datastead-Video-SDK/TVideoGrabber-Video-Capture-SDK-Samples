@@ -18,7 +18,7 @@ Public Class Form1
                 VideoGrabbers(i).VideoDevice = VideoGrabbers(i).VideoDeviceIndex("c922 Pro Stream Webcam")
             Else
                 VideoGrabbers(i).VideoSource = TVideoSource.vs_IPCamera
-                VideoGrabbers(i).IPCameraURL = "rtsp://root:admin@192.168.1.25/axis-media/media.amp?videocodec=h264"
+                VideoGrabbers(i).IPCameraURL = "rtsp://user:password@192.168.1.25/axis-media/media.amp?videocodec=h264"
             End If
 
             VideoGrabbers(i).SetTextOverlay_Left(0, 10)

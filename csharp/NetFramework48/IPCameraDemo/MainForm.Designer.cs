@@ -365,7 +365,6 @@
             this.videoGrabber1.SpeakerBalance = 0;
             this.videoGrabber1.SpeakerControl = false;
             this.videoGrabber1.SpeakerVolume = 65535;
-            this.videoGrabber1.StoragePath = "H:\\TVideoGrabber\\Shareware\\CSharp_VB.NET\\DEMOS\\C#\\IPCameraDemo";
             this.videoGrabber1.StoreDeviceSettingsInRegistry = true;
             this.videoGrabber1.SyncCommands = true;
             this.videoGrabber1.SynchronizationRole = VidGrab.TSynchronizationRole.sr_Master;
@@ -421,7 +420,6 @@
             this.videoGrabber1.VideoFormat = -1;
             this.videoGrabber1.VideoFromImages_BitmapsSortedBy = VidGrab.TFileSort.fs_TimeAsc;
             this.videoGrabber1.VideoFromImages_RepeatIndefinitely = false;
-            this.videoGrabber1.VideoFromImages_SourceDirectory = "H:\\TVideoGrabber\\Shareware\\CSharp_VB.NET\\DEMOS\\C#\\IPCameraDemo";
             this.videoGrabber1.VideoFromImages_TemporaryFile = "SetOfBitmaps01.dat";
             this.videoGrabber1.VideoInput = -1;
             this.videoGrabber1.VideoProcessing_Brightness = 0;
@@ -504,7 +502,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(110, 22);
             this.txtPassword.TabIndex = 9;
-            this.txtPassword.Text = "admin";
+            this.txtPassword.Text = "password";
             // 
             // label3
             // 

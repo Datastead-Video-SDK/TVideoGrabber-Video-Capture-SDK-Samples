@@ -542,9 +542,9 @@ void __fastcall TfrmMainForm::btnStartMP3RecordingClick(TObject *Sender)
    VideoGrabber->RecordingMethod = rm_AVI;
    VideoGrabber->CompressionMode = cm_CompressOnTheFly;
    VideoGrabber->CompressionType = ct_Audio;
-   VideoGrabber->AudioCompressor = VideoGrabber->FindIndexInListByName (VideoGrabber->AudioCompressors, "LAME Audio Encoder", false, true);
+   VideoGrabber->AudioCompressor = VideoGrabber->FindIndexInListByName (VideoGrabber->AudioCompressors, "MP3 (Microsoft)", false, true);
    if (VideoGrabber->AudioCompressor == -1) {
-      ShowMessage ("The LAME 3.99.5 DirectShow Filter is required, download it from https://www.rarewares.org/mp3-lame-dshow-acm.php and register lame.ax with regsvr32.exe");
+      ShowMessage ("MP3 (Microsoft) audio compressor not found, please contact support@datastead.com");
    }
    else {
       VideoGrabber->StartAudioRecording();

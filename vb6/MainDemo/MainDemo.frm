@@ -304,7 +304,6 @@ Begin VB.Form MainForm
       ScreenRecordingWithCursor=   -1  'True
       ShapeOverlayEnabled=   0   'False
       SpeakerControl  =   0   'False
-      StoragePath     =   "C:\Users\Michel_2\AppData\Local\Temp\"
       StoreDeviceSettingsInRegistry=   -1  'True
       SynchronizationRole=   0
       Synchronized    =   0   'False
@@ -330,7 +329,7 @@ Begin VB.Form MainForm
       TextOverlay_GradientMode=   0
       TextOverlay_GradientColor=   8388608
       TextOverlay_VideoAlignment=   0
-      TextOverlay_String=   "Example of static text (TextOverlay_Selector=0). Set TextOverlay_Selector=1 to see a demo with variables."
+      TextOverlay_String=   "TVideoGrabber text overlay (variables: see SetTextOverlay_String in the help)"
       TextOverlay_TargetDisplay=   -1
       TextOverlay_Transparent=   -1  'True
       TextOverlay_Font=   -1878389988
@@ -339,7 +338,6 @@ Begin VB.Form MainForm
       TVUseFrequencyOverrides=   0   'False
       TunerFrequency  =   -1
       UseClock        =   -1  'True
-      Version         =   "v17.0.0.1 (build 4318.220211) - Copyright (c)2022 Datastead"
       v360_Enabled    =   0   'False
       v360_AspectRatio=   -1
       v360_MouseActionPercent=   10
@@ -357,7 +355,6 @@ Begin VB.Form MainForm
       VideoFormat     =   0
       VideoFromImages_BitmapsSortedBy=   0
       VideoFromImages_RepeatIndefinitely=   0   'False
-      VideoFromImages_SourceDirectory=   "C:\Users\Michel_2\AppData\Local\Temp\"
       VideoFromImages_TemporaryFile=   "SetOfBitmaps01.dat"
       VideoInput      =   0
       VideoProcessing_Brightness=   0

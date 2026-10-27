@@ -118,36 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="VideoGrabber1.TextOverlay_String" xml:space="preserve">
-    <value>Note: the date/time formats 
-can be easily modified.
-
-system date/time: %sys_time[dd/mm/yy hh:nn:ss]%
-frame number: %frame_count%
-time (full): %time_full%
-time (sec): %time_sec%
-time (ns): %time_100ns%
-ntp time (ns): %ntptime_100ns%</value>
+    <value>TVideoGrabber text overlay
+(variables: see SetTextOverlay_String in the help)</value>
   </data>
   <data name="VideoGrabber2.TextOverlay_String" xml:space="preserve">
-    <value>Note: the date/time formats 
-can be easily modified.
-
-system date/time: %sys_time[dd/mm/yy hh:nn:ss]%
-frame number: %frame_count%
-time (full): %time_full%
-time (sec): %time_sec%
-time (ns): %time_100ns%
-ntp time (ns): %ntptime_100ns%</value>
+    <value>TVideoGrabber text overlay
+(variables: see SetTextOverlay_String in the help)</value>
   </data>
   <data name="VideoGrabberMixer.TextOverlay_String" xml:space="preserve">
-    <value>Note: the date/time formats 
-can be easily modified.
-
-system date/time: %sys_time[dd/mm/yy hh:nn:ss]%
-frame number: %frame_count%
-time (full): %time_full%
-time (sec): %time_sec%
-time (ns): %time_100ns%
-ntp time (ns): %ntptime_100ns%</value>
+    <value>TVideoGrabber text overlay
+(variables: see SetTextOverlay_String in the help)</value>
   </data>
 </root>

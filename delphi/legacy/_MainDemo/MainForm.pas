@@ -4,7 +4,7 @@ interface
 
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-   ExtCtrls, ComCtrls, StdCtrls, Buttons, Menus, VidGrab, Jpeg, ShellAPI,
+   ExtCtrls, ComCtrls, StdCtrls, Buttons, Menus, VidGrab, ShellAPI,
    Mask;
 
 const
@@ -382,6 +382,7 @@ type
       chkTextOverlayAlphablend: TCheckBox;
       Label106: TLabel;
       tbrTextOverlayAlphablendValue: TTrackBar;
+      chkTextOverlayProportional: TCheckBox;
       btnIPCameraStop: TButton;
       btnIPCameraStarttMP4Recording: TButton;
       Label98: TLabel;
@@ -845,6 +846,7 @@ type
       procedure btnBargraphOverlayClick(Sender: TObject);
       procedure chkTextOverlayAlphablendClick(Sender: TObject);
       procedure tbrTextOverlayAlphablendValueChange(Sender: TObject);
+      procedure chkTextOverlayProportionalClick(Sender: TObject);
       procedure btnIPCameraStarttMP4RecordingClick(Sender: TObject);
       procedure btnIPCameraStopClick(Sender: TObject);
       procedure edtIPCameraURLChange(Sender: TObject);
@@ -1022,6 +1024,7 @@ type
 
       procedure ChangeVideoSource (VideoSource: TVideoSource);
       procedure ConfigureVUMeters (VUMeter: TVUMeter);
+      procedure WarnFrameBitmapOptionInNV12 (OptionEnabled: Boolean);
    end;
 
 var
@@ -1624,11 +1627,11 @@ begin
    VideoGrabber.CompressionType := ct_Audio;
    VideoGrabber.RecordingMethod := rm_AVI;
    VideoGrabber.AudioCompressor := VideoGrabber.FindIndexInListByName
-     (VideoGrabber.AudioCompressors, 'LAME Audio Encoder', False, true);
+     (VideoGrabber.AudioCompressors, 'MP3 (Microsoft)', False, true);
    if VideoGrabber.AudioCompressor = -1 then
    begin
       ShowMessage
-        ('The LAME 3.99.5 DirectShow Filter is required, download it from https://www.rarewares.org/mp3-lame-dshow-acm.php and register lame.ax with regsvr32.exe');
+        ('MP3 (Microsoft) audio compressor not found, please contact support@datastead.com');
    end
    else
    begin
@@ -3364,6 +3367,14 @@ begin
      tbrTextOverlayAlphablendValue.Position);
 end;
 
+procedure TfrmMainForm.chkTextOverlayProportionalClick(Sender: TObject);
+/// font size, left, top, right and scrolling speed of the selected text overlay scaled to the video height
+/// (values given for 1080 lines), see SetTextOverlay_Proportional
+begin
+   VideoGrabber.SetTextOverlay_Proportional(FTextOverlayIndex,
+     chkTextOverlayProportional.Checked);
+end;
+
 procedure TfrmMainForm.mmoTextOverlayStringChange(Sender: TObject);
 begin
    VideoGrabber.SetTextOverlay_String(FTextOverlayIndex,
@@ -3426,21 +3437,40 @@ begin
      (FTextOverlayIndex);
    chkTextOverlayShadow.Checked := VideoGrabber.GetTextOverlay_Shadow
      (FTextOverlayIndex);
+   chkTextOverlayProportional.Checked := VideoGrabber.GetTextOverlay_Proportional
+     (FTextOverlayIndex);
+end;
+
+procedure TfrmMainForm.WarnFrameBitmapOptionInNV12 (OptionEnabled: Boolean);
+/// the options of the "FrameBitmap event drawing" group are drawn from the OnFrameBitmap event, which is not
+/// raised while the frames are kept in NV12 (4K / 8K video with FrameGrabberRGBFormat = fgf_Default, or fgf_NV12).
+begin
+   if OptionEnabled and (VideoGrabber.FrameGrabberCurrentRGBFormat = fgf_NV12) then
+   begin
+      ShowMessage('This option is drawn from the OnFrameBitmap event, which is not raised while the frames are kept in NV12 (4K / 8K video with the "default" frame grabber format, or "NV12" selected).'
+        + #13#10#13#10 + 'To use it, select "RGB32" in "frame grabber format" (frame grabber tab), then open the video again.');
+   end;
 end;
 
 procedure TfrmMainForm.chkChangePixelsClick(Sender: TObject);
 begin
    // chkChangePixels.Checked is tested in the TfrmMainForm.VideoGrabberFrameBitmap event's code
+   WarnFrameBitmapOptionInNV12(chkChangePixels.Checked);
 end;
 
 procedure TfrmMainForm.chkDrawGridOverFramesClick(Sender: TObject);
 begin
    // chkDrawTarget.Checked is tested in the TfrmMainForm.VideoGrabberFrameBitmap event's code
+   if Sender = chkDrawTarget then /// handler shared by chkDrawGridOverFrames and chkDrawTarget
+      WarnFrameBitmapOptionInNV12(chkDrawTarget.Checked)
+   else
+      WarnFrameBitmapOptionInNV12(chkDrawGridOverFrames.Checked);
 end;
 
 procedure TfrmMainForm.chkFreeHandEnabledClick(Sender: TObject);
 begin
    // chkFreeHandEnabled.Checked is tested in the TfrmMainForm.VideoGrabberFrameBitmap event's code
+   WarnFrameBitmapOptionInNV12(chkFreeHandEnabled.Checked);
 end;
 
 procedure TfrmMainForm.btnFreeHandEraseClick(Sender: TObject);

@@ -34,7 +34,7 @@ procedure SetupVG (vgx: TVideoGrabber);
 begin
    vgx.VideoSource := vs_IPcamera;
    vgx.SyncPreview := sp_Disabled;
-   vgx.IPCameraURL := 'rtsp://root:admin@192.168.5.25/axis-media/media.amp?videocodec=h264';
+   vgx.IPCameraURL := 'rtsp://user:password@192.168.5.25/axis-media/media.amp?videocodec=h264';
    vgx.StartPreview();
 end;
 

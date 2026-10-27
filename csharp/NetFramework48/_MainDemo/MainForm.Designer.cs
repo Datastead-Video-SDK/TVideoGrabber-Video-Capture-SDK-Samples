@@ -335,7 +335,6 @@ namespace MainDemo
             this.VideoGrabber1.ScreenRecordingWithCursor = true;
             this.VideoGrabber1.Size = new System.Drawing.Size(1047, 531);
             this.VideoGrabber1.SpeakerControl = false;
-            this.VideoGrabber1.StoragePath = "C:\\Users\\Michel_2\\AppData\\Local\\Temp\\";
             this.VideoGrabber1.StoragePathMode = VidGrab.TStoragePathMode.spm_AutoFileNameOnly;
             this.VideoGrabber1.StoreDeviceSettingsInRegistry = true;
             this.VideoGrabber1.StreamInterface_Format = "mpegts";
@@ -394,7 +393,6 @@ namespace MainDemo
             this.VideoGrabber1.VideoFormat = 0;
             this.VideoGrabber1.VideoFromImages_BitmapsSortedBy = VidGrab.TFileSort.fs_TimeAsc;
             this.VideoGrabber1.VideoFromImages_RepeatIndefinitely = false;
-            this.VideoGrabber1.VideoFromImages_SourceDirectory = "C:\\Users\\Michel_2\\AppData\\Local\\Temp\\";
             this.VideoGrabber1.VideoFromImages_TemporaryFile = "SetOfBitmaps01.dat";
             this.VideoGrabber1.VideoInput = 0;
             this.VideoGrabber1.VideoPlayableWhileRecording = false;

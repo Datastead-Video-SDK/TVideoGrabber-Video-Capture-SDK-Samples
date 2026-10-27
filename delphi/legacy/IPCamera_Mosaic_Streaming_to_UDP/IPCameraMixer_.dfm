@@ -71,11 +71,8 @@ object Form1: TForm1
     TextOverlay_GradientColor = clNavy
     TextOverlay_VideoAlignment = oa_LeftTop
     TextOverlay_String = 
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
     VideoCompression_Quality = 1.000000000000000000
@@ -144,11 +141,8 @@ object Form1: TForm1
     TextOverlay_GradientColor = clNavy
     TextOverlay_VideoAlignment = oa_LeftTop
     TextOverlay_String = 
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
     VideoCompression_Quality = 1.000000000000000000
@@ -217,11 +211,8 @@ object Form1: TForm1
     TextOverlay_GradientColor = clNavy
     TextOverlay_VideoAlignment = oa_LeftTop
     TextOverlay_String = 
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
     VideoCompression_Quality = 1.000000000000000000
@@ -290,11 +281,8 @@ object Form1: TForm1
     TextOverlay_GradientColor = clNavy
     TextOverlay_VideoAlignment = oa_LeftTop
     TextOverlay_String = 
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
     VideoCompression_Quality = 1.000000000000000000
@@ -363,11 +351,8 @@ object Form1: TForm1
     TextOverlay_GradientColor = clNavy
     TextOverlay_VideoAlignment = oa_LeftTop
     TextOverlay_String = 
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
     VideoCompression_Quality = 1.000000000000000000

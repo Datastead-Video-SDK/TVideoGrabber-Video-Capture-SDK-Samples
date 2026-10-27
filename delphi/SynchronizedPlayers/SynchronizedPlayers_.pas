@@ -83,7 +83,7 @@ begin
    SetupPlayer (VideoGrabber3, sr_Slave, edtFileName.Text);
    SetupPlayer (VideoGrabber4, sr_Slave, edtFileName.Text);
 
-   VideoGrabber1.ClosePlayer; // to close synchroneously any clip previously opened
+   VideoGrabber1.ClosePlayer; // to close synchronously any clip previously opened
    VideoGrabber1.OpenPlayer;
    VideoGrabber1.StartSynchronized;
 end;

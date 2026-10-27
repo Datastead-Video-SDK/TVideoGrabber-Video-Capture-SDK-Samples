@@ -156,11 +156,8 @@ object frmMainForm: TfrmMainForm
     TextOverlay_GradientColor = clNavy
     TextOverlay_VideoAlignment = oa_LeftTop
     TextOverlay_String = 
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     TextOverlay_TargetDisplay = -1
     TextOverlay_Transparent = True
     v360_AspectRatio = -1.000000000000000000
@@ -3403,7 +3400,7 @@ object frmMainForm: TfrmMainForm
         Left = 118
         Top = 30
         Width = 169
-        Height = 99
+        Height = 125
         Caption = 'frame grabber format'
         Columns = 2
         Items.Strings = (
@@ -3412,7 +3409,9 @@ object frmMainForm: TfrmMainForm
           'RGB24'
           'RGB565'
           'RGB555'
-          'RGB8')
+          'RGB8'
+          'ARGB32'
+          'NV12')
         TabOrder = 1
         OnClick = rgdFrameGrabberFormatClick
       end

@@ -322,7 +322,6 @@ Partial Class Form1
         Me.VideoGrabber1.SpeakerBalance = 32766
         Me.VideoGrabber1.SpeakerControl = False
         Me.VideoGrabber1.SpeakerVolume = 65535
-        Me.VideoGrabber1.StoragePath = "C:\Users\Michel\AppData\Local\Temp\"
         Me.VideoGrabber1.StoragePathMode = VidGrab.TStoragePathMode.spm_AutoFileNameOnly
         Me.VideoGrabber1.StoreDeviceSettingsInRegistry = True
         Me.VideoGrabber1.StreamInterface_Format = ""
@@ -387,7 +386,6 @@ Partial Class Form1
         Me.VideoGrabber1.VideoFormat = -1
         Me.VideoGrabber1.VideoFromImages_BitmapsSortedBy = VidGrab.TFileSort.fs_TimeAsc
         Me.VideoGrabber1.VideoFromImages_RepeatIndefinitely = False
-        Me.VideoGrabber1.VideoFromImages_SourceDirectory = "C:\Users\Michel\AppData\Local\Temp\"
         Me.VideoGrabber1.VideoFromImages_TemporaryFile = "SetOfBitmaps01.dat"
         Me.VideoGrabber1.VideoInput = -1
         Me.VideoGrabber1.VideoProcessing_Brightness = 0
@@ -701,7 +699,6 @@ Partial Class Form1
         Me.VideoGrabber2.SpeakerBalance = 32766
         Me.VideoGrabber2.SpeakerControl = False
         Me.VideoGrabber2.SpeakerVolume = 65535
-        Me.VideoGrabber2.StoragePath = "C:\Users\Michel\AppData\Local\Temp\"
         Me.VideoGrabber2.StoragePathMode = VidGrab.TStoragePathMode.spm_AutoFileNameOnly
         Me.VideoGrabber2.StoreDeviceSettingsInRegistry = True
         Me.VideoGrabber2.StreamInterface_Format = ""
@@ -766,7 +763,6 @@ Partial Class Form1
         Me.VideoGrabber2.VideoFormat = -1
         Me.VideoGrabber2.VideoFromImages_BitmapsSortedBy = VidGrab.TFileSort.fs_TimeAsc
         Me.VideoGrabber2.VideoFromImages_RepeatIndefinitely = False
-        Me.VideoGrabber2.VideoFromImages_SourceDirectory = "C:\Users\Michel\AppData\Local\Temp\"
         Me.VideoGrabber2.VideoFromImages_TemporaryFile = "SetOfBitmaps01.dat"
         Me.VideoGrabber2.VideoInput = -1
         Me.VideoGrabber2.VideoProcessing_Brightness = 0
@@ -1205,7 +1201,6 @@ Partial Class Form1
         Me.VideoGrabberMixer.SpeakerBalance = 32766
         Me.VideoGrabberMixer.SpeakerControl = False
         Me.VideoGrabberMixer.SpeakerVolume = 65535
-        Me.VideoGrabberMixer.StoragePath = "C:\Users\Michel\AppData\Local\Temp\"
         Me.VideoGrabberMixer.StoragePathMode = VidGrab.TStoragePathMode.spm_AutoFileNameOnly
         Me.VideoGrabberMixer.StoreDeviceSettingsInRegistry = True
         Me.VideoGrabberMixer.StreamInterface_Format = ""
@@ -1270,7 +1265,6 @@ Partial Class Form1
         Me.VideoGrabberMixer.VideoFormat = -1
         Me.VideoGrabberMixer.VideoFromImages_BitmapsSortedBy = VidGrab.TFileSort.fs_TimeAsc
         Me.VideoGrabberMixer.VideoFromImages_RepeatIndefinitely = False
-        Me.VideoGrabberMixer.VideoFromImages_SourceDirectory = "C:\Users\Michel\AppData\Local\Temp\"
         Me.VideoGrabberMixer.VideoFromImages_TemporaryFile = "SetOfBitmaps01.dat"
         Me.VideoGrabberMixer.VideoInput = -1
         Me.VideoGrabberMixer.VideoProcessing_Brightness = 0

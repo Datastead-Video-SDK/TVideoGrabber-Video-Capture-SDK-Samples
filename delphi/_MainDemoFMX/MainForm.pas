@@ -1,6 +1,4 @@
-/// GENERATED from the VCL MainDemo by Sources\DEMOS\FmxDemoGen\regen_fmx_demo.cmd: do not edit,
-/// the changes are overwritten by the next generation. Edit the VCL MainDemo, or the generator
-/// (FireMonkey code of this unit: FmxDemoGen\overrides\MainForm.inc).
+/// FireMonkey version of the VCL MainDemo (_MainDemo folder).
 unit MainForm;
 
 interface
@@ -377,6 +375,8 @@ type
       rgdFrameGrabberFormat_Item3: TRadioButton;
       rgdFrameGrabberFormat_Item4: TRadioButton;
       rgdFrameGrabberFormat_Item5: TRadioButton;
+      rgdFrameGrabberFormat_Item6: TRadioButton;
+      rgdFrameGrabberFormat_Item7: TRadioButton;
       rgdFrameGrabber_Box: TGroupBox;
       rgdFrameGrabber_Item0: TRadioButton;
       rgdFrameGrabber_Item1: TRadioButton;
@@ -528,6 +528,7 @@ type
       chkOverlayOrientation_Item2: TRadioButton;
       chkTextOverlayAlphablend: TCheckBox;
       tbrTextOverlayAlphablendValue: TTrackBar;
+      chkTextOverlayProportional: TCheckBox;
       chkAdjustOverlayAspectRatio: TCheckBox;
       grbBitmapOverlay: TGroupBox;
       Label48: TLabel;
@@ -984,6 +985,7 @@ type
       procedure btnBargraphOverlayClick(Sender: TObject);
       procedure chkTextOverlayAlphablendClick(Sender: TObject);
       procedure tbrTextOverlayAlphablendValueChange(Sender: TObject);
+      procedure chkTextOverlayProportionalClick(Sender: TObject);
       procedure btnIPCameraStarttMP4RecordingClick(Sender: TObject);
       procedure btnIPCameraStopClick(Sender: TObject);
       procedure edtIPCameraURLChange(Sender: TObject);
@@ -1202,6 +1204,7 @@ type
 
       procedure ChangeVideoSource (VideoSource: TVideoSource);
       procedure ConfigureVUMeters (VUMeter: TVUMeter);
+      procedure WarnFrameBitmapOptionInNV12 (OptionEnabled: Boolean);
 
       procedure SetupVideoGrabber;
       procedure CreateFmxHelpers;
@@ -1850,11 +1853,11 @@ begin
    VideoGrabber.CompressionType := ct_Audio;
    VideoGrabber.RecordingMethod := rm_AVI;
    VideoGrabber.AudioCompressor := VideoGrabber.FindIndexInListByName
-     (VideoGrabber.AudioCompressors, 'LAME Audio Encoder', False, true);
+     (VideoGrabber.AudioCompressors, 'MP3 (Microsoft)', False, true);
    if VideoGrabber.AudioCompressor = -1 then
    begin
       ShowMessage
-        ('The LAME 3.99.5 DirectShow Filter is required, download it from https://www.rarewares.org/mp3-lame-dshow-acm.php and register lame.ax with regsvr32.exe');
+        ('MP3 (Microsoft) audio compressor not found, please contact support@datastead.com');
    end
    else
    begin
@@ -3714,6 +3717,15 @@ begin
      Round(tbrTextOverlayAlphablendValue.Value));
 end;
 
+procedure TfrmMainForm.chkTextOverlayProportionalClick(Sender: TObject);
+/// font size, left, top, right and scrolling speed of the selected text overlay scaled to the video height
+/// (values given for 1080 lines), see SetTextOverlay_Proportional
+begin
+   if VideoGrabber = nil then Exit; /// FireMonkey: change events may occur while the form is loading
+   VideoGrabber.SetTextOverlay_Proportional(FTextOverlayIndex,
+     chkTextOverlayProportional.IsChecked);
+end;
+
 procedure TfrmMainForm.mmoTextOverlayStringChange(Sender: TObject);
 begin
    if VideoGrabber = nil then Exit; /// FireMonkey: change events may occur while the form is loading
@@ -3780,24 +3792,43 @@ begin
      (FTextOverlayIndex);
    chkTextOverlayShadow.IsChecked := VideoGrabber.GetTextOverlay_Shadow
      (FTextOverlayIndex);
+   chkTextOverlayProportional.IsChecked := VideoGrabber.GetTextOverlay_Proportional
+     (FTextOverlayIndex);
+end;
+
+procedure TfrmMainForm.WarnFrameBitmapOptionInNV12 (OptionEnabled: Boolean);
+/// the options of the "FrameBitmap event drawing" group are drawn from the OnFrameBitmap event, which is not
+/// raised while the frames are kept in NV12 (4K / 8K video with FrameGrabberRGBFormat = fgf_Default, or fgf_NV12).
+begin
+   if OptionEnabled and (VideoGrabber.FrameGrabberCurrentRGBFormat = fgf_NV12) then
+   begin
+      ShowMessage('This option is drawn from the OnFrameBitmap event, which is not raised while the frames are kept in NV12 (4K / 8K video with the "default" frame grabber format, or "NV12" selected).'
+        + #13#10#13#10 + 'To use it, select "RGB32" in "frame grabber format" (frame grabber tab), then open the video again.');
+   end;
 end;
 
 procedure TfrmMainForm.chkChangePixelsClick(Sender: TObject);
 begin
    if VideoGrabber = nil then Exit; /// FireMonkey: change events may occur while the form is loading
    // chkChangePixels.IsChecked is tested in the TfrmMainForm.VideoGrabberFrameBitmap event's code
+   WarnFrameBitmapOptionInNV12(chkChangePixels.IsChecked);
 end;
 
 procedure TfrmMainForm.chkDrawGridOverFramesClick(Sender: TObject);
 begin
    if VideoGrabber = nil then Exit; /// FireMonkey: change events may occur while the form is loading
    // chkDrawTarget.IsChecked is tested in the TfrmMainForm.VideoGrabberFrameBitmap event's code
+   if Sender = chkDrawTarget then /// handler shared by chkDrawGridOverFrames and chkDrawTarget
+      WarnFrameBitmapOptionInNV12(chkDrawTarget.IsChecked)
+   else
+      WarnFrameBitmapOptionInNV12(chkDrawGridOverFrames.IsChecked);
 end;
 
 procedure TfrmMainForm.chkFreeHandEnabledClick(Sender: TObject);
 begin
    if VideoGrabber = nil then Exit; /// FireMonkey: change events may occur while the form is loading
    // chkFreeHandEnabled.IsChecked is tested in the TfrmMainForm.VideoGrabberFrameBitmap event's code
+   WarnFrameBitmapOptionInNV12(chkFreeHandEnabled.IsChecked);
 end;
 
 procedure TfrmMainForm.btnFreeHandEraseClick(Sender: TObject);
@@ -5559,11 +5590,8 @@ begin
    VideoGrabber.TextOverlay_GradientColor := clNavy;
    VideoGrabber.TextOverlay_VideoAlignment := oa_LeftTop;
    VideoGrabber.TextOverlay_String :=
-      'Note: the date/time formats '#13#10'can be easily modified.'#13#10#13#10'system ' +
-      'date/time: %sys_time[dd/mm/yy hh:nn:ss]%'#13#10'DV time code: %time_co' +
-      'de%'#13#10'DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%'#13#10'frame number: %' +
-      'frame_count%'#13#10'time (full): %time_full%'#13#10'time (sec): %time_sec%'#13#10 +
-      'time (ns): %time_100ns%';
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)';
    VideoGrabber.TextOverlay_TargetDisplay := -1;
    VideoGrabber.TextOverlay_Transparent := True;
    VideoGrabber.v360_AspectRatio := -1.00000000000000000;

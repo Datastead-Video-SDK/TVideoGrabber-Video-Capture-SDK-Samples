@@ -57,7 +57,7 @@ namespace MainDemo
 
 			if (MainForm.cMainForm.VideoGrabber1.AudioDevice == -1)
 			{
-				cboAudioDevices.Text = "SELECT AND AUDIO CAPTURE DEVICE IN THIS LIST";
+				cboAudioDevices.Text = "SELECT AN AUDIO CAPTURE DEVICE IN THIS LIST";
 			}
 			if (MainForm.cMainForm.VideoGrabber1.AudioRenderer == -1) {
 				cboAudioRenderers.Text = "default (AudioRenderer = -1)";
@@ -263,10 +263,10 @@ namespace MainDemo
 			MainForm.cMainForm.VideoGrabber1.CompressionType = VidGrab.TCompressionType.ct_Audio;
 			MainForm.cMainForm.VideoGrabber1.RecordingMethod = VidGrab.TRecordingMethod.rm_AVI;
 			
-			MainForm.cMainForm.VideoGrabber1.AudioCompressor = MainForm.cMainForm.VideoGrabber1.FindIndexInListByName (MainForm.cMainForm.VideoGrabber1.AudioCompressors, "LAME Audio Encoder", false, true);
+			MainForm.cMainForm.VideoGrabber1.AudioCompressor = MainForm.cMainForm.VideoGrabber1.FindIndexInListByName (MainForm.cMainForm.VideoGrabber1.AudioCompressors, "MP3 (Microsoft)", false, true);
 			if (MainForm.cMainForm.VideoGrabber1.AudioCompressor == -1) 
 			{
-				MessageBox.Show ("The LAME 3.99.5 DirectShow Filter is required, download it from https://www.rarewares.org/mp3-lame-dshow-acm.php and register lame.ax with regsvr32.exe",
+				MessageBox.Show ("MP3 (Microsoft) audio compressor not found, please contact support@datastead.com",
                             "DataStead TVideoGrabber C#.NET OCX Demo",MessageBoxButtons.OK);
 			}
 			else {

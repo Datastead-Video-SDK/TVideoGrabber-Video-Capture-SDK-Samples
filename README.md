@@ -11,7 +11,7 @@ The samples cover USB webcams and capture devices, IP cameras (RTSP, RTMP, HTTP,
 - FAQ: https://www.datastead.com/faq/
 - NuGet package (.NET): https://www.nuget.org/packages/TVideoGrabber-SDK
 
-Current SDK version: **17.0.0.1** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
+Current SDK version: **17.1.2.0** ([changelog](https://www.datastead.com/video-sdk/tvideograbber-sdk-changelog/)).
 
 ## Prerequisites
 

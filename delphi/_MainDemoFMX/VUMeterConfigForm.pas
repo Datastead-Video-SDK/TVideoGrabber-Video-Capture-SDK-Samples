@@ -1,6 +1,4 @@
-/// GENERATED from the VCL MainDemo by Sources\DEMOS\FmxDemoGen\regen_fmx_demo.cmd: do not edit,
-/// the changes are overwritten by the next generation. Edit the VCL MainDemo, or the generator
-/// (FireMonkey code of this unit: FmxDemoGen\overrides\VUMeterConfigForm.inc).
+/// FireMonkey version of the VCL MainDemo (_MainDemo folder).
 unit VUMeterConfigForm;
 
 (*

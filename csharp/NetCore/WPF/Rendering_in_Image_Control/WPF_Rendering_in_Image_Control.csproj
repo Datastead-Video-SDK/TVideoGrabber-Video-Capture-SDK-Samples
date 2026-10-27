@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="VideoGrabberNET">
-      <HintPath>..\..\..\..\..\DLL\NET_Core_3.1\VideoGrabberNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\DLL\NET_8.0\VideoGrabberNET.dll</HintPath>
     </Reference>
   </ItemGroup>
 

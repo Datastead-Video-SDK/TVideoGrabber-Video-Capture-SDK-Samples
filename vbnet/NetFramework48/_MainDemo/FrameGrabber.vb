@@ -70,6 +70,7 @@ Friend Class FrameGrabber
     Public WithEvents rgdFrameGrabberFormatRGB555 As System.Windows.Forms.RadioButton
     Friend WithEvents rdgAutoFileName3 As System.Windows.Forms.RadioButton
     Public WithEvents rgdFrameGrabberFormatRGB8 As System.Windows.Forms.RadioButton
+    Public WithEvents rgdFrameGrabberFormatNV12 As System.Windows.Forms.RadioButton
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -108,6 +109,7 @@ Friend Class FrameGrabber
         Me.rgdFrameGrabberFormatRGB32 = New System.Windows.Forms.RadioButton
         Me.rgdFrameGrabberFormatRGB24 = New System.Windows.Forms.RadioButton
         Me.rgdFrameGrabberFormat565 = New System.Windows.Forms.RadioButton
+        Me.rgdFrameGrabberFormatNV12 = New System.Windows.Forms.RadioButton
         Me.rgdFrameGrabber = New System.Windows.Forms.GroupBox
         Me.rgdFrameGrabberPreviewStream = New System.Windows.Forms.RadioButton
         Me.rgdFrameGrabberCaptureStream = New System.Windows.Forms.RadioButton
@@ -551,12 +553,13 @@ Friend Class FrameGrabber
         Me.rgdFrameGrabberFormat.Controls.Add(Me.rgdFrameGrabberFormatRGB32)
         Me.rgdFrameGrabberFormat.Controls.Add(Me.rgdFrameGrabberFormatRGB24)
         Me.rgdFrameGrabberFormat.Controls.Add(Me.rgdFrameGrabberFormat565)
+        Me.rgdFrameGrabberFormat.Controls.Add(Me.rgdFrameGrabberFormatNV12)
         Me.rgdFrameGrabberFormat.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rgdFrameGrabberFormat.ForeColor = System.Drawing.SystemColors.ControlText
         Me.rgdFrameGrabberFormat.Location = New System.Drawing.Point(134, 20)
         Me.rgdFrameGrabberFormat.Name = "rgdFrameGrabberFormat"
         Me.rgdFrameGrabberFormat.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.rgdFrameGrabberFormat.Size = New System.Drawing.Size(171, 98)
+        Me.rgdFrameGrabberFormat.Size = New System.Drawing.Size(171, 115)
         Me.rgdFrameGrabberFormat.TabIndex = 7
         Me.rgdFrameGrabberFormat.TabStop = False
         Me.rgdFrameGrabberFormat.Text = "frame grabber format"
@@ -656,6 +659,22 @@ Friend Class FrameGrabber
         Me.rgdFrameGrabberFormat565.Tag = "3"
         Me.rgdFrameGrabberFormat565.Text = "RGB565"
         Me.rgdFrameGrabberFormat565.UseVisualStyleBackColor = False
+        '
+        'rgdFrameGrabberFormatNV12
+        '
+        Me.rgdFrameGrabberFormatNV12.BackColor = System.Drawing.SystemColors.Control
+        Me.rgdFrameGrabberFormatNV12.Cursor = System.Windows.Forms.Cursors.Default
+        Me.rgdFrameGrabberFormatNV12.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rgdFrameGrabberFormatNV12.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.rgdFrameGrabberFormatNV12.Location = New System.Drawing.Point(10, 86)
+        Me.rgdFrameGrabberFormatNV12.Name = "rgdFrameGrabberFormatNV12"
+        Me.rgdFrameGrabberFormatNV12.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.rgdFrameGrabberFormatNV12.Size = New System.Drawing.Size(78, 21)
+        Me.rgdFrameGrabberFormatNV12.TabIndex = 14
+        Me.rgdFrameGrabberFormatNV12.TabStop = True
+        Me.rgdFrameGrabberFormatNV12.Tag = "7"
+        Me.rgdFrameGrabberFormatNV12.Text = "NV12"
+        Me.rgdFrameGrabberFormatNV12.UseVisualStyleBackColor = False
         '
         'rgdFrameGrabber
         '
@@ -953,7 +972,7 @@ Friend Class FrameGrabber
         End If
     End Sub
 
-    Private Sub rgdFrameGrabberRGBFormat_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rgdFrameGrabberFormatDefault.CheckedChanged, rgdFrameGrabberFormatRGB32.CheckedChanged, rgdFrameGrabberFormatRGB24.CheckedChanged, rgdFrameGrabberFormat565.CheckedChanged, rgdFrameGrabberFormatRGB555.CheckedChanged, rgdFrameGrabberFormatRGB8.CheckedChanged
+    Private Sub rgdFrameGrabberRGBFormat_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rgdFrameGrabberFormatDefault.CheckedChanged, rgdFrameGrabberFormatRGB32.CheckedChanged, rgdFrameGrabberFormatRGB24.CheckedChanged, rgdFrameGrabberFormat565.CheckedChanged, rgdFrameGrabberFormatRGB555.CheckedChanged, rgdFrameGrabberFormatRGB8.CheckedChanged, rgdFrameGrabberFormatNV12.CheckedChanged
         If CType(sender, RadioButton).Checked Then
             MainForm.DefInstance.VideoGrabber1.FrameGrabberRGBFormat = sender.tag
         End If

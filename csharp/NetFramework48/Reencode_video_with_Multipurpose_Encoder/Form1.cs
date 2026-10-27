@@ -175,8 +175,8 @@ namespace TestAppUsingVideoGrabber
         private void btnStartProcess_Click(object sender, EventArgs e)
         {
             VideoGrabber.FrameGrabber = VidGrab.TFrameGrabber.fg_Disabled;
-            VideoGrabber.Reencoding_SourceVideoClip = @"J:\_videos\mike_obrien_pb_fr_9.1.1.2_VGS_161013_125100_999990.avi";
-            VideoGrabber.Reencoding_NewVideoClip = @"k:\temp\result.mp4";
+            VideoGrabber.Reencoding_SourceVideoClip = @"c:\videos\source_clip.avi";
+            VideoGrabber.Reencoding_NewVideoClip = @"c:\videos\result.mp4";
             string CommandLine = "ffmpegLGPL.exe -i " + VideoGrabber.Reencoding_SourceVideoClip + " -c copy " + VideoGrabber.Reencoding_NewVideoClip;
 
             VideoGrabber.EnableMultipurposeEncoder(VidGrab.TMultipurposeEncoderInstance.mpe_Reencoding, true);

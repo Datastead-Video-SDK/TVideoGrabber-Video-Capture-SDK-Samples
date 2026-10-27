@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <Reference Include="VideoGrabberNET">
-      <HintPath>..\..\..\..\..\DLL\NET_6.0\VideoGrabberNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\DLL\NET_8.0\VideoGrabberNET.dll</HintPath>
     </Reference>
   </ItemGroup>
 

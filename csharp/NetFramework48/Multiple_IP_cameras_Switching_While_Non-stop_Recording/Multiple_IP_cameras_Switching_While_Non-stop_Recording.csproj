@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="VideoGrabberNET, Version=4.8.0.0, Culture=neutral, PublicKeyToken=c292da7395203839, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>H:\TVideoGrabber\Shareware\CSharp_VB.NET\DLL\NET_Framework_4.8\VideoGrabberNET.dll</HintPath>
+      <HintPath>..\..\..\..\DLL\NET_Framework_4.8\VideoGrabberNET.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

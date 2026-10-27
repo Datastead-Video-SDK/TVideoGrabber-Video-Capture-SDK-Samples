@@ -153,7 +153,8 @@ object Form1: TForm1
     TextOverlay_Font.Name = 'MS Sans Serif'
     TextOverlay_Font.Style = []
     TextOverlay_String = 
-      '_Selector=1 to see a demo with variables.'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     VideoCompression_Quality = 1
     VideoCompressor = 0
     VideoFromImages_TemporaryFile = 'SetOfBitmaps01.dat'
@@ -210,7 +211,8 @@ object Form1: TForm1
     TextOverlay_Font.Name = 'MS Sans Serif'
     TextOverlay_Font.Style = []
     TextOverlay_String = 
-      '_Selector=1 to see a demo with variables.'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     VideoCompression_Quality = 1
     VideoCompressor = 0
     VideoFromImages_TemporaryFile = 'SetOfBitmaps01.dat'
@@ -404,7 +406,8 @@ object Form1: TForm1
     TextOverlay_Font.Name = 'MS Sans Serif'
     TextOverlay_Font.Style = []
     TextOverlay_String = 
-      '_Selector=1 to see a demo with variables.'
+      'TVideoGrabber text overlay'#13#10'(variables: see SetTextOverlay_Strin' +
+      'g in the help)'
     VideoCompression_Quality = 1
     VideoCompressor = 0
     VideoFromImages_TemporaryFile = 'SetOfBitmaps01.dat'

@@ -490,6 +490,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
       typedef BOOL (STDCALL *tGetTextOverlay_HighResFont) ( void *TVGObject, int Index);
       typedef int (STDCALL *tGetTextOverlay_Left) ( void *TVGObject, int Index);
       typedef TTextOrientation (STDCALL *tGetTextOverlay_Orientation) ( void *TVGObject, int Index);
+      typedef BOOL (STDCALL *tGetTextOverlay_Proportional) ( void *TVGObject, int Index);
       typedef int (STDCALL *tGetTextOverlay_Right) ( void *TVGObject, int Index);
       typedef BOOL (STDCALL *tGetTextOverlay_Scrolling) ( void *TVGObject, int Index);
       typedef int (STDCALL *tGetTextOverlay_ScrollingSpeed) ( void *TVGObject, int Index);
@@ -1173,6 +1174,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
       typedef void (STDCALL *tSetTextOverlay_HighResFont) ( void *TVGObject, int Index, BOOL Value);
       typedef void (STDCALL *tSetTextOverlay_Left) ( void *TVGObject, int Index, int Value);
       typedef void (STDCALL *tSetTextOverlay_Orientation) ( void *TVGObject, int Index, TTextOrientation Value);
+      typedef void (STDCALL *tSetTextOverlay_Proportional) ( void *TVGObject, int Index, BOOL Value);
       typedef void (STDCALL *tSetTextOverlay_Right) ( void *TVGObject, int Index, int Value);
       typedef void (STDCALL *tSetTextOverlay_Scrolling) ( void *TVGObject, int Index, BOOL Value);
       typedef void (STDCALL *tSetTextOverlay_ScrollingSpeed) ( void *TVGObject, int Index, int Value);
@@ -1354,6 +1356,8 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
       typedef INT_PTR (STDCALL *tzReservedInternal3) ( void *TVGObject);
       typedef void * (STDCALL *tzReservedInternal4) ( void *TVGObject,  void *Param1,  void *Param2);
       typedef BOOL (STDCALL *tzReservedInternal5) ( void *TVGObject);
+      typedef void * (STDCALL *tzReservedInternal6) ( void *TVGObject,  void *Param1,  void *Param2);
+      typedef int (STDCALL *tzReservedInternal7) ( void *TVGObject, int Param1, BOOL Param2);
 //#endregion DeclareFunctionTypesCPP
 
 //#region DeclareFunctionPointersCPP
@@ -1839,6 +1843,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
    static tGetTextOverlay_HighResFont _GetTextOverlay_HighResFont;
    static tGetTextOverlay_Left _GetTextOverlay_Left;
    static tGetTextOverlay_Orientation _GetTextOverlay_Orientation;
+   static tGetTextOverlay_Proportional _GetTextOverlay_Proportional;
    static tGetTextOverlay_Right _GetTextOverlay_Right;
    static tGetTextOverlay_Scrolling _GetTextOverlay_Scrolling;
    static tGetTextOverlay_ScrollingSpeed _GetTextOverlay_ScrollingSpeed;
@@ -2522,6 +2527,7 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
    static tSetTextOverlay_HighResFont _SetTextOverlay_HighResFont;
    static tSetTextOverlay_Left _SetTextOverlay_Left;
    static tSetTextOverlay_Orientation _SetTextOverlay_Orientation;
+   static tSetTextOverlay_Proportional _SetTextOverlay_Proportional;
    static tSetTextOverlay_Right _SetTextOverlay_Right;
    static tSetTextOverlay_Scrolling _SetTextOverlay_Scrolling;
    static tSetTextOverlay_ScrollingSpeed _SetTextOverlay_ScrollingSpeed;
@@ -2703,6 +2709,8 @@ static const LPCWSTR TVIDEOGRABBERDLLNAME = L"TVideoGrabber.dll";
    static tzReservedInternal3 _zReservedInternal3;
    static tzReservedInternal4 _zReservedInternal4;
    static tzReservedInternal5 _zReservedInternal5;
+   static tzReservedInternal6 _zReservedInternal6;
+   static tzReservedInternal7 _zReservedInternal7;
 //#endregion DeclareFunctionPointersCPP
 
 static CVideoGrabberMutex m_VideoGrabberLibLock;
@@ -3223,6 +3231,7 @@ bool InitVideoGrabberLib()
                _GetTextOverlay_HighResFont = TGetProcAddress<tGetTextOverlay_HighResFont>(h, "_GetTextOverlay_HighResFont");
                _GetTextOverlay_Left = TGetProcAddress<tGetTextOverlay_Left>(h, "_GetTextOverlay_Left");
                _GetTextOverlay_Orientation = TGetProcAddress<tGetTextOverlay_Orientation>(h, "_GetTextOverlay_Orientation");
+               _GetTextOverlay_Proportional = TGetProcAddress<tGetTextOverlay_Proportional>(h, "_GetTextOverlay_Proportional");
                _GetTextOverlay_Right = TGetProcAddress<tGetTextOverlay_Right>(h, "_GetTextOverlay_Right");
                _GetTextOverlay_Scrolling = TGetProcAddress<tGetTextOverlay_Scrolling>(h, "_GetTextOverlay_Scrolling");
                _GetTextOverlay_ScrollingSpeed = TGetProcAddress<tGetTextOverlay_ScrollingSpeed>(h, "_GetTextOverlay_ScrollingSpeed");
@@ -3906,6 +3915,7 @@ bool InitVideoGrabberLib()
                _SetTextOverlay_HighResFont = TGetProcAddress<tSetTextOverlay_HighResFont>(h, "_SetTextOverlay_HighResFont");
                _SetTextOverlay_Left = TGetProcAddress<tSetTextOverlay_Left>(h, "_SetTextOverlay_Left");
                _SetTextOverlay_Orientation = TGetProcAddress<tSetTextOverlay_Orientation>(h, "_SetTextOverlay_Orientation");
+               _SetTextOverlay_Proportional = TGetProcAddress<tSetTextOverlay_Proportional>(h, "_SetTextOverlay_Proportional");
                _SetTextOverlay_Right = TGetProcAddress<tSetTextOverlay_Right>(h, "_SetTextOverlay_Right");
                _SetTextOverlay_Scrolling = TGetProcAddress<tSetTextOverlay_Scrolling>(h, "_SetTextOverlay_Scrolling");
                _SetTextOverlay_ScrollingSpeed = TGetProcAddress<tSetTextOverlay_ScrollingSpeed>(h, "_SetTextOverlay_ScrollingSpeed");
@@ -4087,6 +4097,8 @@ bool InitVideoGrabberLib()
                _zReservedInternal3 = TGetProcAddress<tzReservedInternal3>(h, "_zReservedInternal3");
                _zReservedInternal4 = TGetProcAddress<tzReservedInternal4>(h, "_zReservedInternal4");
                _zReservedInternal5 = TGetProcAddress<tzReservedInternal5>(h, "_zReservedInternal5");
+               _zReservedInternal6 = TGetProcAddress<tzReservedInternal6>(h, "_zReservedInternal6");
+               _zReservedInternal7 = TGetProcAddress<tzReservedInternal7>(h, "_zReservedInternal7");
             //#endregion InitLoadLibraryCPP
         }
     }
@@ -4285,6 +4297,7 @@ CVideoGrabber::~CVideoGrabber()
    BOOL CVideoGrabber::GetTextOverlay_HighResFont (int Index) {  return _GetTextOverlay_HighResFont (m_VideoGrabber, Index); };
    int CVideoGrabber::GetTextOverlay_Left (int Index) {  return _GetTextOverlay_Left (m_VideoGrabber, Index); };
    TTextOrientation CVideoGrabber::GetTextOverlay_Orientation (int Index) {  return _GetTextOverlay_Orientation (m_VideoGrabber, Index); };
+   BOOL CVideoGrabber::GetTextOverlay_Proportional (int Index) {  return _GetTextOverlay_Proportional (m_VideoGrabber, Index); };
    int CVideoGrabber::GetTextOverlay_Right (int Index) {  return _GetTextOverlay_Right (m_VideoGrabber, Index); };
    BOOL CVideoGrabber::GetTextOverlay_Scrolling (int Index) {  return _GetTextOverlay_Scrolling (m_VideoGrabber, Index); };
    int CVideoGrabber::GetTextOverlay_ScrollingSpeed (int Index) {  return _GetTextOverlay_ScrollingSpeed (m_VideoGrabber, Index); };
@@ -4535,6 +4548,7 @@ CVideoGrabber::~CVideoGrabber()
    void CVideoGrabber::SetTextOverlay_HighResFont (int Index, BOOL Value) {  _SetTextOverlay_HighResFont (m_VideoGrabber, Index, Value); };
    void CVideoGrabber::SetTextOverlay_Left (int Index, int Value) {  _SetTextOverlay_Left (m_VideoGrabber, Index, Value); };
    void CVideoGrabber::SetTextOverlay_Orientation (int Index, TTextOrientation Value) {  _SetTextOverlay_Orientation (m_VideoGrabber, Index, Value); };
+   void CVideoGrabber::SetTextOverlay_Proportional (int Index, BOOL Value) {  _SetTextOverlay_Proportional (m_VideoGrabber, Index, Value); };
    void CVideoGrabber::SetTextOverlay_Right (int Index, int Value) {  _SetTextOverlay_Right (m_VideoGrabber, Index, Value); };
    void CVideoGrabber::SetTextOverlay_Scrolling (int Index, BOOL Value) {  _SetTextOverlay_Scrolling (m_VideoGrabber, Index, Value); };
    void CVideoGrabber::SetTextOverlay_ScrollingSpeed (int Index, int Value) {  _SetTextOverlay_ScrollingSpeed (m_VideoGrabber, Index, Value); };
@@ -4649,6 +4663,8 @@ CVideoGrabber::~CVideoGrabber()
    INT_PTR CVideoGrabber::zReservedInternal3 () {  return _zReservedInternal3 (m_VideoGrabber); };
    void * CVideoGrabber::zReservedInternal4 ( void *Param1,  void *Param2) {  return _zReservedInternal4 (m_VideoGrabber, Param1, Param2); };
    BOOL CVideoGrabber::zReservedInternal5 () {  return _zReservedInternal5 (m_VideoGrabber); };
+   void * CVideoGrabber::zReservedInternal6 ( void *Param1,  void *Param2) {  return _zReservedInternal6 (m_VideoGrabber, Param1, Param2); };
+   int CVideoGrabber::zReservedInternal7 (int Param1, BOOL Param2) {  return _zReservedInternal7 (m_VideoGrabber, Param1, Param2); };
 //#endregion DeclareFunctionsCPP
 
 //#region DeclarePropertiesCPP

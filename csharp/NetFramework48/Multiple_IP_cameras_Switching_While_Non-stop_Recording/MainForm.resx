@@ -118,16 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="videoMixer.TextOverlay_String" xml:space="preserve">
-    <value>Note: the date/time formats 
-can be easily modified.
-
-system date/time: %sys_time[dd/mm/yy hh:nn:ss]%
-DV time code: %time_code%
-DV date/time: %dv_time[dd/mm/yy hh:nn:ss]%
-frame number: %frame_count%
-time (full): %time_full%
-time (sec): %time_sec%
-time (ns): %time_100ns%</value>
+    <value>TVideoGrabber text overlay
+(variables: see SetTextOverlay_String in the help)</value>
   </data>
   <metadata name="SelectCameraGroup.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

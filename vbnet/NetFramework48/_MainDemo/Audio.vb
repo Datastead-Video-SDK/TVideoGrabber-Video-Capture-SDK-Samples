@@ -565,7 +565,7 @@ Friend Class Audio
         chkMuteAudioRendering.Checked = MainForm.DefInstance.VideoGrabber1.MuteAudioRendering
 
         If MainForm.DefInstance.VideoGrabber1.AudioDevice = -1 Then
-            cboAudioDevices.Text = "SELECT AND AUDIO CAPTURE DEVICE IN THIS LIST"
+            cboAudioDevices.Text = "SELECT AN AUDIO CAPTURE DEVICE IN THIS LIST"
         End If
         If MainForm.DefInstance.VideoGrabber1.AudioRenderer = -1 Then
             cboAudioRenderers.Text = "default (AudioRenderer = -1)"
@@ -687,9 +687,9 @@ Friend Class Audio
         MainForm.DefInstance.VideoGrabber1.CompressionMode = VidGrab.TCompressionMode.cm_CompressOnTheFly
         MainForm.DefInstance.VideoGrabber1.CompressionType = VidGrab.TCompressionType.ct_Audio
         MainForm.DefInstance.VideoGrabber1.RecordingMethod = VidGrab.TRecordingMethod.rm_AVI
-        MainForm.DefInstance.VideoGrabber1.AudioCompressor = MainForm.DefInstance.VideoGrabber1.FindIndexInListByName(MainForm.DefInstance.VideoGrabber1.AudioCompressors, "LAME Audio Encoder", False, True)
+        MainForm.DefInstance.VideoGrabber1.AudioCompressor = MainForm.DefInstance.VideoGrabber1.FindIndexInListByName(MainForm.DefInstance.VideoGrabber1.AudioCompressors, "MP3 (Microsoft)", False, True)
         If MainForm.DefInstance.VideoGrabber1.AudioCompressor = -1 Then
-            MsgBox("The LAME 3.99.5 DirectShow Filter is required, download it from https://www.rarewares.org/mp3-lame-dshow-acm.php and register lame.ax with regsvr32.exe")
+            MsgBox("MP3 (Microsoft) audio compressor not found, please contact support@datastead.com")
         Else
             MainForm.DefInstance.VideoGrabber1.StartAudioRecording()
         End If

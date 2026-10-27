@@ -49,7 +49,7 @@ namespace Images2Video
             // if you have installed the Multipurpose Encoder with the .exe installer, the line below is not required
             vg.ExtraDLLPath = @"C:\Multipurpose\package.ffmpeg\Evaluation"; // specify the folder where are located the "x86" and "x64" sub-folders containing the binaries of the Multipurpose Encoder
 
-            string SourceFolder = @"i:\folder_containing_the_jpeg_images\";
+            string SourceFolder = @"c:\folder_containing_the_jpeg_images\";
 
             vg.Reencoding_SourceVideoClip = "frame_%06d.jpg"; /// numeric format of the frames, 6 digits with left-padded zeros, e.g. frame_000001.jpg, frame_000002.jpg, etc...
             int FrameRate = 60;

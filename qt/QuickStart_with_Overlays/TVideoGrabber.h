@@ -369,7 +369,9 @@
    Enc_Video_Deblock_Enable_bool = 39,
    Enc_Video_SlicesPerFrame = 40,
    Enc_Video_IntraRefresh_Enable_bool = 41,
-   Enc_Video_IntraRefresh_Percent = 42
+   Enc_Video_IntraRefresh_Percent = 42,
+   Enc_Audio_Output_SamplesPerSec = 43,
+   Enc_Audio_Output_Channels = 44
    };
    
    enum class TEncoder_str
@@ -463,7 +465,8 @@
    fgf_RGB565 = 3,
    fgf_RGB555 = 4,
    fgf_RGB8 = 5,
-   fgf_ARGB32 = 6
+   fgf_ARGB32 = 6,
+   fgf_NV12 = 7
    };
    
    enum class TFrameInfoId
@@ -802,7 +805,8 @@
    e_encryption_decryption = 202,
    e_facebook_go_live = 203,
    w_need_reindexing = 204,
-   e_failed_to_resume_recording = 205
+   e_failed_to_resume_recording = 205,
+   w_paused_frame_not_reported = 206
    };
    
    enum class TMiscDeviceControl
@@ -1730,6 +1734,7 @@ public:
        BOOL GetTextOverlay_HighResFont (int Index);
        int GetTextOverlay_Left (int Index);
        TTextOrientation GetTextOverlay_Orientation (int Index);
+       BOOL GetTextOverlay_Proportional (int Index);
        int GetTextOverlay_Right (int Index);
        BOOL GetTextOverlay_Scrolling (int Index);
        int GetTextOverlay_ScrollingSpeed (int Index);
@@ -1980,6 +1985,7 @@ public:
        void SetTextOverlay_HighResFont (int Index, BOOL Value);
        void SetTextOverlay_Left (int Index, int Value);
        void SetTextOverlay_Orientation (int Index, TTextOrientation Value);
+       void SetTextOverlay_Proportional (int Index, BOOL Value);
        void SetTextOverlay_Right (int Index, int Value);
        void SetTextOverlay_Scrolling (int Index, BOOL Value);
        void SetTextOverlay_ScrollingSpeed (int Index, int Value);
@@ -2094,6 +2100,8 @@ public:
        INT_PTR zReservedInternal3 ();
        void * zReservedInternal4 ( void *Param1,  void *Param2);
        BOOL zReservedInternal5 ();
+       void * zReservedInternal6 ( void *Param1,  void *Param2);
+       int zReservedInternal7 (int Param1, BOOL Param2);
     //#endregion DeclareFunctionsH
 
     //#region DeclarePropertiesH

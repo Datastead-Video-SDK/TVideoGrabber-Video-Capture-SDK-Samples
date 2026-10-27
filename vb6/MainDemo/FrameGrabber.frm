@@ -267,11 +267,20 @@ Begin VB.Form FrameGrabber
       End
       Begin VB.Frame rgdFrameGrabberFormat 
          Caption         =   "frame grabber format"
-         Height          =   1215
+         Height          =   1455
          Left            =   1440
          TabIndex        =   8
          Top             =   240
          Width           =   2055
+         Begin VB.OptionButton rgdFrameGrabberFormat7 
+            Caption         =   "NV12"
+            Height          =   255
+            Left            =   120
+            TabIndex        =   48
+            Tag             =   "7"
+            Top             =   1140
+            Width           =   975
+         End
          Begin VB.OptionButton rgdFrameGrabberFormat6 
             Caption         =   "RGB8"
             Height          =   255
@@ -616,6 +625,10 @@ End Sub
 
 Private Sub rgdFrameGrabberFormat6_Click()
    MainForm.VideoGrabberVB61.FrameGrabberRGBFormat = fgf_RGB8
+End Sub
+
+Private Sub rgdFrameGrabberFormat7_Click()
+   MainForm.VideoGrabberVB61.FrameGrabberRGBFormat = fgf_NV12
 End Sub
 
 Private Sub tbrCaptureZoomSize_Scroll()

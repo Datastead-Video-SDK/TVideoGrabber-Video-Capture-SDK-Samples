@@ -874,7 +874,6 @@ Friend Class MainForm
         Me.VideoGrabber1.SpeakerBalance = 0
         Me.VideoGrabber1.SpeakerControl = False
         Me.VideoGrabber1.SpeakerVolume = 65535
-        Me.VideoGrabber1.StoragePath = "C:\Users\Michel_2\AppData\Local\Temp\"
         Me.VideoGrabber1.StoreDeviceSettingsInRegistry = True
         Me.VideoGrabber1.StreamInterface_Format = "mpegts"
         Me.VideoGrabber1.StreamInterface_FrameRate = 0R
@@ -938,7 +937,6 @@ Friend Class MainForm
         Me.VideoGrabber1.VideoFormat = -1
         Me.VideoGrabber1.VideoFromImages_BitmapsSortedBy = VidGrab.TFileSort.fs_TimeAsc
         Me.VideoGrabber1.VideoFromImages_RepeatIndefinitely = False
-        Me.VideoGrabber1.VideoFromImages_SourceDirectory = "C:\Users\Michel_2\AppData\Local\Temp\"
         Me.VideoGrabber1.VideoFromImages_TemporaryFile = "SetOfBitmaps01.dat"
         Me.VideoGrabber1.VideoInput = -1
         Me.VideoGrabber1.VideoProcessing_Brightness = 0

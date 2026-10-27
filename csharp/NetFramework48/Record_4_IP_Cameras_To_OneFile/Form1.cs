@@ -25,12 +25,12 @@ namespace Record_4_IP_Cameras_To_OneFile
 
         public string[] URLs = {
             SPECIFY YOUR IP CAMERA URLS HERE
-            "onvif://admin:root@192.168.0.148",
-            "onvif://admin:root@192.168.0.148",
-            "onvif://admin:root@192.168.0.148",
-            "onvif://admin:root@192.168.0.148",
-            "onvif://admin:root@192.168.0.148",
-            "onvif://admin:root@192.168.0.148",
+            "onvif://user:password@192.168.0.148",
+            "onvif://user:password@192.168.0.148",
+            "onvif://user:password@192.168.0.148",
+            "onvif://user:password@192.168.0.148",
+            "onvif://user:password@192.168.0.148",
+            "onvif://user:password@192.168.0.148",
         };
 
         public Form1()

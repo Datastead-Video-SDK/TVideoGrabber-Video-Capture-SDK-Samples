@@ -47,9 +47,9 @@ namespace ThreadedPlaylist
             /*
             // to quick test without having to re-select the clips, the playlist can be pre-populated as below:
             lstPlayList.Items.Clear();
-            lstPlayList.Items.Add(@"j:\vg000002.asf");
-            lstPlayList.Items.Add(@"j:\vg000003.asf");
-            lstPlayList.Items.Add(@"j:\vg000004.asf");
+            lstPlayList.Items.Add(@"c:\videos\clip1.asf");
+            lstPlayList.Items.Add(@"c:\videos\clip2.asf");
+            lstPlayList.Items.Add(@"c:\videos\clip3.asf");
             chkLoop.Checked = true;
              */
             

@@ -65,12 +65,13 @@
                 <TextBlock Text="frame grabber format"/>
             </GroupBox.Header>
             <Canvas Height="65" Width="127" Name="rgdFrameGrabberFormat">
-                <RadioButton Name="rgdFrameGrabberFormatRGB8" Height="17" Width="65" TabIndex="5" Margin="59,37,822,165" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB8</RadioButton>
-                <RadioButton Name="rgdFrameGrabberFormatRGB555" Height="17" Width="65" TabIndex="4" Margin="59,19,822,183" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB555</RadioButton>
-                <RadioButton Name="rgdFrameGrabberFormatDefault" Height="17" Width="56" TabIndex="1" Margin="-2,1,892,201" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged" >default</RadioButton>
-                <RadioButton Name="rgdFrameGrabberFormatRGB32" Height="17" Width="65" TabIndex="12" Margin="-2,19,883,183" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB32</RadioButton>
-                <RadioButton Name="rgdFrameGrabberFormatRGB24" Height="17" Width="65" TabIndex="2" Margin="-2,37,883,165" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged" >RGB24</RadioButton>
-                <RadioButton Name="rgdFrameGrabberFormat565" Height="17" Width="65" TabIndex="3" Margin="59,1,822,201" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB565</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormatRGB8" Height="17" Width="65" TabIndex="5" Margin="59,32,822,165" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB8</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormatRGB555" Height="17" Width="65" TabIndex="4" Margin="59,16,822,183" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB555</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormatDefault" Height="17" Width="56" TabIndex="0" Margin="-2,0,892,201" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged" >default</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormatRGB32" Height="17" Width="65" TabIndex="1" Margin="-2,16,883,183" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB32</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormatRGB24" Height="17" Width="65" TabIndex="2" Margin="-2,32,883,165" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged" >RGB24</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormat565" Height="17" Width="65" TabIndex="3" Margin="59,0,822,201" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">RGB565</RadioButton>
+                <RadioButton Name="rgdFrameGrabberFormatNV12" Height="17" Width="65" TabIndex="7" Margin="-2,48,883,154" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rgdFrameGrabberFormat_CheckedChanged">NV12</RadioButton>
             </Canvas>
         </GroupBox>
         <GroupBox Margin="4,1,831,112" HorizontalAlignment="Right" VerticalAlignment="Bottom" >

@@ -73,6 +73,7 @@ namespace MainDemo
             this.rgdFrameGrabberFormatRGB32 = new System.Windows.Forms.RadioButton();
             this.rgdFrameGrabberFormatRGB24 = new System.Windows.Forms.RadioButton();
             this.rgdFrameGrabberFormat565 = new System.Windows.Forms.RadioButton();
+            this.rgdFrameGrabberFormatNV12 = new System.Windows.Forms.RadioButton();
             this.rgdFrameGrabber = new System.Windows.Forms.GroupBox();
             this.rgdFrameGrabberPreviewStream = new System.Windows.Forms.RadioButton();
             this.rgdFrameGrabberCaptureStream = new System.Windows.Forms.RadioButton();
@@ -588,12 +589,13 @@ namespace MainDemo
             this.rgdFrameGrabberFormat.Controls.Add(this.rgdFrameGrabberFormatRGB32);
             this.rgdFrameGrabberFormat.Controls.Add(this.rgdFrameGrabberFormatRGB24);
             this.rgdFrameGrabberFormat.Controls.Add(this.rgdFrameGrabberFormat565);
+            this.rgdFrameGrabberFormat.Controls.Add(this.rgdFrameGrabberFormatNV12);
             this.rgdFrameGrabberFormat.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rgdFrameGrabberFormat.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rgdFrameGrabberFormat.Location = new System.Drawing.Point(156, 24);
             this.rgdFrameGrabberFormat.Name = "rgdFrameGrabberFormat";
             this.rgdFrameGrabberFormat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rgdFrameGrabberFormat.Size = new System.Drawing.Size(200, 124);
+            this.rgdFrameGrabberFormat.Size = new System.Drawing.Size(200, 150);
             this.rgdFrameGrabberFormat.TabIndex = 44;
             this.rgdFrameGrabberFormat.TabStop = false;
             this.rgdFrameGrabberFormat.Text = "frame grabber format";
@@ -699,6 +701,23 @@ namespace MainDemo
             this.rgdFrameGrabberFormat565.Text = "RGB565";
             this.rgdFrameGrabberFormat565.UseVisualStyleBackColor = false;
             this.rgdFrameGrabberFormat565.CheckedChanged += new System.EventHandler(this.rgdFrameGrabberFormat_CheckedChanged);
+            // 
+            // rgdFrameGrabberFormatNV12
+            // 
+            this.rgdFrameGrabberFormatNV12.BackColor = System.Drawing.SystemColors.Control;
+            this.rgdFrameGrabberFormatNV12.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rgdFrameGrabberFormatNV12.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rgdFrameGrabberFormatNV12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rgdFrameGrabberFormatNV12.Location = new System.Drawing.Point(12, 108);
+            this.rgdFrameGrabberFormatNV12.Name = "rgdFrameGrabberFormatNV12";
+            this.rgdFrameGrabberFormatNV12.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rgdFrameGrabberFormatNV12.Size = new System.Drawing.Size(91, 27);
+            this.rgdFrameGrabberFormatNV12.TabIndex = 14;
+            this.rgdFrameGrabberFormatNV12.TabStop = true;
+            this.rgdFrameGrabberFormatNV12.Tag = "7";
+            this.rgdFrameGrabberFormatNV12.Text = "NV12";
+            this.rgdFrameGrabberFormatNV12.UseVisualStyleBackColor = false;
+            this.rgdFrameGrabberFormatNV12.CheckedChanged += new System.EventHandler(this.rgdFrameGrabberFormat_CheckedChanged);
             // 
             // rgdFrameGrabber
             // 
@@ -867,6 +886,7 @@ namespace MainDemo
         private RadioButton rgdFrameGrabberFormatRGB32;
         private RadioButton rgdFrameGrabberFormatRGB24;
         private RadioButton rgdFrameGrabberFormat565;
+        private RadioButton rgdFrameGrabberFormatNV12;
         private GroupBox rgdFrameGrabber;
         private RadioButton rgdFrameGrabberPreviewStream;
         private RadioButton rgdFrameGrabberCaptureStream;

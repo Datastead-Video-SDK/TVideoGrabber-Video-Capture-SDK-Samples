@@ -15,7 +15,7 @@ Public Class Form1
         VideoGrabberMixer.UseNearestVideoSize(1920, 1080, True)
 
 
-        StreamingEncoderId = VideoGrabberMixer.Encoders_CreateInstanceForStreaming("rtmps://live-api-s.facebook.com:443/rtmp/FB-613202114689260-0-Ab068DGkxkj_cbioRuyTrK13")
+        StreamingEncoderId = VideoGrabberMixer.Encoders_CreateInstanceForStreaming("rtmps://live-api-s.facebook.com:443/rtmp/... your key ...")
         If (StreamingEncoderId = -1) Then
             ' error
         Else
