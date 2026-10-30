@@ -3314,6 +3314,371 @@ object frmMainForm: TfrmMainForm
         OnChangeTracking = edtAVIAutoFilePrefixChange
       end
     end
+    object tbsEncryption: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      StyleLookup = ''
+      TabOrder = 0
+      TextSettings.Font.Family = 'Microsoft Sans Serif'
+      TextSettings.Font.Size = 11.000000000000000000
+      StyledSettings = [Style, FontColor, Other]
+      Text = 'encryption'
+      object lblEncryptionKey: TLabel
+        AutoSize = True
+        Position.X = 1.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Encryption key (16 or 32 chars):'
+      end
+      object lblDecryptionKey: TLabel
+        AutoSize = True
+        Position.X = 0.000000000000000000
+        Position.Y = 75.000000000000000000
+        Size.Width = 151.000000000000000000
+        Size.Height = 13.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = False
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Decryption key (16 or 32 chars):'
+      end
+      object grbEncryptionMethod: TGroupBox
+        TabOrder = 0
+        Position.X = 167.000000000000000000
+        Position.Y = 2.000000000000000000
+        Size.Width = 361.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'Encryption method'
+        object rdbAESencryption: TRadioButton
+          TabOrder = 0
+          Position.X = 16.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          GroupName = 'grp_grbEncryptionMethod'
+          IsChecked = True
+          Text = 'AES (recommended)'
+          OnChange = rdbAESencryptionClick
+        end
+        object rdbFastEncryption: TRadioButton
+          TabOrder = 1
+          Position.X = 168.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 185.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          GroupName = 'grp_grbEncryptionMethod'
+          Text = 'Fast (obfuscation only)'
+          OnChange = rdbFastEncryptionClick
+        end
+      end
+      object edtEncryptionKey: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 167.000000000000000000
+        Position.Y = 45.000000000000000000
+        Size.Width = 219.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+      end
+      object btnSetEncryptionKey: TButton
+        TabOrder = 2
+        Position.X = 392.000000000000000000
+        Position.Y = 47.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'SET'
+        OnClick = btnSetEncryptionKeyClick
+      end
+      object btnClearEncryption: TButton
+        TabOrder = 3
+        Position.X = 439.000000000000000000
+        Position.Y = 47.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'clear'
+        OnClick = btnClearEncryptionClick
+      end
+      object edtDecryptionKey: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 167.000000000000000000
+        Position.Y = 72.000000000000000000
+        Size.Width = 219.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+      end
+      object btnSetDecryptionKey: TButton
+        TabOrder = 5
+        Position.X = 392.000000000000000000
+        Position.Y = 74.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'SET'
+        OnClick = btnSetDecryptionKeyClick
+      end
+      object btnClearDecryption: TButton
+        TabOrder = 6
+        Position.X = 439.000000000000000000
+        Position.Y = 74.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'clear'
+        OnClick = btnClearDecryptionClick
+      end
+      object grbEncryptDecryptFiles: TGroupBox
+        TabOrder = 7
+        Position.X = 3.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 593.000000000000000000
+        Size.Height = 110.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        StyledSettings = [Style, FontColor, Other]
+        Text = 'encrypt / decrypt existing video files (OPTION 2):'
+        object spdSourceVideoClip: TSpeedButton
+          Position.X = 6.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 152.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'source video clip (input) :'
+          OnClick = spdSourceVideoClipClick
+          TextSettings.HorzAlign = Trailing
+          object spdSourceVideoClip_Glyph: TImage
+            MultiResBitmap = <
+        item
+          Width = 16
+          Height = 16
+          PNG = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000041B494441547801011004EFFB00000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000007F7F7FFF00
+            0000FF000000FF000000FF000000FF7F7F7FFF00000000000000000000000000
+            00000000000000000000000000000000000000000000000000000000000000FF
+            FFFF00FFFFFFFFFFFFFF00FFFFFFFFFF000000FF000000000000000000000000
+            00000000000000000000000000000000000000000000000000000000FFFFFF00
+            FFFFFFFFFFFFFF00FFFFFFFFFFFFFF00FFFFFFFFFF000000FF000000FF000000
+            FF00000000000000000000000000000000000000000000000000000000FFFFFF
+            FFFFFFFF00FFFFFFFFFFFFFF00FFFFFFFFFFFFFF00FFFFFFFFFFFFFF00FFFFFF
+            FFFF000000FF000000000000000000000000000000000000000000000000FFFF
+            FF00FFFFFFFFFFFFFF00FFFFFFFFFFFFFF00FFFFFFFFFFFFFF00FFFFFFFFFFFF
+            FF00FF000000FF000000000000000000000000000000000000000000000000FF
+            FFFFFFFFFFFF00FFFFFFFFFF000000FF000000FF000000FF000000FF000000FF
+            000000FF000000FF000000FF000000FF000000FF000000000000000000000000
+            FFFFFF00FFFFFFFFFF000000FFFFFF00FFBFBFBFFFFFFF00FFBFBFBFFFFFFF00
+            FFBFBFBFFFFFFF00FFBFBFBFFFFFFF00FF000000FF0000000000000000000000
+            00FFFFFFFFFF000000FFFFFF00FFBFBFBFFFFFFF00FFBFBFBFFFFFFF00FFBFBF
+            BFFFFFFF00FFBFBFBFFFFFFF00FF000000FF0000000000000000000000000000
+            0000FF000000FFFFFF00FFBFBFBFFFFFFF00FFBFBFBFFFFFFF00FFBFBFBFFFFF
+            FF00FFBFBFBFFFFFFF00FF000000FF0000000000000000000000000000000000
+            00000000000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+            000000FF000000FF000000FF0000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            BFB0FBF8B6C8F6360000000049454E44AE426082}
+        end>
+            Align = Left
+            Margins.Left = 3.000000000000000000
+            Size.Width = 16.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+            HitTest = False
+            WrapMode = Center
+          end
+        end
+        object lblEncryptDecryptDestination: TLabel
+          AutoSize = True
+          Position.X = 14.000000000000000000
+          Position.Y = 52.000000000000000000
+          Size.Width = 144.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          TextSettings.WordWrap = False
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'destination video clip (output) :'
+        end
+        object edtEncryptDecryptSourceVideoClip: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 164.000000000000000000
+          Position.Y = 23.000000000000000000
+          Size.Width = 397.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+        end
+        object edtEncryptDecryptDestinationVideoClip: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 164.000000000000000000
+          Position.Y = 50.000000000000000000
+          Size.Width = 397.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+        end
+        object chkEncryptDecryptOverwriteDestination: TCheckBox
+          TabOrder = 2
+          Position.X = 9.000000000000000000
+          Position.Y = 79.000000000000000000
+          Size.Width = 166.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'overwrite destination if exists'
+        end
+        object btnEncryptVideoClip: TButton
+          TabOrder = 3
+          Position.X = 317.000000000000000000
+          Position.Y = 77.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'ENCRYPT'
+          OnClick = btnEncryptVideoClipClick
+        end
+        object btnDecryptVideoClip: TButton
+          TabOrder = 4
+          Position.X = 430.000000000000000000
+          Position.Y = 77.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Microsoft Sans Serif'
+          TextSettings.Font.Size = 11.000000000000000000
+          StyledSettings = [Style, FontColor, Other]
+          Text = 'DECRYPT'
+          OnClick = btnDecryptVideoClipClick
+        end
+      end
+      object mmoEncryptionHelp: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+              'REQUIREMENTS'
+              
+                '- encryption during the recording: recording through the Dataste' +
+                'ad Multipurpose Encoder, or native IP camera recording through t' +
+                'he Datastead RTSP/RTMP/HTTP/ONVIF Source Filter'
+              
+                '- "ENCRYPT" / "DECRYPT" (Encrypt_File / Decrypt_File): Datastead' +
+                ' Multipurpose Encoder or Datastead RTSP/RTMP/HTTP/ONVIF Source F' +
+                'ilter'
+              
+                '- playback of an encrypted clip: Datastead RTSP/RTMP/HTTP/ONVIF ' +
+                'Source Filter'
+              ''
+              
+                '- method: AES (recommended). "Fast" is only an obfuscation (the ' +
+                'key can be deduced from the file), kept to read the files alread' +
+                'y encrypted with it'
+              
+                '- the decryption key and method must be the key and method used ' +
+                'for the encryption'
+              
+                '- the key length must be exactly 16 characters (128 bits) or 32 ' +
+                'characters (256 bits)'
+              
+                '- to disable the encryption or decryption, set an empty key ("cl' +
+                'ear")'
+              ''
+              'OPTION 1: REAL-TIME ENCRYPTION / DECRYPTION'
+              
+                'A) encryption: set the encryption key, select the source to reco' +
+                'rd (video source or IP cameras tab), then start the recording: t' +
+                'he clip is encrypted on the fly'
+              
+                'B) decryption: set the decryption key, then open the encrypted c' +
+                'lip in the player tab'
+              ''
+              'OPTION 2: ENCRYPTION / DECRYPTION OF EXISTING FILES'
+              
+                'A) enter the encryption key, select the source clip, enter the d' +
+                'estination clip, then click "ENCRYPT"'
+              
+                'B) enter the decryption key, select the encrypted clip as source' +
+                ', enter the destination clip, then click "DECRYPT"')
+        ReadOnly = True
+        TabOrder = 8
+        Position.X = 615.000000000000000000
+        Position.Y = 3.000000000000000000
+        Size.Width = 692.000000000000000000
+        Size.Height = 222.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Microsoft Sans Serif'
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.WordWrap = True
+        StyledSettings = [Style, FontColor, Other]
+      end
+    end
     object tbsMPE: TTabItem
       CustomIcon = <
         item

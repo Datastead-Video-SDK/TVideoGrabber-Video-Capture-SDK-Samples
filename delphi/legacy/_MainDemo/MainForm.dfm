@@ -2390,6 +2390,240 @@ object frmMainForm: TfrmMainForm
         OnChange = edtAVIAutoFilePrefixChange
       end
     end
+    object tbsEncryption: TTabSheet
+      Caption = 'encryption'
+      ImageIndex = 13
+      object lblEncryptionKey: TLabel
+        Left = 1
+        Top = 48
+        Width = 150
+        Height = 13
+        Caption = 'Encryption key (16 or 32 chars):'
+      end
+      object lblDecryptionKey: TLabel
+        Left = 0
+        Top = 75
+        Width = 151
+        Height = 13
+        Caption = 'Decryption key (16 or 32 chars):'
+      end
+      object grbEncryptionMethod: TGroupBox
+        Left = 167
+        Top = 2
+        Width = 361
+        Height = 36
+        Caption = 'Encryption method'
+        TabOrder = 0
+        object rdbAESencryption: TRadioButton
+          Left = 16
+          Top = 10
+          Width = 137
+          Height = 24
+          Caption = 'AES (recommended)'
+          Checked = True
+          TabOrder = 0
+          TabStop = True
+          OnClick = rdbAESencryptionClick
+        end
+        object rdbFastEncryption: TRadioButton
+          Left = 168
+          Top = 10
+          Width = 185
+          Height = 24
+          Caption = 'Fast (obfuscation only)'
+          TabOrder = 1
+          OnClick = rdbFastEncryptionClick
+        end
+      end
+      object edtEncryptionKey: TEdit
+        Left = 167
+        Top = 45
+        Width = 219
+        Height = 21
+        MaxLength = 32
+        TabOrder = 1
+      end
+      object btnSetEncryptionKey: TButton
+        Left = 392
+        Top = 47
+        Width = 41
+        Height = 17
+        Caption = 'SET'
+        TabOrder = 2
+        OnClick = btnSetEncryptionKeyClick
+      end
+      object btnClearEncryption: TButton
+        Left = 439
+        Top = 47
+        Width = 41
+        Height = 17
+        Caption = 'clear'
+        TabOrder = 3
+        OnClick = btnClearEncryptionClick
+      end
+      object edtDecryptionKey: TEdit
+        Left = 167
+        Top = 72
+        Width = 219
+        Height = 21
+        MaxLength = 32
+        TabOrder = 4
+      end
+      object btnSetDecryptionKey: TButton
+        Left = 392
+        Top = 74
+        Width = 41
+        Height = 17
+        Caption = 'SET'
+        TabOrder = 5
+        OnClick = btnSetDecryptionKeyClick
+      end
+      object btnClearDecryption: TButton
+        Left = 439
+        Top = 74
+        Width = 41
+        Height = 17
+        Caption = 'clear'
+        TabOrder = 6
+        OnClick = btnClearDecryptionClick
+      end
+      object grbEncryptDecryptFiles: TGroupBox
+        Left = 3
+        Top = 99
+        Width = 593
+        Height = 110
+        Caption = 'encrypt / decrypt existing video files (OPTION 2):'
+        TabOrder = 7
+        object spdSourceVideoClip: TSpeedButton
+          Left = 6
+          Top = 20
+          Width = 152
+          Height = 26
+          Caption = 'source video clip (input) :'
+          Glyph.Data = {
+            76010000424D7601000000000000760000002800000020000000100000000100
+            0400000000000001000000000000000000001000000010000000000000000000
+            800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+            5555555555555555555555555555555555555555555555555555555555555555
+            555555555555555555555555555555555555555FFFFFFFFFF555550000000000
+            55555577777777775F55500B8B8B8B8B05555775F555555575F550F0B8B8B8B8
+            B05557F75F555555575F50BF0B8B8B8B8B0557F575FFFFFFFF7F50FBF0000000
+            000557F557777777777550BFBFBFBFB0555557F555555557F55550FBFBFBFBF0
+            555557F555555FF7555550BFBFBF00055555575F555577755555550BFBF05555
+            55555575FFF75555555555700007555555555557777555555555555555555555
+            5555555555555555555555555555555555555555555555555555}
+          NumGlyphs = 2
+          OnClick = spdSourceVideoClipClick
+        end
+        object lblEncryptDecryptDestination: TLabel
+          Left = 14
+          Top = 52
+          Width = 144
+          Height = 13
+          Caption = 'destination video clip (output) :'
+        end
+        object edtEncryptDecryptSourceVideoClip: TEdit
+          Left = 164
+          Top = 23
+          Width = 397
+          Height = 21
+          TabOrder = 0
+        end
+        object edtEncryptDecryptDestinationVideoClip: TEdit
+          Left = 164
+          Top = 50
+          Width = 397
+          Height = 21
+          TabOrder = 1
+        end
+        object chkEncryptDecryptOverwriteDestination: TCheckBox
+          Left = 9
+          Top = 79
+          Width = 166
+          Height = 17
+          Caption = 'overwrite destination if exists'
+          TabOrder = 2
+        end
+        object btnEncryptVideoClip: TButton
+          Left = 317
+          Top = 77
+          Width = 90
+          Height = 24
+          Caption = 'ENCRYPT'
+          TabOrder = 3
+          OnClick = btnEncryptVideoClipClick
+        end
+        object btnDecryptVideoClip: TButton
+          Left = 430
+          Top = 77
+          Width = 90
+          Height = 24
+          Caption = 'DECRYPT'
+          TabOrder = 4
+          OnClick = btnDecryptVideoClipClick
+        end
+      end
+      object mmoEncryptionHelp: TMemo
+        Left = 615
+        Top = 3
+        Width = 692
+        Height = 222
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -10
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Lines.Strings = (
+          'REQUIREMENTS'
+          
+            '- encryption during the recording: recording through the Dataste' +
+            'ad Multipurpose Encoder, or native IP camera recording through t' +
+            'he Datastead RTSP/RTMP/HTTP/ONVIF Source Filter'
+          
+            '- "ENCRYPT" / "DECRYPT" (Encrypt_File / Decrypt_File): Datastead' +
+            ' Multipurpose Encoder or Datastead RTSP/RTMP/HTTP/ONVIF Source F' +
+            'ilter'
+          
+            '- playback of an encrypted clip: Datastead RTSP/RTMP/HTTP/ONVIF ' +
+            'Source Filter'
+          ''
+          
+            '- method: AES (recommended). "Fast" is only an obfuscation (the ' +
+            'key can be deduced from the file), kept to read the files alread' +
+            'y encrypted with it'
+          
+            '- the decryption key and method must be the key and method used ' +
+            'for the encryption'
+          
+            '- the key length must be exactly 16 characters (128 bits) or 32 ' +
+            'characters (256 bits)'
+          
+            '- to disable the encryption or decryption, set an empty key ("cl' +
+            'ear")'
+          ''
+          'OPTION 1: REAL-TIME ENCRYPTION / DECRYPTION'
+          
+            'A) encryption: set the encryption key, select the source to reco' +
+            'rd (video source or IP cameras tab), then start the recording: t' +
+            'he clip is encrypted on the fly'
+          
+            'B) decryption: set the decryption key, then open the encrypted c' +
+            'lip in the player tab'
+          ''
+          'OPTION 2: ENCRYPTION / DECRYPTION OF EXISTING FILES'
+          
+            'A) enter the encryption key, select the source clip, enter the d' +
+            'estination clip, then click "ENCRYPT"'
+          
+            'B) enter the decryption key, select the encrypted clip as source' +
+            ', enter the destination clip, then click "DECRYPT"')
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssVertical
+        TabOrder = 8
+      end
+    end
     object tbsMPE: TTabSheet
       Caption = 'Multipurpose Encoder'
       ImageIndex = 12

@@ -565,6 +565,27 @@ type
     chk2ndTranspColor: TCheckBox;
     edt2ndTranspColor: TEdit;
     tbr2ndAlphaBlend: TTrackBar;
+    tbsEncryption: TTabSheet;
+    lblEncryptionKey: TLabel;
+    lblDecryptionKey: TLabel;
+    grbEncryptionMethod: TGroupBox;
+    rdbAESencryption: TRadioButton;
+    rdbFastEncryption: TRadioButton;
+    edtEncryptionKey: TEdit;
+    btnSetEncryptionKey: TButton;
+    btnClearEncryption: TButton;
+    edtDecryptionKey: TEdit;
+    btnSetDecryptionKey: TButton;
+    btnClearDecryption: TButton;
+    grbEncryptDecryptFiles: TGroupBox;
+    spdSourceVideoClip: TSpeedButton;
+    lblEncryptDecryptDestination: TLabel;
+    edtEncryptDecryptSourceVideoClip: TEdit;
+    edtEncryptDecryptDestinationVideoClip: TEdit;
+    chkEncryptDecryptOverwriteDestination: TCheckBox;
+    btnEncryptVideoClip: TButton;
+    btnDecryptVideoClip: TButton;
+    mmoEncryptionHelp: TMemo;
       procedure btnAudioCompressorSettingsClick(Sender: TObject);
       procedure btnAutoPlayClick(Sender: TObject);
       procedure btnAutoRefreshPreviewClick(Sender: TObject);
@@ -967,6 +988,15 @@ type
     procedure chk2ndTranspColorClick(Sender: TObject);
     procedure edt2ndTranspColorChange(Sender: TObject);
     procedure tbr2PanScanChange(Sender: TObject);
+    procedure rdbAESencryptionClick(Sender: TObject);
+    procedure rdbFastEncryptionClick(Sender: TObject);
+    procedure btnSetEncryptionKeyClick(Sender: TObject);
+    procedure btnClearEncryptionClick(Sender: TObject);
+    procedure btnSetDecryptionKeyClick(Sender: TObject);
+    procedure btnClearDecryptionClick(Sender: TObject);
+    procedure spdSourceVideoClipClick(Sender: TObject);
+    procedure btnEncryptVideoClipClick(Sender: TObject);
+    procedure btnDecryptVideoClipClick(Sender: TObject);
 
    private
       FStartupWidth: Integer;
@@ -1002,6 +1032,8 @@ type
 
       FMultipurposeUDPStreamingID: LongInt;
 
+      FEncryptionMethod: TEncryptionMethod; /// 261028de method used by SetEncryptionKey / SetDecryptionKey (encryption tab)
+
       // VU-meter configuration window (non-modal, instantiated on demand)
       FVUMeterConfigForm: TForm;
 
@@ -1025,6 +1057,7 @@ type
       procedure ChangeVideoSource (VideoSource: TVideoSource);
       procedure ConfigureVUMeters (VUMeter: TVUMeter);
       procedure WarnFrameBitmapOptionInNV12 (OptionEnabled: Boolean);
+      procedure ReapplyEncryptionKeys;
    end;
 
 var
@@ -1082,6 +1115,8 @@ begin
    FTextOverlayIndex := 0;
 
    FMultipurposeUDPStreamingID := -1;
+
+   FEncryptionMethod := em_AES_Encryption; /// 261028de AES recommended (rdbAESencryption checked in the form)
 
    // Capture the design-time sizes of the VU-meter host panels
    // (FInitial*VUMeter* fields) - used as the resize reference by
@@ -5132,6 +5167,114 @@ procedure TfrmMainForm.btnDeviceDialogClick(Sender: TObject);
 begin
    VideoGrabber.ShowDialog(dlg_VideoDevice);
    RefreshDeviceControls;
+end;
+
+/// /////////////////////////////////////////////////////////////////////////////
+/// 261028de encryption tab, restored from the previous MainDemo ("ENCRYPT" / "DECRYPT" were not connected to any
+/// handler: they did nothing). AES selected by default (em_Fast_Encryption is only an obfuscation).
+
+procedure TfrmMainForm.ReapplyEncryptionKeys;
+/// applies the method selected to the keys already entered (a key is applied with the method selected when it is set)
+begin
+   if edtEncryptionKey.Text <> '' then begin
+      VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text);
+   end;
+   if edtDecryptionKey.Text <> '' then begin
+      VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text);
+   end;
+end;
+
+procedure TfrmMainForm.rdbAESencryptionClick(Sender: TObject);
+begin
+   FEncryptionMethod := em_AES_Encryption;
+   ReapplyEncryptionKeys;
+end;
+
+procedure TfrmMainForm.rdbFastEncryptionClick(Sender: TObject);
+begin
+   FEncryptionMethod := em_Fast_Encryption;
+   ReapplyEncryptionKeys;
+end;
+
+procedure TfrmMainForm.btnSetEncryptionKeyClick(Sender: TObject);
+begin
+   VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text);
+end;
+
+procedure TfrmMainForm.btnClearEncryptionClick(Sender: TObject);
+begin
+   edtEncryptionKey.Text := '';
+   VideoGrabber.SetEncryptionKey (FEncryptionMethod, '');
+end;
+
+procedure TfrmMainForm.btnSetDecryptionKeyClick(Sender: TObject);
+begin
+   VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text);
+end;
+
+procedure TfrmMainForm.btnClearDecryptionClick(Sender: TObject);
+begin
+   edtDecryptionKey.Text := '';
+   VideoGrabber.SetDecryptionKey (FEncryptionMethod, '');
+end;
+
+procedure TfrmMainForm.spdSourceVideoClipClick(Sender: TObject);
+var
+   OpenDlg: TOpenDialog;
+begin
+   OpenDlg := TOpenDialog.Create(nil);
+   try
+      OpenDlg.Filter := OPEN_MEDIA_FILES_EXTENDED + '|All files|*.*'; /// an encrypted clip may have any extension
+      if OpenDlg.Execute then begin
+         edtEncryptDecryptSourceVideoClip.Text := OpenDlg.FileName;
+      end;
+   finally
+      OpenDlg.Free;
+   end;
+end;
+
+procedure TfrmMainForm.btnEncryptVideoClipClick(Sender: TObject);
+/// encrypts the source clip into the destination clip, with the encryption key and the method displayed
+/// (the errors are reported by OnLog)
+var
+   Ok: Boolean;
+begin
+   if not VideoGrabber.SetEncryptionKey (FEncryptionMethod, edtEncryptionKey.Text) then Exit;
+   Screen.Cursor := crHourGlass;
+   try
+      Ok := VideoGrabber.Encrypt_File (edtEncryptDecryptSourceVideoClip.Text,
+        edtEncryptDecryptDestinationVideoClip.Text, chkEncryptDecryptOverwriteDestination.Checked);
+   finally
+      Screen.Cursor := crDefault;
+   end;
+   if Ok then begin
+      mmoLog.Lines.Add ('encrypted to ' + edtEncryptDecryptDestinationVideoClip.Text);
+   end
+   else begin
+      mmoLog.Lines.Add ('encryption failed (see the messages above)');
+   end;
+end;
+
+procedure TfrmMainForm.btnDecryptVideoClipClick(Sender: TObject);
+/// decrypts the source clip into the destination clip, with the decryption key and the method displayed
+/// (the errors are reported by OnLog)
+var
+   Ok: Boolean;
+begin
+   if not VideoGrabber.SetDecryptionKey (FEncryptionMethod, edtDecryptionKey.Text) then Exit;
+   Screen.Cursor := crHourGlass;
+   try
+      Ok := VideoGrabber.Decrypt_File (edtEncryptDecryptSourceVideoClip.Text,
+        edtEncryptDecryptDestinationVideoClip.Text, chkEncryptDecryptOverwriteDestination.Checked);
+   finally
+      Screen.Cursor := crDefault;
+   end;
+   if Ok then begin
+      mmoLog.Lines.Add ('decrypted to ' + edtEncryptDecryptDestinationVideoClip.Text);
+   end
+   else begin
+      mmoLog.Lines.Add ('decryption failed (see the messages above)');
+   end;
 end;
 
 end.
